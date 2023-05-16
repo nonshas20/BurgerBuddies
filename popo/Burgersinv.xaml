@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.Burgersinv"
+             Padding="10"
+             Title="Main POS">
+            
+    <ContentPage.Content>
+        <StackLayout Spacing="10" BackgroundColor="#F6F6F6">
+            <Label Text="Burgers Inventory" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,20,0,0"/>
+
+            <Grid Margin="10,20,10,10" ColumnSpacing="30" HeightRequest ="400" BackgroundColor="#FFFFFF" Padding="5,10,0,0" VerticalOptions="Start" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="Product" FontAttributes="Bold" FontSize="Medium"  HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="2" Text="Stock" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="3" Text="Quantity" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
+            </Grid>
+
+            <StackLayout Margin="10,0,10,0" BackgroundColor="#FFFFFF" Padding="5,10">
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="PLB" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="PLBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid BackgroundColor="#FFFFFF" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="BC" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="BCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="BC" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P40" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="BCCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid BackgroundColor="#FFFFFF" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="CB" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="40" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="CBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="CBC" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P45" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="CBCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+                <Grid BackgroundColor="White" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="CBCE" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" />
+                    <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" />
+                    <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="CBCEStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="PB" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
+                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Label x:Name="PBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="20">
+
+                <ListView x:Name="OrderListView" HasUnevenRows="True" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Name" FontSize="Medium"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="Price" FontSize="Medium" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="Quantity" FontSize="Medium" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Subtotal, StringFormat='Subtotal: P{0:F}'}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Button Text="Clear" FontSize="Large" HeightRequest="80" WidthRequest="150" BorderRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="5,10,10,10"/>
+                    <Button Text="Save" FontSize="Large" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" BorderRadius="10" Margin="10, 10, 10, 10"/>
+                </StackLayout>
+
+                <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" BorderRadius="10" Clicked="ViewOrderButton_Clicked"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

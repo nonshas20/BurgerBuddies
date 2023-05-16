@@ -1,0 +1,55 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.LoginPage"
+             BackgroundColor="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <BoxView Grid.Row="0" HeightRequest="200" VerticalOptions="StartAndExpand">
+            <BoxView.Clip>
+                <PathGeometry>
+                    <PathFigure IsClosed="True" StartPoint="0, 0">
+                        <PathFigure.Segments>
+                            <BezierSegment Point1="0,100" Point2="100,200" Point3="200,100" />
+                            <BezierSegment Point1="200,100" Point2="300,0" Point3="400,100" />
+                            <BezierSegment Point1="400,100" Point2="500,200" Point3="600,100" />
+                            <LineSegment Point="600,0" />
+                        </PathFigure.Segments>
+                    </PathFigure>
+                </PathGeometry>
+            </BoxView.Clip>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <GradientStop Color="DodgerBlue" Offset="0.1" />
+                    <GradientStop Color="DeepSkyBlue" Offset="1.0" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <StackLayout Grid.Row="1" Padding="30" Spacing="20">
+            <Label Text="Login" FontSize="30" TextColor="Black" HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                <Entry x:Name="usernameEntry" Placeholder="Username" />
+            </Frame>
+
+            <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" />
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                <Switch OnColor="DodgerBlue" ThumbColor="White" />
+                <Label Text="Remember me" FontSize="16" TextColor="Black" VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Padding="50" Spacing="1">
+                <Button Text="Login" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" WidthRequest="200" HorizontalOptions="CenterAndExpand" Clicked="OnLoginClicked" />
+
+                <Label Text="Forgot password?" FontSize="16" TextColor="DodgerBlue" HorizontalOptions="Center" Margin="0,20,0,0" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

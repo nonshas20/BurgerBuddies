@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.MainPage"
+             BackgroundColor="White">
+    
+    <StackLayout>
+        <StackLayout BackgroundColor="#ffac33" HeightRequest="70" Padding="10,20,10,0">
+            <Label Text="Burger Buddies" FontSize="32" TextColor="White" FontFamily="Arial" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Button Text="Exit" BackgroundColor="FloralWhite" BorderRadius="10" FontSize="20" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <Grid Padding="15" ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="1000"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="Burgers" FontSize="25" FontAttributes="Bold" BackgroundColor="#8bc34a" TextColor="White" BorderColor="#4caf50" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="BurgersButton_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="Sandwiches" FontSize="25" FontAttributes="Bold" BackgroundColor="#2196f3" TextColor="White" BorderColor="#1976d2" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#ff5722" TextColor="White" BorderColor="#e64a19" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+
+            <Button Grid.Row="0" Grid.Column="1" Text="Meals" FontSize="25" FontAttributes="Bold"  BackgroundColor="#607d8b" TextColor="White" BorderColor="#455a64" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="MealsButton_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#9c27b0" TextColor="White" BorderColor="#7b1fa2" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#795548" TextColor="White" BorderColor="#5d4037" BorderRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#f44336" TextColor="White" BorderColor="#d32f2f" BorderRadius="10" BorderWidth="2" HeightRequest="150" WidthRequest="120"/>
+            
+            
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
