@@ -1,7 +1,8 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.ViewOrdersPage"
-             Title="Burgers Inventory">
+             Title="Burgers Inventory"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Padding="10">
             <Label Text="Orders" FontSize="Large" FontAttributes="Bold" Margin="0,10,0,10"/>
@@ -125,8 +126,8 @@
                     <Label Text="May 04, 2023" FontSize="Small"/>
                 </StackLayout>
                 <StackLayout Grid.Row="5" Orientation="Horizontal">
-                    <Button Text="Add Items" FontSize="Large" FontAttributes="Bold" HeightRequest="80" BorderRadius="10"  HorizontalOptions="FillAndExpand" BackgroundColor="Green" TextColor="White" Margin="0,0,5,0" VerticalOptions="End"/>
-                    <Button Text="Confirm" FontSize="Large" FontAttributes="Bold" HeightRequest="80" BorderRadius="10" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Margin="5,0,0,0" VerticalOptions="End"/>
+                    <Button Text="Add Items" FontSize="Large" FontAttributes="Bold" HeightRequest="80" CornerRadius="10"  HorizontalOptions="FillAndExpand" BackgroundColor="Green" TextColor="White" Margin="0,0,5,0" VerticalOptions="End"/>
+                    <Button Text="Confirm" FontSize="Large" FontAttributes="Bold" HeightRequest="80" CornerRadius="10" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Margin="5,0,0,0" VerticalOptions="End"/>
                 </StackLayout>
             </Grid>
 

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.Mealsinv"
-             Padding="10">
+             Padding="10"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Spacing="10" BackgroundColor="#F6F6F6">
             <Label Text="Burgers Inventory" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,20,0,0"/>
@@ -172,11 +173,11 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                    <Button Text="Clear" HeightRequest="80" WidthRequest="150" BorderRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="10"/>
-                    <Button Text="Save" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" BorderRadius="10" Margin="10"/>
+                    <Button Text="Clear" HeightRequest="80" WidthRequest="150" CornerRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="10"/>
+                    <Button Text="Save" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" CornerRadius="10" Margin="10"/>
                 </StackLayout>
 
-                <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" BorderRadius="10"/>
+                <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" CornerRadius="10"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

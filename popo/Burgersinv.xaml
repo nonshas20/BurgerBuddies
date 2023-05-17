@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.Burgersinv"
              Padding="10"
-             Title="Main POS">
+             Title="Main POS"
+             NavigationPage.HasNavigationBar="False">
             
     <ContentPage.Content>
         <StackLayout Spacing="10" BackgroundColor="#F6F6F6">
@@ -174,11 +175,11 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                    <Button Text="Clear" FontSize="Large" HeightRequest="80" WidthRequest="150" BorderRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="5,10,10,10"/>
-                    <Button Text="Save" FontSize="Large" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" BorderRadius="10" Margin="10, 10, 10, 10"/>
+                    <Button Text="Clear" FontSize="Large" HeightRequest="80" WidthRequest="150" CornerRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="5,10,10,10"/>
+                    <Button Text="Save" FontSize="Large" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" CornerRadius="10" Margin="10, 10, 10, 10"/>
                 </StackLayout>
 
-                <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" BorderRadius="10" Clicked="ViewOrderButton_Clicked"/>
+                <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" CornerRadius="10" Clicked="ViewOrderButton_Clicked"/>
 
             </StackLayout>
         </StackLayout>
