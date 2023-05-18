@@ -26,6 +26,11 @@ namespace popo
         {
             await Navigation.PushAsync(new Mealsinv());
         }
-        
+        private void ExitButton_Clicked(object sender, EventArgs e)
+        {
+            // Navigate back to the LoginPage
+            Navigation.PopToRootAsync();
+        }
+
     }
 }

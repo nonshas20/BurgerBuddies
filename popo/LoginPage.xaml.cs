@@ -21,17 +21,24 @@ namespace popo
             string username = usernameEntry.Text;
             string password = passwordEntry.Text;
 
-            // Check the entered credentials
-            if (username == "admin" && password == "admin")
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                // Navigate to MainPage.xaml
-                Navigation.PushAsync(new MainPage());
+                DisplayAlert("Login Failed", "Invalid username or password", "OK");
             }
             else
             {
-                // Show an error message or handle the incorrect credentials case
-                DisplayAlert("Login Failed", "Invalid username or password", "OK");
+                // Check the entered credentials
+                if (username == "admin" && password == "admin")
+                {
+                    // Navigate to MainPage.xaml
+                    Navigation.PushAsync(new MainPage());
+                }
+                else
+                {
+                    // Show an error message or handle the incorrect credentials case
+                    DisplayAlert("Login Failed", "Invalid username or password", "OK");
+                }
             }
         }
     }
-}
+    }

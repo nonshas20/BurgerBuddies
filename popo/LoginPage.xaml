@@ -9,14 +9,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <BoxView Grid.Row="0" HeightRequest="200" VerticalOptions="StartAndExpand">
+        <BoxView Grid.Row="0" HeightRequest="300" VerticalOptions="Start">
             <BoxView.Clip>
                 <PathGeometry>
                     <PathFigure IsClosed="True" StartPoint="0, 0">
                         <PathFigure.Segments>
-                            <BezierSegment Point1="0,100" Point2="100,200" Point3="200,100" />
-                            <BezierSegment Point1="200,100" Point2="300,0" Point3="400,100" />
-                            <BezierSegment Point1="400,100" Point2="500,200" Point3="600,100" />
+                            <BezierSegment Point1="0,150" Point2="150,300" Point3="300,150" />
+                            <BezierSegment Point1="300,150" Point2="450,0" Point3="600,150" />
                             <LineSegment Point="600,0" />
                         </PathFigure.Segments>
                     </PathFigure>
@@ -30,9 +29,11 @@
             </BoxView.Background>
         </BoxView>
 
-        <StackLayout Grid.Row="1" Padding="30" Spacing="20">
-            <Label Text="Login" FontSize="30" TextColor="Black" HorizontalOptions="Center" />
+        <StackLayout Grid.Row="0">
+            <Label Text="LOGIN" FontSize="40" TextColor="White" FontFamily="Montserrat-Bold" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,70,0,0" />
+        </StackLayout>
 
+        <StackLayout Grid.Row="1" Padding="30" Spacing="20">
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
                 <Entry x:Name="usernameEntry" Placeholder="Username" />
             </Frame>

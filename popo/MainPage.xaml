@@ -4,11 +4,17 @@
              x:Class="popo.MainPage"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
-    
+
     <StackLayout>
         <StackLayout BackgroundColor="#ffac33" HeightRequest="70" Padding="10,20,10,0">
-            <Label Text="Burger Buddies" FontSize="32" TextColor="White" FontFamily="Arial" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-            <Button Text="Exit" BackgroundColor="FloralWhite" CornerRadius="10" FontSize="20" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Burger Buddies" FontSize="32" TextColor="White" FontFamily="Arial" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Button Grid.Column="1" Text="Exit" BackgroundColor="FloralWhite" CornerRadius="10" FontSize="20" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Clicked="ExitButton_Clicked"/>
+            </Grid>
         </StackLayout>
 
         <Grid Padding="15" ColumnSpacing="10" RowSpacing="10">
