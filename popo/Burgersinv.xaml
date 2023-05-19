@@ -4,13 +4,13 @@
              x:Class="popo.Burgersinv"
              Padding="10"
              Title="Main POS"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="True">
             
     <ContentPage.Content>
         <StackLayout Spacing="10" BackgroundColor="#F6F6F6">
             <Label Text="Burgers Inventory" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,20,0,0"/>
 
-            <Grid Margin="10,20,10,10" ColumnSpacing="30" HeightRequest ="400" BackgroundColor="#FFFFFF" Padding="5,10,0,0" VerticalOptions="Start" >
+            <Grid Margin="10,20,10,10" ColumnSpacing="30" HeightRequest ="800" BackgroundColor="#FFFFFF" Padding="5,10,0,0" VerticalOptions="Start" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="2*"/>

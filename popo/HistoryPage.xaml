@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.HistoryPage"
+             BackgroundColor="White"
+             Title=""
+             NavigationPage.HasNavigationBar="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="Transaction" FontSize="Large" FontAttributes="Bold" Margin="0,20,0,10" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                    <Label Text="MONTH" FontAttributes="Bold" TextColor="Black" />
+                    <Label Text="|" FontAttributes="Bold" TextColor="Black" />
+                    <Label Text="YEAR" FontAttributes="Bold" TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                    <Label Text="{Binding CurrentMonth}" FontSize="Medium" TextColor="Black" />
+                    <Label Text="|" FontSize="Medium" TextColor="Black" />
+                    <Label Text="{Binding CurrentYear}" FontSize="Medium" TextColor="Black" />
+                </StackLayout>
+
+                <BoxView HeightRequest="2" BackgroundColor="Black" HorizontalOptions="FillAndExpand" Margin="0,10" />
+
+                <StackLayout Margin="0,10">
+                    <Label Text="{Binding CurrentDate}" FontSize="Medium" FontAttributes="Bold" TextColor="Black" />
+                    <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" Margin="0,5" />
+                    <Label Text="000001 | P360 | 2:30PM" FontSize="Medium" TextColor="Black" Margin="0,5,0,0" />
+                    <Label Text="..." FontSize="Medium" TextColor="Gray" Margin="0,5,0,0" HorizontalOptions="End" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <Grid Grid.Row="1" BackgroundColor="#1976D2" HeightRequest="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="POS" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="POSButton_CLicked" />
+            <Button Grid.Column="1" Text="Inventory" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Button Grid.Column="2" Text="History" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>

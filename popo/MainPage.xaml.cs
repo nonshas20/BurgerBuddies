@@ -31,6 +31,10 @@ namespace popo
             // Navigate back to the LoginPage
             Navigation.PopToRootAsync();
         }
+        private async void HistoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryPage());
+        }
 
     }
 }
