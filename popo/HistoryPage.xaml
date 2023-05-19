@@ -4,7 +4,7 @@
              x:Class="popo.HistoryPage"
              BackgroundColor="White"
              Title=""
-             NavigationPage.HasNavigationBar="True">
+             NavigationPage.HasNavigationBar="False">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -47,7 +47,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Text="POS" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="POSButton_CLicked" />
-            <Button Grid.Column="1" Text="Inventory" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Button Grid.Column="1" Text="Inventory" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Clicked="InventoryButton_Clicked" />
             <Button Grid.Column="2" Text="History" FontSize="19" TextColor="White" BackgroundColor="#1976D2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
         </Grid>
     </Grid>

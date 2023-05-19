@@ -19,5 +19,9 @@ namespace popo
         {
             await Navigation.PushAsync(new MainPage());
         }
+        private async void InventoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InventoryPage());
+        }
     }
 }

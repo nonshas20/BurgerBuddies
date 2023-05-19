@@ -35,6 +35,10 @@ namespace popo
         {
             await Navigation.PushAsync(new HistoryPage());
         }
+        private async void InventoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InventoryPage());
+        }
 
     }
 }
