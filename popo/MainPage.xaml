@@ -15,8 +15,11 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <Image Source="Headerburgerbuddies.jpg" Aspect="AspectFill" />
+            <!-- pag dito sa labas ng stack layout ung picture ayaw gumana-->
             <StackLayout BackgroundColor="#039BE5" Padding="10,20,10,0">
+                <Image Source="Headerburgerbuddies.JPG" Aspect="AspectFill"/>
+                <!--edit mo na lang kung san mo lalagay tong image remove this comment after ah
+                    ps u can use margin para ma ayos ung location ng shit mwaps-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
