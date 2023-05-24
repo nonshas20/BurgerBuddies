@@ -60,23 +60,7 @@
                         <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
-                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="4*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Column="0" Text="BC" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
-                    <Label Grid.Column="1" Text="P40" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
-                    <Label Grid.Column="2" Text="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
-                    <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
-                        <Label x:Name="BCCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
-                    </StackLayout>
-                </Grid>
+                
 
                 <Grid BackgroundColor="#FFFFFF" HeightRequest="1000">
                     <Grid.ColumnDefinitions>

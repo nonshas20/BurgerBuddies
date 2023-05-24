@@ -58,7 +58,8 @@
                                 FontAttributes="Bold"
                                 WidthRequest="100"
                                 HeightRequest="100"
-                                Margin="5" />
+                                Margin="5"
+                                Clicked="AddCategoryButton_Clicked"/>
                         <Button Text="Update"
                                 CornerRadius="10"
                                 BackgroundColor="#2196F3"
