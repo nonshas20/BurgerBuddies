@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Android.Graphics.Drawables;
+using popo;
+using popo.Droid;
 
 namespace popo
 {

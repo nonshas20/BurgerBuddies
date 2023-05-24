@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="dontshowpassword.png" />
     <None Remove="login.png" />
+    <None Remove="showpassword.png" />
   </ItemGroup>
 
   <ItemGroup>
