@@ -28,5 +28,9 @@ namespace popo
         {
             await Navigation.PushAsync(new AddCategoryPage());
         }
+        private async void UpdateCategoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UpdateCategoryPage());
+        }
     }
 }

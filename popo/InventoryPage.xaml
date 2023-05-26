@@ -67,7 +67,8 @@
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
-                                Margin="5" />
+                                Margin="5"
+                                Clicked="UpdateCategoryButton_Clicked"/>
                         <Button Text="Remove"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
