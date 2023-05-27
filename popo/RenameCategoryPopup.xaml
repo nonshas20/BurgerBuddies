@@ -16,6 +16,7 @@
                 <Button Text="Save" FontAttributes="Bold"
                         BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnSaveClicked" />
+                
             </StackLayout>
         </StackLayout>
     </Frame>
