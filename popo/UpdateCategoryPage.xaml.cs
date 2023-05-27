@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,18 @@ namespace popo
         public UpdateCategoryPage()
         {
             InitializeComponent();
+        }
+
+        private async void RenameButton_Clicked(object sender, System.EventArgs e)
+        {
+            Button button = sender as Button;
+            Grid parentGrid = button.Parent as Grid;
+            Frame frame = parentGrid.Children[0] as Frame;
+            Label label = frame.Content as Label;
+            string currentName = label.Text;
+
+            var renamePopup = new RenameCategoryPopup(currentName);
+            await PopupNavigation.Instance.PushAsync(renamePopup);
         }
     }
 }

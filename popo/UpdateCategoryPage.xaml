@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.UpdateCategoryPage"
              Title="Update Category"
-             BackgroundColor="#FCEBB6"
+             BackgroundColor="White"
              NavigationPage.HasNavigationBar="True">
     <StackLayout Margin="20">
         <StackLayout VerticalOptions="StartAndExpand">
@@ -12,13 +12,13 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#E1701A" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Burgers" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="BurgersRenameButton_Clicked"
-                        BackgroundColor="#E1701A" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" />
+                        Grid.Column="1" Clicked="RenameButton_Clicked" />
             </Grid>
 
             <Grid>
@@ -27,11 +27,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#FFB540" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Meals" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="MealsRenameButton_Clicked"
-                        BackgroundColor="#FFB540" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -42,11 +42,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#E1701A" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Sandwiches" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="SandwichesRenameButton_Clicked"
-                        BackgroundColor="#E1701A" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -57,11 +57,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#FFB540" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Snacks" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="SnacksRenameButton_Clicked"
-                        BackgroundColor="#FFB540" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -72,11 +72,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#E1701A" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Drinks" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="DrinksRenameButton_Clicked"
-                        BackgroundColor="#E1701A" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -87,11 +87,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#FFB540" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Desserts" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="DessertsRenameButton_Clicked"
-                        BackgroundColor="#FFB540" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -102,11 +102,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="#E1701A" Padding="10" Margin="5" CornerRadius="10">
+                <Frame BackgroundColor="#007BFF" Padding="10" Margin="5" CornerRadius="10">
                     <Label Text="Combo Meals" TextColor="White" FontSize="Medium" WidthRequest="210"/>
                 </Frame>
-                <Button Text="Rename" Clicked="ComboMealsRenameButton_Clicked"
-                        BackgroundColor="#E1701A" TextColor="White" FontSize="Small" BorderRadius="10"
+                <Button Text="Rename"
+                        BackgroundColor="#007BFF" TextColor="White" FontSize="Small" BorderRadius="10"
                         HeightRequest="50" WidthRequest="100" Margin="5"
                         Grid.Column="1" />
             </Grid>
@@ -115,11 +115,11 @@
 
         <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
-                <Button Text="Cancel" FontAttributes="Bold" Clicked="CancelButton_Clicked"
+                <Button Text="Cancel" FontAttributes="Bold"
                         BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="160" Margin="5" />
 
-                <Button Text="Save" FontAttributes="Bold" Clicked="SaveButton_Clicked"
+                <Button Text="Save" FontAttributes="Bold"
                         BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="100" WidthRequest="160" Margin="5" />
             </StackLayout>
