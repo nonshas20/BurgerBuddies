@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,6 +31,7 @@ namespace popo
                 {
                     // Navigate to MainPage.xaml
                     Navigation.PushAsync(new MainPage());
+
                 }
                 else
                 {
