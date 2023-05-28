@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.AddItemPage">
+    <StackLayout>
+        <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Category 1"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="0" Grid.Column="0" />
+
+            <Button Text="Category 2"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="0" Grid.Column="1" />
+
+            <Button Text="Category 3"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="0" Grid.Column="2" />
+
+            <Button Text="Category 4"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="1" Grid.Column="0" />
+
+            <Button Text="Category 5"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="1" Grid.Column="1" />
+
+            <Button Text="Category 6"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="1" Grid.Column="2" />
+
+            <Button Text="Category 7"
+                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
+                    HeightRequest="50" WidthRequest="100" Margin="5"
+                    Grid.Row="2" Grid.Column="0" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

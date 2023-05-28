@@ -174,7 +174,8 @@
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="100"
-                                Margin="5" />
+                                Margin="5" 
+                                Clicked="AddItemButton_Clicked"/>
                                     <Button Text="Update"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
