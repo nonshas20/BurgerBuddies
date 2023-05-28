@@ -10,7 +10,7 @@ namespace popo
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainTabbedPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

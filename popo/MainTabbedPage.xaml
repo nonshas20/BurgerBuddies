@@ -2,12 +2,18 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.MainTabbedPage"
+             BarBackground="White"
+            BarTextColor="Black"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
 
     <TabbedPage.Children>
-        <ContentPage Title="POS">
+        <ContentPage Title="Pos"  
+                    
+                     Icon="pos_icon.png">
+            
             <ContentPage.Content>
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="90" />
@@ -59,13 +65,16 @@
 
                         <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" />
                     </Grid>
+                    
                 </Grid>
+                
 
             </ContentPage.Content>
             
         </ContentPage>
 
-        <ContentPage Title="Inventory">
+        <ContentPage Title="Inventory"
+                     Icon="inventory_icon.png">
             <ContentPage.Content>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -200,7 +209,8 @@
             </ContentPage.Content>
         </ContentPage>
 
-        <ContentPage Title="History">
+        <ContentPage Title="History"
+                     Icon="history_icon.png">
             <ContentPage.Content>
                 <Grid>
 
@@ -227,16 +237,7 @@
                         </StackLayout>
                     </Grid>
 
-                    <!-- Tab Bar -->
-                    <Grid Grid.Row="2" BackgroundColor="#1976D2" HeightRequest="60">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                       
-                    </Grid>
+                   
 
                     <!-- Header -->
                     <BoxView Grid.Row="0" HeightRequest="60"/>

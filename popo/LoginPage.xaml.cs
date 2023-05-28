@@ -30,7 +30,7 @@ namespace popo
                 if (username == "admin" && password == "admin")
                 {
                     // Navigate to MainPage.xaml
-                    Navigation.PushAsync(new MainPage());
+                    Navigation.PushAsync(new MainTabbedPage());
 
                 }
                 else
