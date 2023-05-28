@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace popo
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DeleteCategoryPage : ContentPage
+    {
+        public DeleteCategoryPage()
+        {
+            InitializeComponent();
+        }
+
+        private async void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            Grid parentGrid = button.Parent as Grid;
+            Frame frame = parentGrid.Children[0] as Frame;
+            Label label = frame.Content as Label;
+            string categoryName = label.Text;
+
+            var deletePopupPage = new DeletePopupPage(categoryName);
+            await PopupNavigation.Instance.PushAsync(deletePopupPage);
+        }
+
+        public async void OnDeleteConfirmed(string categoryName)
+        {
+            // Perform the necessary actions to delete the category
+            // For example, you can call a method or perform an API request to delete the category from your data source
+
+            // Display a success message or navigate back to the previous page
+            await DisplayAlert("Success", $"{categoryName} has been deleted.", "OK");
+            await Navigation.PopAsync(); // Navigate back to the previous page
+        }
+    
+
+    }
+}

@@ -48,5 +48,12 @@ namespace popo
         {
             await Navigation.PushAsync(new UpdateCategoryPage());
         }
+        
+        private async void DeleteCategoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DeleteCategoryPage());
+        }
+
+
     }
 }

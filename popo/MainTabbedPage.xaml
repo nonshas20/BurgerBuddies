@@ -148,7 +148,8 @@
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
-                                Margin="5" />
+                                Margin="5" 
+                                Clicked="DeleteCategoryButton_Clicked"/>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
