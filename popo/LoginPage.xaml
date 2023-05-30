@@ -38,20 +38,43 @@
         </StackLayout>
 
         <StackLayout Grid.Row="1" Padding="30" Spacing="20">
-            <Label Text="Username:" FontSize="Medium" ></Label>
+            <Label Text="Username:" FontSize="Medium"></Label>
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
-                
-                <Entry x:Name="usernameEntry" Placeholder="Enter Username" HeightRequest="40" />
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Image Source="username96_icon.png" HeightRequest="20" WidthRequest="20" Margin="10" />
+                    <Entry x:Name="usernameEntry" Placeholder="Enter Username" Grid.Column="1" />
+                </Grid>
             </Frame>
             <Label Text="Password:" FontSize="Medium"></Label>
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
-                <Entry x:Name="passwordEntry" Placeholder="Enter Password" IsPassword="True" HeightRequest="40" >
-                    <Entry.Behaviors>
-                       
-                    </Entry.Behaviors>
-                </Entry>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    
+                    <Image Source="password96_icon.png" HeightRequest="20" WidthRequest="20" Margin="10" />
+                    <Entry x:Name="passwordEntry" Placeholder="Enter Password" IsPassword="True" Grid.Column="1">
+                        <Entry.Behaviors>
+
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
             </Frame>
+
 
             <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
                 <Switch OnColor="DodgerBlue" ThumbColor="White" />
