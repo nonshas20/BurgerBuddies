@@ -3,59 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.AddItemPage">
     <StackLayout>
-        <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+        <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
 
-        <Grid>
+        <Grid Grid.Row="1" Padding="15" ColumnSpacing="10" RowSpacing="15">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="1000"/>
             </Grid.ColumnDefinitions>
 
-            <Button Text="Category 1"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="0" Grid.Column="0" />
+            <Button Grid.Row="0" Grid.Column="0" Text="Burgers" FontSize="25" FontAttributes="Bold" BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="Sandwiches" FontSize="24" FontAttributes="Bold" BackgroundColor="#64B5F6" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
 
-            <Button Text="Category 2"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="0" Grid.Column="1" />
+            <Button Grid.Row="0" Grid.Column="1" Text="Meals" FontSize="25" FontAttributes="Bold" BackgroundColor="#448AFF" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" />
+            <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#90CAF9" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
 
-            <Button Text="Category 3"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="0" Grid.Column="2" />
-
-            <Button Text="Category 4"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="1" Grid.Column="0" />
-
-            <Button Text="Category 5"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="1" Grid.Column="1" />
-
-            <Button Text="Category 6"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="1" Grid.Column="2" />
-
-            <Button Text="Category 7"
-                    BackgroundColor="Gray" TextColor="White" FontSize="Small" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="100" Margin="5"
-                    Grid.Row="2" Grid.Column="0" />
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="200" HorizontalOptions="Center"/>
         </Grid>
     </StackLayout>
 </ContentPage>
+    
+
+
+
+
