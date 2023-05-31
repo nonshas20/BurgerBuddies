@@ -9,20 +9,22 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class LoginPage : ContentPage
     {
         public LoginPage()
         {
             InitializeComponent();
         }
-        private void OnLoginClicked(object sender, EventArgs e)
+
+        private async void OnLoginClicked(object sender, EventArgs e)
         {
             string username = usernameEntry.Text;
             string password = passwordEntry.Text;
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                DisplayAlert("Login Failed", "Invalid username or password", "OK");
+                await DisplayAlert("Login Failed", "Invalid username or password", "OK");
             }
             else
             {
@@ -30,13 +32,13 @@ namespace popo
                 if (username == "admin" && password == "admin")
                 {
                     // Navigate to MainPage.xaml
-                    Navigation.PushAsync(new MainTabbedPage());
+                    await Navigation.PushAsync(new MainTabbedPage());
 
                 }
                 else
                 {
                     // Show an error message or handle the incorrect credentials case
-                    DisplayAlert("Login Failed", "Invalid username or password", "OK");
+                    await DisplayAlert("Login Failed", "Invalid username or password", "OK");
                 }
             }
         }

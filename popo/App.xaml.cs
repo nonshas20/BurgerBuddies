@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.CommunityToolkit.UI.Views;
+using System.Data.Common;
+using System.IO;
 
 namespace popo
 {
