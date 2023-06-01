@@ -1,0 +1,44 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.AddUserPopupPage"
+             Title="Add User">
+
+    <StackLayout>
+        <Grid>
+            <!-- Header section -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Auto-sized row for the header -->
+                <RowDefinition Height="*" />
+                <!-- Remaining space for the ListView -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <!-- Auto-sized column for the header label -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Auto-sized column for the Add button -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Header label -->
+            <Label Text="Users list" FontSize="24" HorizontalOptions="Start" Margin="10" Grid.Row="0" Grid.Column="0" />
+
+            <!-- Add button -->
+            <Button Text="Add" FontSize="16" HorizontalOptions="End" Margin="10" Grid.Row="0" Grid.Column="1" Clicked="AddUserButton_Clicked" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="20" Padding="10,5" />
+
+        </Grid>
+
+        <!-- ListView for displaying users -->
+        <ListView ItemsSource="{Binding Users}" SeparatorVisibility="Default" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Name}" FontSize="16" />
+                            <!-- Additional user details can be added here -->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

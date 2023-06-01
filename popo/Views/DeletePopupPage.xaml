@@ -3,18 +3,31 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                  x:Class="popo.DeletePopupPage">
+
+    <!-- Frame to contain the popup content -->
     <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="False">
         <StackLayout>
+
+            <!-- Label displaying the category name -->
             <Label x:Name="CategoryNameLabel" Text="Category Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
+
+            <!-- Confirmation message -->
             <Label Text="Are you sure you want to delete this category?" HorizontalOptions="Center" FontSize="Medium" Margin="0,20" />
+
+            <!-- Buttons section -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
+
+                <!-- Cancel button -->
                 <Button Text="Cancel" FontAttributes="Bold"
                         BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCancelClicked" />
+
+                <!-- Delete button -->
                 <Button Text="Delete" FontAttributes="Bold"
                         BackgroundColor="#FF6B6B" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnDeleteClicked" />
             </StackLayout>
+
         </StackLayout>
     </Frame>
 </popup:PopupPage>

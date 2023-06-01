@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +16,11 @@ namespace popo
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private async void OnAddUserClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddUserPopupPage());
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

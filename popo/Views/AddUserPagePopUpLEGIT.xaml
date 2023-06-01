@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="popo.AddUserPopUpPageLEGIT">
+
+    <!-- Frame to contain the popup content -->
+    <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="10" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="True">
+        <StackLayout Padding="20">
+
+            <!-- Username label and entry field -->
+            <Label Text="Username" FontSize="16" TextColor="Black" />
+            <Entry x:Name="usernameEntry" Placeholder="Enter Username" BackgroundColor="#F5F5F5" FontSize="16" HeightRequest="40" Margin="0,5" />
+
+            <!-- Password label and entry field -->
+            <Label Text="Password" FontSize="16" TextColor="Black" />
+            <Entry x:Name="passwordEntry" Placeholder="Enter Password" IsPassword="True" BackgroundColor="#F5F5F5" FontSize="16" HeightRequest="40" Margin="0,5" />
+
+            <!-- Buttons section -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20">
+
+                <!-- Cancel button -->
+                <Button Text="Cancel" FontAttributes="Bold"
+                        BackgroundColor="#DC143C" TextColor="White" FontSize="16" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" />
+
+                <!-- Confirm button -->
+                <Button Text="Confirm" FontAttributes="Bold"
+                        BackgroundColor="Blue" TextColor="White" FontSize="16" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" />
+            </StackLayout>
+
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>

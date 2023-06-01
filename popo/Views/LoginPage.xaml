@@ -1,44 +1,56 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:popo"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              x:Class="popo.LoginPage"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
-    
+
+    <!-- Grid layout for the page -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- BoxView with a clipped background gradient -->
         <BoxView Grid.Row="0" HeightRequest="300" VerticalOptions="Start">
-    <BoxView.Clip>
-        <PathGeometry>
-            <PathFigure IsClosed="True" StartPoint="0, 0">
-                <PathFigure.Segments>
-                    <BezierSegment Point1="0,150" Point2="150,300" Point3="300,150" />
-                    <BezierSegment Point1="300,150" Point2="450,0" Point3="600,150" />
-                    <BezierSegment Point1="600,150" Point2="750,300" Point3="900,150" />
-                    <BezierSegment Point1="900,150" Point2="1050,0" Point3="1200,150" />
-                    <LineSegment Point="1200,0" />
-                </PathFigure.Segments>
-            </PathFigure>
-        </PathGeometry>
-    </BoxView.Clip>
-    <BoxView.Background>
-        <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-            <GradientStop Color="DodgerBlue" Offset="0.1" />
-            <GradientStop Color="DeepSkyBlue" Offset="1.0" />
-        </LinearGradientBrush>
-    </BoxView.Background>
-</BoxView>
+            <BoxView.Clip>
+                <PathGeometry>
+                    <PathFigure IsClosed="True" StartPoint="0, 0">
+                        <PathFigure.Segments>
+                            <BezierSegment Point1="0,150" Point2="150,300" Point3="300,150" />
+                            <BezierSegment Point1="300,150" Point2="450,0" Point3="600,150" />
+                            <BezierSegment Point1="600,150" Point2="750,300" Point3="900,150" />
+                            <BezierSegment Point1="900,150" Point2="1050,0" Point3="1200,150" />
+                            <LineSegment Point="1200,0" />
+                        </PathFigure.Segments>
+                    </PathFigure>
+                </PathGeometry>
+            </BoxView.Clip>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <GradientStop Color="DodgerBlue" Offset="0.1" />
+                    <GradientStop Color="DeepSkyBlue" Offset="1.0" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
 
-
+        <!-- Login label -->
         <StackLayout Grid.Row="0">
             <Label Text="LOGIN" FontSize="40" TextColor="White" FontFamily="Montserrat-Bold" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,70,0,0" />
         </StackLayout>
 
-        <StackLayout Grid.Row="1" Padding="30" Spacing="20">
-            <Label Text="Username:" FontSize="Medium"></Label>
+        <!-- Login form -->
+        <StackLayout Grid.Row="1" Padding="20" Spacing="20">
+
+            <!-- Add User button and Username label -->
+            <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                <Button Text="Add User" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" Clicked="OnAddUserClicked" />
+                <Label Text="Username:" FontSize="Medium"></Label>
+            </StackLayout>
+
+            <!-- Username entry field -->
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -49,23 +61,28 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
+
                     <Image Source="username96_icon.png" HeightRequest="20" WidthRequest="20" Margin="10" />
                     <Entry x:Name="usernameEntry" Placeholder="Enter Username" Grid.Column="1" />
                 </Grid>
             </Frame>
+
+            <!-- Password label -->
             <Label Text="Password:" FontSize="Medium"></Label>
+
+            <!-- Password entry field -->
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
-                        
+
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
-                    
+
                     <Image Source="password96_icon.png" HeightRequest="20" WidthRequest="20" Margin="10" />
                     <Entry x:Name="passwordEntry" Placeholder="Enter Password" IsPassword="True" Grid.Column="1">
                         <Entry.Behaviors>
@@ -75,14 +92,15 @@
                 </Grid>
             </Frame>
 
-
+            <!-- Remember me switch and label -->
             <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
                 <Switch OnColor="DodgerBlue" ThumbColor="White" />
                 <Label Text="Remember me" FontSize="16" TextColor="Black" VerticalOptions="Center" />
             </StackLayout>
 
+            <!-- Login button and forgot password label -->
             <StackLayout Grid.Row="2" Padding="50" Spacing="1">
-                <Button Text="Login" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" WidthRequest="200"  HorizontalOptions="CenterAndExpand" Clicked="OnLoginClicked" />
+                <Button Text="Login" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" WidthRequest="200" HorizontalOptions="CenterAndExpand" Clicked="OnLoginClicked" />
 
                 <Label Text="Forgot password?" FontSize="16" TextColor="DodgerBlue" HorizontalOptions="Center" Margin="0,20,0,0" />
             </StackLayout>

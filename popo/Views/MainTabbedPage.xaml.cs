@@ -15,9 +15,7 @@ namespace popo
 
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
-
-
-         
+        
         }
         private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
