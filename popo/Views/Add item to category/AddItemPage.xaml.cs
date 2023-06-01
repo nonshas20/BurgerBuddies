@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace popo
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddItemPage : ContentPage
+    {
+        public AddItemPage()
+        {
+            InitializeComponent();
+        }
+        
+        private async void AddItemBurger_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsBurgerPage());
+        }
+        
+
+        private async void AddItemSandwiches_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemSandwichesPage());
+        }
+        
+        private async void AddItemsMeals_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsMealsPage());
+        }
+
+        private async void AddItemsSnacks_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsSnacksPage());
+        }
+        
+        private async void AddItemsDrinks_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsDrinksPage());
+        }
+    }
+}

@@ -2,7 +2,7 @@
 <popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                 x:Class="popo.AddUserPopUpPageLEGIT">
+                 x:Class="popo.AddUserPopUpPage">
 
     <!-- Frame to contain the popup content -->
     <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="10" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="True">

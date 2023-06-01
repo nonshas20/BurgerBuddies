@@ -31,6 +31,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Add item to category\AddItemsDrinksPage.xaml.cs">
+      <DependentUpon>AddItemsDrinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Add item to category\AddItemsSnacksPage.xaml.cs">
+      <DependentUpon>AddItemsSnacksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AddUserPage.xaml.cs">
+      <DependentUpon>AddUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Main POS\BurgersPOS.xaml.cs">
+      <DependentUpon>BurgersPOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Main POS\MealsPOS.xaml.cs">
+      <DependentUpon>MealsPOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
+      <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="AddCategoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -76,10 +97,19 @@
     <EmbeddedResource Update="ViewOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddUserPagePopUpLEGIT.xaml">
+    <EmbeddedResource Update="Views\Add item to category\AddItemSandwichesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddUserPopupPage.xaml">
+    <EmbeddedResource Update="Views\Add item to category\AddItemsMealsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pop-ups\AddUserPagePopUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddUserPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ItemFieldsControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

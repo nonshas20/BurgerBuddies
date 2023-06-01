@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Burgersinv : ContentPage
+    public partial class BurgersPOS : ContentPage
     {
-        public Burgersinv()
+        public BurgersPOS()
         {
             InitializeComponent();
 

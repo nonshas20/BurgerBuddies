@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddItemPage : ContentPage
+    public partial class MealsPOS : ContentPage
     {
-        public AddItemPage()
+        public MealsPOS()
         {
             InitializeComponent();
-        }
-        
-        private async void AddItemBurger_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsBurgerPage());
         }
     }
 }

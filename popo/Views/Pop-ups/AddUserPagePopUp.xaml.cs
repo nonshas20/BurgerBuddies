@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddUserPopUpPageLEGIT : PopupPage
+    public partial class AddUserPopUpPage : PopupPage
     {
-        public AddUserPopUpPageLEGIT()
+        public AddUserPopUpPage()
         {
             InitializeComponent();
         }

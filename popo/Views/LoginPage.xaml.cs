@@ -20,7 +20,7 @@ namespace popo
 
         private async void OnAddUserClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddUserPopupPage());
+            await Navigation.PushAsync(new AddUserPage());
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

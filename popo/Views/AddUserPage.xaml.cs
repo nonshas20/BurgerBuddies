@@ -10,15 +10,15 @@ using System.Linq;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddUserPopupPage : ContentPage
+    public partial class AddUserPage : ContentPage
     {
-        public AddUserPopupPage()
+        public AddUserPage()
         {
             InitializeComponent();
         }
         private async void AddUserButton_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new AddUserPopUpPageLEGIT());
+            await PopupNavigation.Instance.PushAsync(new AddUserPopUpPage());
         }
 
 

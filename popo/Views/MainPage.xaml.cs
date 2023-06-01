@@ -20,11 +20,11 @@ namespace popo
         }
         private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Burgersinv());
+            await Navigation.PushAsync(new BurgersPOS());
         }
         private async void MealsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Mealsinv());
+            await Navigation.PushAsync(new MealsPOS());
         }
         private void ExitButton_Clicked(object sender, EventArgs e)
         {
