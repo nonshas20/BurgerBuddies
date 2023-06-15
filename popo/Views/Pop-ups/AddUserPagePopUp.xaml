@@ -9,7 +9,7 @@
         <StackLayout Padding="20">
 
             <!-- Username label and entry field -->
-            <Label Text="Username" FontSize="16" TextColor="Black" />
+            <Label Text="Username" FontSize="16" TextColor="Black"/>
             <Entry x:Name="usernameEntry" Placeholder="Enter Username" BackgroundColor="#F5F5F5" FontSize="16" HeightRequest="40" Margin="0,5" />
 
             <!-- Password label and entry field -->
@@ -21,13 +21,13 @@
 
                 <!-- Cancel button -->
                 <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="16" BorderRadius="20"
+                        BackgroundColor="#DC143C" TextColor="White" FontSize="16" CornerRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" />
 
                 <!-- Confirm button -->
                 <Button Text="Confirm" FontAttributes="Bold"
-                        BackgroundColor="Blue" TextColor="White" FontSize="16" BorderRadius="20"
-                        HeightRequest="50" WidthRequest="100" Margin="5" />
+                        BackgroundColor="Blue" TextColor="White" FontSize="16" CornerRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnConfirmClicked"/>
             </StackLayout>
 
         </StackLayout>

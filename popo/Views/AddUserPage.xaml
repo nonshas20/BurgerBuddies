@@ -2,43 +2,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.AddUserPage"
              Title="Add User">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked ="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <StackLayout>
-        <Grid>
-            <!-- Header section -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <!-- Auto-sized row for the header -->
-                <RowDefinition Height="*" />
-                <!-- Remaining space for the ListView -->
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <!-- Auto-sized column for the header label -->
-                <ColumnDefinition Width="Auto" />
-                <!-- Auto-sized column for the Add button -->
-            </Grid.ColumnDefinitions>
-
-            <!-- Header label -->
-            <Label Text="Users list" FontSize="24" HorizontalOptions="Start" Margin="10" Grid.Row="0" Grid.Column="0" />
-
-            <!-- Add button -->
-            <Button Text="Add" FontSize="16" HorizontalOptions="End" Margin="10" Grid.Row="0" Grid.Column="1" Clicked="AddUserButton_Clicked" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="20" Padding="10,5" />
-
-        </Grid>
-
-        <!-- ListView for displaying users -->
-        <ListView ItemsSource="{Binding Users}" SeparatorVisibility="Default" Grid.Row="1">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="LoginDetailsCollectionView"
+                        SelectionMode="Single"
+                        Margin="20,5,20,0">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label Text="{Binding Name}" FontSize="16" />
-                            <!-- Additional user details can be added here -->
-                        </StackLayout>
-                    </ViewCell>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Id}" FontSize="16" 
+                               Grid.Row="0" Grid.RowSpan="2"/>
+                        <Label Text="{Binding Username}" FontSize="16" 
+                               Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="{Binding Password}" FontSize="16" 
+                               Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>

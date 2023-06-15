@@ -47,7 +47,6 @@
             <!-- Add User button and Username label -->
             <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
                 <Button Text="Add User" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" Clicked="OnAddUserClicked" />
-                <Label Text="Username:" FontSize="Medium"></Label>
             </StackLayout>
 
             <!-- Username entry field -->

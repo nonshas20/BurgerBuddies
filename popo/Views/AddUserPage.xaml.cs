@@ -16,11 +16,21 @@ namespace popo
         {
             InitializeComponent();
         }
-        private async void AddUserButton_Clicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                LoginDetailsCollectionView.ItemsSource = await App.loginDatabase.ReadLoginDetails();
+            }
+            catch
+            {
+
+            }
+        }
+        async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PushAsync(new AddUserPopUpPage());
         }
-
-
     }
 }
