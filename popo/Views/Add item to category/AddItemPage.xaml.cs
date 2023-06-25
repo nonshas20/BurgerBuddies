@@ -42,5 +42,15 @@ namespace popo
         {
             await Navigation.PushAsync(new AddItemsDrinksPage());
         }
+        private async void AddItemsSingleOrders_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsSingleOrdersPage());
+        }
+        private async void AddItemsAddOnsPage_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddItemsAddOnsPage());
+        }
+        
+
     }
 }
