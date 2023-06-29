@@ -7,7 +7,7 @@
              NavigationPage.HasNavigationBar="True">
             
     <ContentPage.Content>
-        <StackLayout Spacing="10" BackgroundColor="#F6F6F6">
+        <StackLayout  BackgroundColor="#F6F6F6" >
             <Label Text="Burgers Inventory" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,20,0,0"/>
 
             <Grid Margin="10,20,10,10" ColumnSpacing="30" HeightRequest ="800" BackgroundColor="#FFFFFF" Padding="5,10,0,0" VerticalOptions="Start" >
@@ -18,14 +18,14 @@
                     <ColumnDefinition Width="6*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Text="Product" FontAttributes="Bold" FontSize="Medium"  HorizontalTextAlignment="Center" TextColor="Black"/>
-                <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
-                <Label Grid.Column="2" Text="Stock" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
-                <Label Grid.Column="3" Text="Quantity" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="0" Text="Product" FontAttributes="Bold" FontSize="Small"  HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="1" Text="Price" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="2" Text="Stock" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" TextColor="Black"/>
+                <Label Grid.Column="3" Text="Quantity" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="Center" TextColor="Black"/>
             </Grid>
 
-            <StackLayout Margin="10,0,10,0" BackgroundColor="#FFFFFF" Padding="5,10">
-                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+            <StackLayout  BackgroundColor="#FFFFFF" >
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1300" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -37,13 +37,13 @@
                     <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="PLBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
 
-                <Grid BackgroundColor="#FFFFFF" HeightRequest="1000">
+                <Grid BackgroundColor="#FFFFFF" HeightRequest="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -55,14 +55,14 @@
                     <Label Grid.Column="1" Text="P35" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <Label Grid.Column="2" Text="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="BCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
                 
 
-                <Grid BackgroundColor="#FFFFFF" HeightRequest="1000">
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -74,13 +74,13 @@
                     <Label Grid.Column="1" Text="P25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <Label Grid.Column="2" Text="40" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="CBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
 
-                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                <Grid BackgroundColor="#FFFFFF" HeightRequest="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -92,12 +92,12 @@
                     <Label Grid.Column="1" Text="P45" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <Label Grid.Column="2" Text="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="CBCStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
-                <Grid BackgroundColor="White" HeightRequest="1000">
+                <Grid BackgroundColor="#F6F6F6" HeightRequest="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -109,12 +109,12 @@
                     <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" />
                     <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="CBCEStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
-                <Grid BackgroundColor="#F6F6F6" HeightRequest="1000">
+                <Grid BackgroundColor="#FFFFFF" HeightRequest="1300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="2*"/>
@@ -126,9 +126,9 @@
                     <Label Grid.Column="1" Text="P30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <Label Grid.Column="2" Text="50" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
                     <StackLayout Grid.Column="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Button Text="-" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="-" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                         <Label x:Name="PBStocksLabel" Text="0" WidthRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Button Text="+" WidthRequest="30" BackgroundColor="#007AFF" TextColor="White"/>
+                        <Button Text="+" WidthRequest="40" CornerRadius="10" BackgroundColor="#007AFF" TextColor="White"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
@@ -159,8 +159,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-                    <Button Text="Clear" FontSize="Large" HeightRequest="80" WidthRequest="150" CornerRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="5,10,10,10"/>
-                    <Button Text="Save" FontSize="Large" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" CornerRadius="10" Margin="10, 10, 10, 10"/>
+                    <Button Text="Clear" FontSize="Large" FontAttributes="Bold" HeightRequest="80" WidthRequest="150" CornerRadius="10" TextColor="White" BackgroundColor="#FF3B30" Margin="5,10,10,10"/>
+                    <Button Text="Save" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" WidthRequest="150" TextColor="White" HeightRequest="80" CornerRadius="10" Margin="10, 10, 10, 10"/>
                 </StackLayout>
 
                 <Button Text="View orders" FontSize="Large" FontAttributes="Bold" BackgroundColor="#007AFF" TextColor="White" HeightRequest="80" CornerRadius="10" Clicked="ViewOrderButton_Clicked"/>

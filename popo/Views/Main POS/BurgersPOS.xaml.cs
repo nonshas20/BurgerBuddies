@@ -19,7 +19,16 @@ namespace popo
         }
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ViewOrdersPage());
+            
+            List<OrderItem> orderItems = new List<OrderItem>
+    {
+        new OrderItem { Item = "PLB", Price = 30, Quantity = 2 },
+        new OrderItem { Item = "BC", Price = 35, Quantity = 3 },
+        new OrderItem { Item = "CB", Price = 40, Quantity = 1 }
+    };
+
+            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
         }
+
     }
 }
