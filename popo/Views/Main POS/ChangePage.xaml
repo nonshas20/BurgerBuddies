@@ -5,8 +5,8 @@
              BackgroundColor="White">
 
     <StackLayout VerticalOptions="FillAndExpand" Padding="10">
-        <Label Text="Amount Payable:" FontSize="Small" TextColor="#333333"  HorizontalOptions="Center" Margin="0,50,100,0"/>
-        <Label x:Name="AmountPayableLabel" Text="0.00" FontSize="70" TextColor="#333333" HorizontalOptions="Center" Margin="0,0,0,0" />
+        <Label Text="Amount Payable:" FontSize="Small" FontAttributes="Bold" TextColor="#333333"  HorizontalOptions="Center" Margin="0,50,100,0"/>
+        <Label x:Name="AmountPayableLabel" Text="0.00" FontAttributes="Bold" FontSize="70" TextColor="#333333" HorizontalOptions="Center" Margin="0,0,0,0" />
 
         <Label Text="Amount Received:" FontSize="Medium" FontAttributes="Bold" Margin="30,20,0,0" TextColor="#333333" HorizontalOptions="StartAndExpand" />
         <Frame Margin="30,20,30,10" CornerRadius="10" BorderColor="#333333" BackgroundColor="#FFFFFF" Padding="5" WidthRequest="300">
@@ -27,23 +27,23 @@
 
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="10" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="0" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="20" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="0" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="50" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="1" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="100" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="1" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="200" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="1" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="300" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="2" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="400" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="2" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="500" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
-                <Button Grid.Row="2" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="1000" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="0" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="10" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="0" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="20" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="0" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="50" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="1" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="100" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="1" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="200" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="1" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="300" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="2" Grid.Column="0" TextColor="#FFFFFF" FontSize="Large" HeightRequest="50" Text="400" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="2" Grid.Column="1" TextColor="#FFFFFF" FontSize="Large" Text="500" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
+                <Button Grid.Row="2" Grid.Column="2" TextColor="#FFFFFF" FontSize="Large" Text="1000" BackgroundColor="#FF4081" CornerRadius="10" Clicked="OnButtonClicked"/>
             </Grid>
 
-            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#FFFFFF" FontSize="Large" Margin="0,10" FontAttributes="Bold" Text="Exact Amount" BackgroundColor="#4A90E2" CornerRadius="10" Clicked="OnExactAmountButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#FFFFFF" FontSize="Large" Margin="0,10" FontAttributes="Bold" Text="Exact Amount" BackgroundColor="#A61439 " CornerRadius="10" Clicked="OnExactAmountButtonClicked"/>
         </StackLayout>
 
         <BoxView HeightRequest="1" BackgroundColor="#333333" Margin="0,20,0,0"/>
 
-        <Button Text="Proceed"  TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold" BackgroundColor="#4A90E2" VerticalOptions="EndAndExpand" Margin="30,0,30,30" WidthRequest="300" HeightRequest="70" CornerRadius="10" Clicked="OnProceedButton_Clicked"/>
+        <Button Text="Proceed"  TextColor="#FFFFFF" FontSize="Large" FontAttributes="Bold" BackgroundColor="#000080" VerticalOptions="EndAndExpand" Margin="30,0,30,30" WidthRequest="300" HeightRequest="70" CornerRadius="10" Clicked="OnProceedButton_Clicked"/>
 
     </StackLayout>
 

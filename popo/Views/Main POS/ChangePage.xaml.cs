@@ -43,8 +43,13 @@ namespace popo
                     return;
                 }
                 amountReceived = double.Parse(AmountReceivedEntry.Text, NumberStyles.Currency, CultureInfo.GetCultureInfo("en-PH"));
+                if (amountReceived < grandTotal)
+                {
+                    await DisplayAlert("Insufficient amount", "The amount received is less than the amount payable.", "OK");
+                    return;
+                }
                 double change = amountReceived - grandTotal;
-                await Navigation.PushAsync(new CompletedPage(change));
+                await Navigation.PushAsync(new CompletedPage(grandTotal, change));
             }
             catch (FormatException)
             {
@@ -52,5 +57,4 @@ namespace popo
             }
         }
     }
-    
 }
