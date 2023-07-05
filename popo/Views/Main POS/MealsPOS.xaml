@@ -64,9 +64,9 @@
                                     <Label Grid.Column="2" Text="{Binding Stocks}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
 
                                     <StackLayout Grid.Column="4" Orientation="Horizontal" Spacing="5" VerticalOptions="Center">
-                                        <Button Text="-" CommandParameter="{Binding .}" FontSize="14" WidthRequest="30" HeightRequest="30" BackgroundColor="Red" />
+                                        <Button Text="-" CommandParameter="{Binding .}" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="30" BackgroundColor="Red" />
                                         <Entry Grid.Column="3" Text="{Binding Quantity}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                        <Button Text="+" CommandParameter="{Binding .}" FontSize="14" WidthRequest="30" HeightRequest="70" BackgroundColor="Blue" CornerRadius="5"/>
+                                        <Button Text="+" CommandParameter="{Binding .}" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="70" BackgroundColor="Blue" CornerRadius="5"/>
                                     </StackLayout>
                                 </Grid>
                             </Grid>
