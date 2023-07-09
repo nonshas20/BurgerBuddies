@@ -1,37 +1,29 @@
-﻿using System.Collections.ObjectModel;
-using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using System;
-
+using System.Collections.Generic;
 
 namespace popo
 {
-    public partial class MealsPOS : ContentPage
+    public partial class SandwichesPOS : ContentPage
     {
-
         public ObservableCollection<Product> Products { get; set; }
 
-        public MealsPOS()
+        public SandwichesPOS()
         {
             InitializeComponent();
 
-
             Products = new ObservableCollection<Product>
             {
-                new Product { ProductName = "Chicken Adobo", Price = 150.00M, Stocks = 10, Quantity = 0 },
-                new Product { ProductName = "Pork Sinigang", Price = 180.00M, Stocks = 8, Quantity = 0 },
-                new Product { ProductName = "Beef Kare-Kare", Price = 220.00M, Stocks = 5, Quantity = 0 },
-                new Product { ProductName = "Fish Escabeche", Price = 200.00M, Stocks = 6, Quantity = 0 },
-                new Product { ProductName = "Vegetable Curry", Price = 170.00M, Stocks = 12, Quantity = 0 },
-                // add more products here
+                new Product { ProductName = "HOTDOG B1T1", Price = 30.00M, Stocks = 50, Quantity = 0 },
+                new Product { ProductName = "HOTDOG W/ CHEESE B1T1", Price = 35.00M, Stocks = 30, Quantity = 0 },
+                new Product { ProductName = "HOTDOG COLESLAW W/ CHEESE B1T1", Price = 25.00M, Stocks = 40, Quantity = 0 },
+                new Product { ProductName = "CBC", Price = 45.00M, Stocks = 15, Quantity = 0 }
             };
 
-
-
             BindingContext = this;
-            
         }
+
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
         {
             List<OrderItem> orderItems = new List<OrderItem>();
@@ -52,22 +44,5 @@ namespace popo
 
             await Navigation.PushAsync(new ViewOrdersPage(orderItems));
         }
-
-
-
-
-
-
     }
-
-
-
-    public class Product
-    {
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public int Stocks { get; set; }
-        public int Quantity { get; set; }
-    }
-
 }

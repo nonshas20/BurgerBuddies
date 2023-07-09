@@ -25,6 +25,14 @@ namespace popo
         {
             await Navigation.PushAsync(new MealsPOS());
         }
+        
+        private async void SandwichesButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SandwichesPOS());
+        }
+
+
+
         private void ExitButton_Clicked(object sender, EventArgs e)
         {
             // Navigate back to the LoginPage

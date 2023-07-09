@@ -49,6 +49,8 @@
                 <Button Text="Add User" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" Clicked="OnAddUserClicked" />
             </StackLayout>
 
+            <!-- Password label -->
+            <Label Text="Username:" FontSize="Medium"></Label>
             <!-- Username entry field -->
             <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
                 <Grid>
@@ -91,17 +93,9 @@
                 </Grid>
             </Frame>
 
-            <!-- Remember me switch and label -->
-            <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
-                <Switch OnColor="DodgerBlue" ThumbColor="White" />
-                <Label Text="Remember me" FontSize="16" TextColor="Black" VerticalOptions="Center" />
-            </StackLayout>
-
-            <!-- Login button and forgot password label -->
+            <!-- Login button -->
             <StackLayout Grid.Row="2" Padding="50" Spacing="1">
                 <Button Text="Login" BackgroundColor="DodgerBlue" TextColor="White" CornerRadius="5" WidthRequest="200" HorizontalOptions="CenterAndExpand" Clicked="OnLoginClicked" />
-
-                <Label Text="Forgot password?" FontSize="16" TextColor="DodgerBlue" HorizontalOptions="Center" Margin="0,20,0,0" />
             </StackLayout>
         </StackLayout>
     </Grid>
