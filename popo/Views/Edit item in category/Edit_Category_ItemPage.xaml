@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.Edit_Category_ItemPage">
+    <StackLayout>
+        <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
+
+        <Grid Grid.Row="1" Padding="15" ColumnSpacing="10" RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="1000"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="Burgers" FontSize="25" FontAttributes="Bold" BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="EditItemBurger_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="Sandwiches" FontSize="24" FontAttributes="Bold" BackgroundColor="#64B5F6" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="AddItemSandwiches_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="AddItemsSingleOrders_Clicked"/>
+
+            <Button Grid.Row="0" Grid.Column="1" Text="Meals" FontSize="25" FontAttributes="Bold" BackgroundColor="#448AFF" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="AddItemsMeals_Clicked" />
+            <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#90CAF9" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="AddItemsSnacks_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="AddItemsDrinks_Clicked"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="200" HorizontalOptions="Center" Clicked="AddItemsAddOnsPage_Clicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
+    
+
+
+
+

@@ -30,6 +30,31 @@ namespace popo
         {
             await Navigation.PushAsync(new SandwichesPOS());
         }
+        
+        private async void SnacksButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SnacksPOS());
+        }
+        
+        private async void EditCategoryItemButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Edit_Category_ItemPage());
+        }
+
+        private async void AddOnsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddOnsPOS());
+        }
+
+        private async void DrinksButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DrinksPOS());
+        }
+
+        private async void SingleOrdersButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SingleOrderPOS());
+        }
 
 
 

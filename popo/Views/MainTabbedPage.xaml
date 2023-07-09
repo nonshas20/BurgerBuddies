@@ -58,13 +58,13 @@
 
                         <Button Grid.Row="0" Grid.Column="0" Text="Burgers" FontSize="25" FontAttributes="Bold" BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="BurgersButton_Clicked"/>
                         <Button Grid.Row="1" Grid.Column="0" Text="Sandwiches" FontSize="24" FontAttributes="Bold" BackgroundColor="#64B5F6" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SandwichesButton_Clicked"/>
-                        <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+                        <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SingleOrdersButton_Clicked"/>
 
                         <Button Grid.Row="0" Grid.Column="1" Text="Meals" FontSize="25" FontAttributes="Bold" BackgroundColor="#448AFF" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="MealsButton_Clicked"/>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#90CAF9" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
-                        <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120"/>
+                        <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#90CAF9" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SnacksButton_Clicked"/>
+                        <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="DrinksButton_Clicked"/>
 
-                        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" />
+                        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" Clicked="AddOnsButton_Clicked"/>
                     </Grid>
                     
                 </Grid>
@@ -184,7 +184,8 @@
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
-                                Margin="5" />
+                                Margin="5"
+                                Clicked="EditCategoryItemButton_Clicked"/>
                                     <Button Text="Remove"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
@@ -254,49 +255,10 @@
                        HorizontalOptions="Center"
                        TextColor="#1976D2" />
 
+                            
                             <Frame CornerRadius="10"
                        Padding="10"
-                       BackgroundColor="#F0F0F0"
-                       Margin="0,20,0,0">
-                                <StackLayout>
-                                    <Label Text="Item Details"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               HorizontalOptions="Center"
-                               TextColor="#1976D2" />
-
-                                    <Entry Placeholder="Item Name"
-                               Margin="0,10,0,0" />
-                                    <Entry Placeholder="Price"
-                               Keyboard="Numeric"
-                               Margin="0,10,0,0" />
-                                    <Entry Placeholder="Quantity"
-                               Keyboard="Numeric"
-                               Margin="0,10,0,0" />
-
-                                    <StackLayout Orientation="Horizontal"
-                                     HorizontalOptions="Center"
-                                     Margin="0,10,0,0">
-                                        <Button Text="Add Item"
-                                    CornerRadius="10"
-                                    BackgroundColor="#4CAF50"
-                                    TextColor="White"
-                                    WidthRequest="100"
-                                    HeightRequest="40"
-                                    Margin="5" />
-                                        <Button Text="Delete Item"
-                                    CornerRadius="10"
-                                    BackgroundColor="#F44336"
-                                    TextColor="White"
-                                    WidthRequest="100"
-                                    HeightRequest="40"
-                                    Margin="5" />
-                                    </StackLayout>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame CornerRadius="10"
-                       Padding="10"
+                             HeightRequest="550"
                        BackgroundColor="#F0F0F0"
                        Margin="0,20,0,0">
                                 <StackLayout>
@@ -316,14 +278,7 @@
                                 </StackLayout>
                             </Frame>
 
-                            <Button Text="Complete Transaction"
-                        CornerRadius="10"
-                        BackgroundColor="#1976D2"
-                        TextColor="White"
-                        WidthRequest="200"
-                        HeightRequest="40"
-                        HorizontalOptions="Center"
-                        Margin="0,20,0,0" />
+                           
 
                         </StackLayout>
 
