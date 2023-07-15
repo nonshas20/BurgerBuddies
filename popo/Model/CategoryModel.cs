@@ -5,7 +5,7 @@ using System.Text;
 
 namespace popo.Model
 {
-    public class CateogryModel
+    public class CategoryModel
     {
         [PrimaryKey, AutoIncrement]
         public int Category_Id { get; set; }
