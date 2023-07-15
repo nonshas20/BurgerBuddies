@@ -15,7 +15,6 @@ namespace popo.Model
         [Unique]
         public string Product_Name { get; set; }
         public int Product_Cost { get; set; }
-        public string Product_Description { get; set; }
         public int Product_Stock { get; set; }
     }
 }

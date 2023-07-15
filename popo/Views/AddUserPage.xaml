@@ -7,7 +7,7 @@
                      Clicked ="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <CollectionView x:Name="LoginDetailsCollectionView"
+        <CollectionView x:Name="CategoryCollectionView"
                         SelectionMode="Single"
                         Margin="20,5,20,0">
             <CollectionView.ItemTemplate>
@@ -19,12 +19,36 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Id}" FontSize="16" 
+                        <Label Text="{Binding Category_Id}" FontSize="16" 
                                Grid.Row="0" Grid.RowSpan="2"/>
-                        <Label Text="{Binding Username}" FontSize="16" 
+                        <Label Text="{Binding Category_Name}" FontSize="16" 
                                Grid.Row="0" Grid.Column="1"/>
-                        <Label Text="{Binding Password}" FontSize="16" 
-                               Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <CollectionView x:Name="ProductCollectionView"
+                        SelectionMode="Single"
+                        Margin="20,20,20,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Category_Id}" FontSize="16" 
+                               Grid.Row="0"/>
+                        <Label Text="{Binding Product_Id}" FontSize="16" 
+                               Grid.Row="1"/>
+                        <Label Text="{Binding Product_Name}" FontSize="16" 
+                               Grid.Row="2"/>
+                        <Label Text="{Binding Product_Cost}" FontSize="16" 
+                               Grid.Row="3"/>
+                        <Label Text="{Binding Product_Stock}" FontSize="16" 
+                               Grid.Row="4"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

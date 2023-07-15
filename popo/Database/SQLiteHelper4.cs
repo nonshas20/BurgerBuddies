@@ -16,19 +16,19 @@ namespace popo.Database
             db = new SQLiteAsyncConnection(dbPath);
             db.CreateTableAsync<ProductModel>(); // Create table based on Login Model
         }
-        public Task<int> CreateLoginDetails(ProductModel Products)
+        public Task<int> CreateProducts(ProductModel Products)
         {
             return db.InsertAsync(Products); // Create or Insert Object passed to this
         }
-        public Task<List<ProductModel>> ReadLoginDetails()
+        public Task<List<ProductModel>> ReadProducts()
         {
             return db.Table<ProductModel>().ToListAsync(); // Reads all data from the Login Model
         }
-        public Task<int> UpdateLoginDetails(ProductModel Products)
+        public Task<int> UpdateProducts(ProductModel Products)
         {
             return db.UpdateAsync(Products); // Updates the database based on the object passed onto this
         }
-        public Task<int> DeleteLoginDetails(ProductModel Products)
+        public Task<int> DeleteProducts(ProductModel Products)
         {
             return db.DeleteAsync(Products); // Deletes from the database based on the object passed thru this
         }

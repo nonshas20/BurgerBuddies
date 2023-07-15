@@ -21,7 +21,8 @@ namespace popo
             try
             {
                 base.OnAppearing();
-                LoginDetailsCollectionView.ItemsSource = await App.loginDatabase.ReadLoginDetails();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+                ProductCollectionView.ItemsSource = await App.ProductsDatabase.ReadProducts();
             }
             catch
             {
