@@ -6,13 +6,14 @@
              BarTextColor="Black"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
+    
 
     <TabbedPage.Children>
         <ContentPage Title="Pos"  
                      Icon="pos_icon.png">
             
             <ContentPage.Content>
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="90" />
@@ -48,27 +49,38 @@
                             <RowDefinition Height="150"/>
                             <RowDefinition Height="150"/>
                             <RowDefinition Height="150"/>
-                            
+
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="180"/>
                             <ColumnDefinition Width="180"/>
                             <ColumnDefinition Width="1000"/>
                         </Grid.ColumnDefinitions>
-
-                        <Button Grid.Row="0" Grid.Column="0" Text="Burgers" FontSize="25" FontAttributes="Bold" BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="BurgersButton_Clicked"/>
-                        <Button Grid.Row="1" Grid.Column="0" Text="Sandwiches" FontSize="24" FontAttributes="Bold" BackgroundColor="#64B5F6" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SandwichesButton_Clicked"/>
-                        <Button Grid.Row="2" Grid.Column="0" Text="Single Orders" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SingleOrdersButton_Clicked"/>
-
-                        <Button Grid.Row="0" Grid.Column="1" Text="Meals" FontSize="25" FontAttributes="Bold" BackgroundColor="#448AFF" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="MealsButton_Clicked"/>
-                        <Button Grid.Row="1" Grid.Column="1" Text="Snacks" FontSize="25" FontAttributes="Bold" BackgroundColor="#90CAF9" TextColor="White" BorderColor="#1565C0" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="SnacksButton_Clicked"/>
-                        <Button Grid.Row="2" Grid.Column="1" Text="Drinks" FontSize="25" FontAttributes="Bold" BackgroundColor="#0D47A1" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="120" Clicked="DrinksButton_Clicked"/>
-
-                        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Add-ons" FontSize="25" FontAttributes="Bold" BackgroundColor="#1565C0" TextColor="White" BorderColor="#0D47A1" CornerRadius="10" BorderWidth="2" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" Clicked="AddOnsButton_Clicked"/>
+                        <!-- TESTING -->
+                        <CollectionView x:Name="CategoryCollectionView"
+                                        SelectionMode="Single"
+                                        Margin="20"
+                                        ItemsSource="{Binding Category_Name}">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Padding="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
+                                                BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
+                                                CornerRadius="10" BorderWidth="2" HeightRequest="80" WidthRequest="300"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <!-- TESTING -->
                     </Grid>
-                    
                 </Grid>
-                
 
             </ContentPage.Content>
             
@@ -268,8 +280,8 @@
                                HorizontalOptions="Center"
                                TextColor="#1976D2" />
 
-                                    <!-- Add a ListView or CollectionView here to display the transaction items -->
-
+                                    
+                                    
                                     <Label Text="Total:"
                                FontSize="20"
                                FontAttributes="Bold"

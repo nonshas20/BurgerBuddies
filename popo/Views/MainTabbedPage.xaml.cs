@@ -3,6 +3,10 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Application = Xamarin.Forms.Application;
+using System.Windows.Input;
+using Xamarin.Forms;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace popo
 {
@@ -15,10 +19,10 @@ namespace popo
 
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
-        
+            CategoryCollectionView.BindingContext = this;
         }
 
-        private async void BurgersButton_Clicked(object sender, EventArgs e)
+private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BurgersPOS());
         }
@@ -91,6 +95,17 @@ namespace popo
             await Navigation.PushAsync(new AddItemPage());
         }
 
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+            }
+            catch
+            {
 
+            }
+        }
     }
 }
