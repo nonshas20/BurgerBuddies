@@ -15,6 +15,8 @@ namespace popo
         public Edit_Category_ItemPage()
         {
             InitializeComponent();
+
+            CategoryCollectionView.BindingContext = this;
         }
 
         private async void EditItemBurger_Clicked(object sender, EventArgs e)
@@ -51,6 +53,17 @@ namespace popo
             await Navigation.PushAsync(new AddItemsAddOnsPage());
         }
 
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+            }
+            catch
+            {
 
+            }
+        }
     }
 }

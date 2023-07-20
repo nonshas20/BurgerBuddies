@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace popo
@@ -15,7 +16,10 @@ namespace popo
         public AddItemPage()
         {
             InitializeComponent();
+
+            CategoryCollectionView.BindingContext = this;
         }
+
         
         private async void AddItemBurger_Clicked(object sender, EventArgs e)
         {
@@ -50,7 +54,18 @@ namespace popo
         {
             await Navigation.PushAsync(new AddItemsAddOnsPage());
         }
-        
 
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
