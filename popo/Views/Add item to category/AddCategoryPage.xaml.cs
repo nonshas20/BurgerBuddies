@@ -61,28 +61,52 @@ namespace popo
                 AddCategoryAndProduct();
             }
         }
+
         async void AddCategoryAndProduct()
         {
-            CategoryModel createdCategory = await App.CategoryDatabase.CreateCategory(new CategoryModel
-            {
-                Category_Name = CategoryEntry.Text,
-            });
-            if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
-            {
-                await App.ProductsDatabase.CreateProducts(new ProductModel
-                {
-                    Category_Id = createdCategory.Category_Id,
-                    Product_Name = ItemNameEntry.Text,
-                    Product_Cost = productCost,
-                    Product_Stock = productStock
-                });
 
-                await DisplayAlert("Success", "Category and Product Added!", "OK");
+            var existingCategory = await App.CategoryDatabase.GetCategoryByName(CategoryEntry.Text);
+            var existingProduct = await App.ProductsDatabase.GetProductByName(ItemNameEntry.Text);
+            // Check if the createdCategory is null, which means a category with the same name already exists
+            if (existingCategory != null )
+            {
+                await DisplayAlert("Error", "Category with the same name already exists.", "OK");
+                return; // Exit the method if there was an error
             }
+            if (existingProduct != null)
+            {
+                await DisplayAlert("Error", "Product with the same name already exists.", "OK");
+                return; // Exit the method if there was an error
+            }
+            // If createdCategory is not null, meaning a category name doesn't exist
             else
             {
-                await DisplayAlert("Error", "Invalid input for product cost or stock", "OK");
+                if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
+                {
+                    if(productCost <= 0 || productStock <= 0)
+                    {
+                        await DisplayAlert("Error", "Product Cost or Stock cannot be equal or less than 0!", "OK");
+                    }
+                    else
+                    {
+                        await App.ProductsDatabase.CreateProducts(new ProductModel
+                        {
+                            Category_Id = existingCategory.Category_Id,
+                            Product_Name = ItemNameEntry.Text,
+                            Product_Cost = productCost,
+                            Product_Stock = productStock
+                        });
+                        await DisplayAlert("Success", "Category and Product Added!", "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Invalid input for product cost or stock", "OK");
+                }
             }
+
         }
+
+
     }
 }
