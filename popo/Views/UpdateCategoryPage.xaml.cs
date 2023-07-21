@@ -11,6 +11,8 @@ namespace popo
         public UpdateCategoryPage()
         {
             InitializeComponent();
+
+            CategoryCollectionView.BindingContext = this;
         }
 
         private async void RenameButton_Clicked(object sender, System.EventArgs e)
@@ -23,6 +25,19 @@ namespace popo
 
             var renamePopup = new RenameCategoryPopup(currentName);
             await PopupNavigation.Instance.PushAsync(renamePopup);
+        }
+
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

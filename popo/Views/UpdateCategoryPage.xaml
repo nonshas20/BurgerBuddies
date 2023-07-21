@@ -6,129 +6,51 @@
              NavigationPage.HasNavigationBar="True">
     <StackLayout Margin="20">
         <StackLayout VerticalOptions="StartAndExpand">
-            <Grid>
+            <!--Container-->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="600"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="350"/>
                 </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#FF6B6B" Padding="10" Margin="5" CornerRadius="10" HasShadow="True">
-                    <Label Text="Burgers" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#FF6B6B" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked" />
+                <!-- TESTING -->
+                <CollectionView x:Name="CategoryCollectionView"
+                                SelectionMode="Single"
+                                Margin="20"
+                                ItemsSource="{Binding Category_Name}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
+                                           TextColor="White"/>
+                                    <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100"
+                                            TextColor="White"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!-- TESTING -->
             </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#74B9FF" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Meals" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#74B9FF" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#FDA7DF" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Sandwiches" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#FDA7DF" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#F9CA24" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Snacks" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#F9CA24" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#00B894" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Drinks" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#00B894" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#6C5CE7" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Desserts" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#6C5CE7" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <Frame BackgroundColor="#FDA085" Padding="10" Margin="5" CornerRadius="10">
-                    <Label Text="Combo Meals" TextColor="White" FontSize="Medium" WidthRequest="210"/>
-                </Frame>
-                <Button Text="Rename"
-                        BackgroundColor="#FDA085" TextColor="White" FontSize="Small" BorderRadius="10"
-                        HeightRequest="50" WidthRequest="100" Margin="5"
-                        Grid.Column="1" Clicked="RenameButton_Clicked"/>
-            </Grid>
-            <BoxView HeightRequest="1" Color="LightGray" HorizontalOptions="FillAndExpand" Margin="10,0"/>
+            <!--Container-->
         </StackLayout>
 
 
         <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
                 <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="50" WidthRequest="160" Margin="5" />
 
 
                 <Button Text="Save" FontAttributes="Bold"
-                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="100" WidthRequest="160" Margin="5" />
             </StackLayout>
         </StackLayout>

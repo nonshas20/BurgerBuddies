@@ -15,6 +15,8 @@ namespace popo
         public DeleteCategoryPage()
         {
             InitializeComponent();
+
+            CategoryCollectionView.BindingContext = this;
         }
 
         private async void DeleteButton_Clicked(object sender, EventArgs e)
@@ -38,7 +40,18 @@ namespace popo
             await DisplayAlert("Success", $"{categoryName} has been deleted.", "OK");
             await Navigation.PopAsync(); // Navigate back to the previous page
         }
-    
 
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
