@@ -2,6 +2,8 @@
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+
+using Rg.Plugins.Popup.Services;
 using Application = Xamarin.Forms.Application;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -10,19 +12,43 @@ using System.Collections.Generic;
 
 namespace popo
 {
+    public class Transaction
+    {
+        public DateTime Date { get; set; }
+        public decimal TotalPrice { get; set; }
+    }
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainTabbedPage : Xamarin.Forms.TabbedPage
+
     {
+        public ObservableCollection<Transaction> Transactions { get; set; }
+
         public MainTabbedPage()
         {
             InitializeComponent();
+            InitializeData();
+            this.BindingContext = this;
 
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             CategoryCollectionView.BindingContext = this;
         }
+        private void InitializeData()
+        {
+            // Sample data for transactions (you can replace this with your actual data)
+            Transactions = new ObservableCollection<Transaction>
+        {
+            new Transaction { Date = DateTime.Now, TotalPrice = 0.00m},
+            new Transaction { Date = DateTime.Now.AddDays(-1), TotalPrice = 0.00m},
+            new Transaction { Date = DateTime.Now.AddDays(-2), TotalPrice = 0.00m},
+            // Add more transactions here...
+        };
+        }
 
-private async void BurgersButton_Clicked(object sender, EventArgs e)
+
+
+        private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BurgersPOS());
         }
@@ -40,7 +66,12 @@ private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SnacksPOS());
         }
-        
+
+        private async void OnThreeDotsClicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PushAsync(new ThreeDotPage());
+        }
+
         private async void EditCategoryItemButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Edit_Category_ItemPage());

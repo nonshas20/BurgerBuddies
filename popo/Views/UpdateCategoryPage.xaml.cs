@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

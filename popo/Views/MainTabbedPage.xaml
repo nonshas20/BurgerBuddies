@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:rgPlugins="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              x:Class="popo.MainTabbedPage"
              BarBackground="White"
              BarTextColor="Black"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
-    
 
     <TabbedPage.Children>
+        
         <ContentPage Title="Pos"  
                      Icon="pos_icon.png">
             
@@ -257,39 +258,66 @@
                     <!-- Content -->
                     <ScrollView Grid.Row="1">
                         <StackLayout Margin="20">
-                            <Label Text="Transaction"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       TextColor="#1976D2" />
+                            <Label Text="Transaction History"
+               FontSize="25"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#1976D2" />
 
-                            
                             <Frame CornerRadius="10"
-                       Padding="10"
-                             HeightRequest="550"
-                       BackgroundColor="#F0F0F0"
-                       Margin="0,20,0,0">
-                                <StackLayout>
-                                    <Label Text="Transaction Summary"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               HorizontalOptions="Center"
-                               TextColor="#1976D2" />
+               Padding="10"
+               HeightRequest="550"
+               BackgroundColor="#F0F0F0"
+               Margin="0,20,0,0">
+                                <CollectionView x:Name="TransactionCollectionView"
+                            ItemsSource="{Binding Transactions}"
+                            SelectionMode="None">
 
-                                    
-                                    
-                                    <Label Text="Total:"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               HorizontalOptions="End"
-                               Margin="0,10,0,0" />
-                                </StackLayout>
+                                    <CollectionView.ItemsLayout>
+                                        <LinearItemsLayout Orientation="Vertical" />
+                                    </CollectionView.ItemsLayout>
+
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame CornerRadius="10"
+                               BackgroundColor="White"
+                               Padding="5"
+                               Margin="5,0,5,10">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <BoxView Grid.Row="0"
+                                         BackgroundColor="#1976D2"
+                                         HeightRequest="4"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="Start" />
+                                                    <Grid Grid.Row="1" Padding="5">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" TextColor="Black" />
+                                                        <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="Black" />
+                                                        <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" TextColor="Black" />
+
+                                                        <!-- Three dots image button -->
+                                                        <ImageButton Grid.Column="3"
+                                                  Source="threedot.png"
+                                                  BackgroundColor="Transparent"
+                                                  Clicked="OnThreeDotsClicked"
+                                                  HeightRequest="30"
+                                                  WidthRequest="30"
+                                                  HorizontalOptions="End" />
+                                                    </Grid>
+                                                </Grid>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
                             </Frame>
-
-                           
-
                         </StackLayout>
-
                     </ScrollView>
 
                 </Grid>

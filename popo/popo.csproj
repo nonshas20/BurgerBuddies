@@ -53,6 +53,9 @@
     <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
       <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pop-ups\ThreeDotPage.xaml.cs">
+      <DependentUpon>ThreeDotPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

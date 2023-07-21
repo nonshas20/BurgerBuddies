@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="popo.ThreeDotPage">
+    <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="False">
+        <StackLayout>
+            <Label x:Name="DateTimeLabel" Text="Date time here" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" />
+            <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,5"/>
+
+            <!-- Updated ListView -->
+            <ListView x:Name="ItemsListView" HeightRequest="200" Margin="0,10,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Text="{Binding ItemName}" FontSize="Medium" HorizontalOptions="Start" TextColor="Black" />
+                                <Label Grid.Column="1" Text="{Binding Quantity}" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" />
+                                <Label Grid.Column="2" Text="{Binding Price}" FontSize="Medium" HorizontalOptions="End" TextColor="Black" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5"/>
+
+            <!-- Total -->
+            <Label Text="Total - 60PHP" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="End" Margin="0,5,0,0" />
+
+            <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
+                <Button Text="Close" FontAttributes="Bold"
+                        BackgroundColor="Blue" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCloseClicked" />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>
