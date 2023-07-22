@@ -34,8 +34,8 @@ namespace popo
 
         async void SaveButton_Clicked(object sender, EventArgs e)
         { 
-            string CategoryName = CategoryEntry.Text;
-            string ItemName = ItemNameEntry.Text;
+            string CategoryName = CategoryEntry.Text.ToUpper();
+            string ItemName = ItemNameEntry.Text.ToUpper(); 
             string Price = PriceEntry.Text;
             string Stocks = StocksEntry.Text;
 
@@ -64,47 +64,58 @@ namespace popo
 
         async void AddCategoryAndProduct()
         {
+            var existingCategory = await App.CategoryDatabase.GetCategoryByName(CategoryEntry.Text.ToUpper());
+            var existingProduct = await App.ProductsDatabase.GetProductByName(ItemNameEntry.Text.ToUpper());
 
-            var existingCategory = await App.CategoryDatabase.GetCategoryByName(CategoryEntry.Text);
-            var existingProduct = await App.ProductsDatabase.GetProductByName(ItemNameEntry.Text);
-            // Check if the createdCategory is null, which means a category with the same name already exists
-            if (existingCategory != null )
+            // Check if the category name already exists
+            if (existingCategory != null)
             {
                 await DisplayAlert("Error", "Category with the same name already exists.", "OK");
-                return; // Exit the method if there was an error
+                return;
             }
+            // Check if the product name already exists
             if (existingProduct != null)
             {
                 await DisplayAlert("Error", "Product with the same name already exists.", "OK");
-                return; // Exit the method if there was an error
+                return;
             }
-            // If createdCategory is not null, meaning a category name doesn't exist
-            else
+            // If both category and product names are unique, proceed to create the category and product
+            if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
             {
-                if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
+                if (productCost <= 0 || productStock <= 0)
                 {
-                    if(productCost <= 0 || productStock <= 0)
-                    {
-                        await DisplayAlert("Error", "Product Cost or Stock cannot be equal or less than 0!", "OK");
-                    }
-                    else
-                    {
-                        await App.ProductsDatabase.CreateProducts(new ProductModel
-                        {
-                            Category_Id = existingCategory.Category_Id,
-                            Product_Name = ItemNameEntry.Text,
-                            Product_Cost = productCost,
-                            Product_Stock = productStock
-                        });
-                        await DisplayAlert("Success", "Category and Product Added!", "OK");
-                    }
+                    await DisplayAlert("Error", "Product Cost or Stock cannot be equal to or less than 0!", "OK");
+                    return;
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Invalid input for product cost or stock", "OK");
+                    // Create the category first
+                    var newCategory = new CategoryModel
+                    {
+                        Category_Name = CategoryEntry.Text.ToUpper(),
+                    };
+                    await App.CategoryDatabase.CreateCategory(newCategory);
+
+                    // Create the product using the newly created category's Category_Id
+                    await App.ProductsDatabase.CreateProducts(new ProductModel
+                    {
+                        Category_Id = newCategory.Category_Id,
+                        Product_Name = ItemNameEntry.Text.ToUpper(),
+                        Product_Cost = productCost,
+                        Product_Stock = productStock
+                    });
+
+                    await DisplayAlert("Success", "Category and Product Added!", "OK");
+
+                    await Navigation.PushAsync(new MainTabbedPage());
+
                 }
             }
-
+            else
+            {
+                await DisplayAlert("Error", "Invalid input for product cost or stock", "OK");
+                return;
+            }
         }
 
 
