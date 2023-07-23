@@ -32,14 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Add item to category\AddItemsDrinksPage.xaml.cs">
-      <DependentUpon>AddItemsDrinksPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Add item to category\AddItemsAddOnsPage.xaml.cs">
-      <DependentUpon>AddItemsAddOnsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Add item to category\AddItemsSnacksPage.xaml.cs">
-      <DependentUpon>AddItemsSnacksPage.xaml</DependentUpon>
+    <Compile Update="Views\Add item to category\AddItemsCategoryPage.xaml.cs">
+      <DependentUpon>AddItemsCategoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
@@ -102,15 +96,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ViewOrdersPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Add item to category\AddItemSandwichesPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Add item to category\AddItemsMealsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Add item to category\AddItemsSingleOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Edit item in category\ChooseItemInBurger.xaml">

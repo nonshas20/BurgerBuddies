@@ -24,35 +24,6 @@ namespace popo
             await Navigation.PushAsync(new ChooseItemInBurger());
         }
 
-
-        private async void AddItemSandwiches_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemSandwichesPage());
-        }
-
-        private async void AddItemsMeals_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsMealsPage());
-        }
-
-        private async void AddItemsSnacks_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsSnacksPage());
-        }
-
-        private async void AddItemsDrinks_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsDrinksPage());
-        }
-        private async void AddItemsSingleOrders_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsSingleOrdersPage());
-        }
-        private async void AddItemsAddOnsPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsAddOnsPage());
-        }
-
         protected override async void OnAppearing()
         {
             try

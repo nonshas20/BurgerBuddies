@@ -1,14 +1,21 @@
-﻿using System;
+﻿using popo.Model;
+using System;
 using Xamarin.Forms;
 
 namespace popo
 {
-    public partial class AddItemsDrinksPage : ContentPage
+    public partial class AddItemsCategoryPage : ContentPage
     {
-        public AddItemsDrinksPage()
+        public AddItemsCategoryPage(CategoryModel selectedCategory)
         {
             InitializeComponent();
+            this.selectedCategory = selectedCategory; //Dadalhin yung info ng selected category dito
+            CategoryEntry.Text = selectedCategory.Category_Name;
         }
+
+        private CategoryModel selectedCategory; //Declared selected category
+
+
 
 
 
