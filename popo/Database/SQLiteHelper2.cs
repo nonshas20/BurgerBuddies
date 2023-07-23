@@ -16,16 +16,20 @@ namespace popo.Database
             db = new SQLiteAsyncConnection(dbPath);
             db.CreateTableAsync<CategoryModel>(); // Create table based on Login Model
         }
-        public Task<int> CreateCategory(CategoryModel Category)
+        public Task<CategoryModel> CreateCategory(CategoryModel Category)
         {
-            return db.InsertAsync(Category);
+            return db.InsertAsync(Category).ContinueWith(task =>
+            {
+                if (task.IsCompletedSuccessfully)
+                {
+                    return Category;
+                }
+                else
+                {
+                    throw task.Exception;
+                }
+            });
         }
-        public async Task<CategoryModel> GetCategoryByName(string CategoryName)
-        {
-            return await db.Table<CategoryModel>().FirstOrDefaultAsync(p => p.Category_Name == CategoryName);
-        }
-
-
         public Task<List<CategoryModel>> ReadCategory()
         {
             return db.Table<CategoryModel>().ToListAsync(); // Reads all data from the Login Model
