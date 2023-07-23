@@ -13,7 +13,7 @@ namespace popo
             CategoryEntry.Text = selectedCategory.Category_Name;
         }
 
-        private CategoryModel selectedCategory; // Add this field to store the selected category
+        private CategoryModel selectedCategory; //Declared selected category
 
 
 
