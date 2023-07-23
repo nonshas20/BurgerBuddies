@@ -20,6 +20,11 @@ namespace popo.Database
         {
             return db.InsertAsync(Products); // Create or Insert Object passed to this
         }
+        // Checker if there is already an existing Product Name
+        public async Task<ProductModel> GetProductByName(string productName)
+        {
+            return await db.Table<ProductModel>().FirstOrDefaultAsync(p => p.Product_Name == productName);
+        }
         public Task<List<ProductModel>> ReadProducts()
         {
             return db.Table<ProductModel>().ToListAsync(); // Reads all data from the Login Model
@@ -33,5 +38,6 @@ namespace popo.Database
             return db.DeleteAsync(Products); // Deletes from the database based on the object passed thru this
         }
 
+        
     }
 }
