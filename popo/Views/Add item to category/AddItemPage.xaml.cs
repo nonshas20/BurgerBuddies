@@ -1,4 +1,5 @@
-﻿using System;
+﻿using popo.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,10 @@ namespace popo
             CategoryCollectionView.BindingContext = this;
         }
 
-        
+        private CategoryModel selectedCategory;//Declared selected category
         private async void AddItemBurger_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddItemsBurgerPage());
+            await Navigation.PushAsync(new AddItemsBurgerPage(selectedCategory));//insert selected category sa AddItemsBurgerPage
         }
         
 
@@ -67,5 +68,19 @@ namespace popo
 
             }
         }
+
+        private async void OnCategoryButtonClicked(object sender, EventArgs e) //Event Handler pag nagclick ng category buttons
+        {
+            if (sender is Button button)
+            {
+                CategoryModel category = button.BindingContext as CategoryModel;
+
+                if (category != null)
+                {
+                    await Navigation.PushAsync(new AddItemsBurgerPage(category));
+                }
+            }
+        }
+
     }
 }
