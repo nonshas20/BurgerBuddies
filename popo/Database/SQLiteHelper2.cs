@@ -16,13 +16,13 @@ namespace popo.Database
             db = new SQLiteAsyncConnection(dbPath);
             db.CreateTableAsync<CategoryModel>(); // Create table based on Login Model
         }
-        public Task<CategoryModel> CreateCategory(CategoryModel Category)
+        public Task<int> CreateCategory(CategoryModel Category)
         {
             return db.InsertAsync(Category).ContinueWith(task =>
             {
                 if (task.IsCompletedSuccessfully)
                 {
-                    return Category;
+                    return Category.Category_Id; // Return the ID of the newly created category
                 }
                 else
                 {
