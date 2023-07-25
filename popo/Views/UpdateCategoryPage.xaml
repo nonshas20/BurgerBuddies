@@ -5,54 +5,48 @@
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="True">
     <StackLayout Margin="20">
-        <StackLayout VerticalOptions="StartAndExpand">
-            <!--Container-->
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="600"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="350"/>
-                </Grid.ColumnDefinitions>
-                <!-- TESTING -->
-                <CollectionView x:Name="CategoryCollectionView"
-                                SelectionMode="Single"
-                                Margin="20"
-                                ItemsSource="{Binding Category_Name}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
-                                           TextColor="White"/>
-                                    <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100"
-                                            TextColor="White"/>
-                                </Grid>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <!-- TESTING -->
-            </Grid>
-            <!--Container-->
-        </StackLayout>
+        <!-- Parent Grid to organize the layout -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <!-- This row will hold the buttons -->
+            </Grid.RowDefinitions>
 
+            <CollectionView x:Name="CategoryCollectionView"
+                            SelectionMode="Single"
+                            ItemsSource="{Binding Category_Name}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
+                                       TextColor="White"/>
+                                <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
+                                        TextColor="White"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
+            <!-- Buttons in the second row -->
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
                 <Button Text="Cancel" FontAttributes="Bold"
                         BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="50" WidthRequest="160" Margin="5" />
-
 
                 <Button Text="Save" FontAttributes="Bold"
                         BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="100" WidthRequest="160" Margin="5" />
             </StackLayout>
-        </StackLayout>
+        </Grid>
     </StackLayout>
 </ContentPage>
