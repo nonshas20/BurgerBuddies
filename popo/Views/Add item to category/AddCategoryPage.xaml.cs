@@ -63,20 +63,15 @@ namespace popo
         }
         async void AddCategoryAndProduct()
         {
+            CategoryModel createdCategory = await App.CategoryDatabase.CreateCategory(new CategoryModel
+            {
+                Category_Name = CategoryEntry.Text,
+            });
             if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
             {
-                CategoryModel createdCategory = new CategoryModel
-                {
-                    Category_Name = CategoryEntry.Text,
-                };
-
-                // Add the category to the database and get the ID of the newly created category
-                int categoryId = await App.CategoryDatabase.CreateCategory(createdCategory);
-
-                // Create the product using the obtained category ID
                 await App.ProductsDatabase.CreateProducts(new ProductModel
                 {
-                    Category_Id = categoryId,
+                    Category_Id = createdCategory.Category_Id,
                     Product_Name = ItemNameEntry.Text,
                     Product_Cost = productCost,
                     Product_Stock = productStock
