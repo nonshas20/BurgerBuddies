@@ -9,6 +9,9 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Diagnostics;
+using popo;
+using popo.Model;
 
 namespace popo
 {
@@ -76,12 +79,18 @@ namespace popo
         {
             await Navigation.PushAsync(new Edit_Category_ItemPage());
         }
-
+        //TESTING
         private async void AddOnsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddOnsPOS());
-        }
+            var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel; // Replace YourCategoryModelType with the actual type of your category object
 
+            if (selectedCategory != null)
+            {
+                int selectedCategoryId = selectedCategory.Category_Id;
+                await Navigation.PushAsync(new AddOnsPOS(selectedCategoryId));
+            }
+        }
+        //TESTING
         private async void DrinksButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new DrinksPOS());

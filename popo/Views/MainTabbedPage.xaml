@@ -56,7 +56,7 @@
                         <CollectionView x:Name="CategoryCollectionView"
                                         SelectionMode="Single"
                                         Margin="20"
-                                        ItemsSource="{Binding Category_Name}">
+                                        ItemsSource="{Binding Category_Id}">
                             <CollectionView.ItemsLayout>
                                 <GridItemsLayout Orientation="Vertical" Span="2" />
                             </CollectionView.ItemsLayout>
@@ -69,7 +69,8 @@
                                         </Grid.ColumnDefinitions>
                                         <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
                                                 BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
-                                                CornerRadius="10" BorderWidth="2" HeightRequest="100"/>
+                                                CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="AddOnsButton_Clicked"
+                                                CommandParameter="{Binding .}"/>
                                     </Grid>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
