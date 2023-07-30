@@ -37,17 +37,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
-            <!-- Buttons in the second row -->
-            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
-                <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" CornerRadius="20"
-                        HeightRequest="50" WidthRequest="160" Margin="5" />
-
-                <Button Text="Save" FontAttributes="Bold"
-                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" CornerRadius="20"
-                        HeightRequest="100" WidthRequest="160" Margin="5" />
-            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

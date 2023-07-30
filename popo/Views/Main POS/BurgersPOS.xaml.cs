@@ -22,7 +22,7 @@ namespace popo
             this.BindingContext = this;
             this.SelectedCategoryId = SelectedCategoryId;
         }
-
+        /*
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
         {
             List<OrderItem> orderItems = new List<OrderItem>();
@@ -42,7 +42,7 @@ namespace popo
             }
 
             await Navigation.PushAsync(new ViewOrdersPage(orderItems));
-        }
+        } */
         protected override async void OnAppearing()
         {
             try

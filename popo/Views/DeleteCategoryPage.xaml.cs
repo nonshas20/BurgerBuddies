@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using popo.Model;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,20 +22,15 @@ namespace popo
 
         private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-
-            await PopupNavigation.Instance.PushAsync(new DeletePopupPage());
+            if (sender is Button button)
+            {
+                CategoryModel category = button.BindingContext as CategoryModel;
+                if (category != null)
+                {
+                    await PopupNavigation.Instance.PushAsync(new DeletePopupPage(category));
+                }
+            }
         }
-
-        public async void OnDeleteConfirmed(string categoryName)
-        {
-            // Perform the necessary actions to delete the category
-            // For example, you can call a method or perform an API request to delete the category from your data source
-
-            // Display a success message or navigate back to the previous page
-            await DisplayAlert("Success", $"{categoryName} has been deleted.", "OK");
-            await Navigation.PopAsync(); // Navigate back to the previous page
-        }
-
         protected override async void OnAppearing()
         {
             try

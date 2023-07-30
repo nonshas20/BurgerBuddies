@@ -4,19 +4,20 @@ using System;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 using System.Linq;
-
+using popo.Model;
 
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DeletePopupPage: PopupPage
     {
-        public DeletePopupPage(string categoryName = null)
+        public DeletePopupPage(CategoryModel selectedCategory)
         {
             InitializeComponent();
-            
+            this.selectedCategory = selectedCategory;
+            CategoryNameLabel.Text = selectedCategory.Category_Name;
         }
-
+        private CategoryModel selectedCategory;
         private async void OnCancelClicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync();
@@ -24,11 +25,8 @@ namespace popo
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            // Perform the delete action
-            // Pass the category name back to the DeleteCategoryPage
-            var deleteCategoryPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault() as DeleteCategoryPage;
-            deleteCategoryPage?.OnDeleteConfirmed(CategoryNameLabel.Text);
-
+            await App.CategoryDatabase.DeleteCategory(selectedCategory);
+            await DisplayAlert("Success", "Deleted Category", "OK");
             await PopupNavigation.Instance.PopAsync();
         }
     }

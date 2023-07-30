@@ -21,13 +21,6 @@ namespace popo
             CategoryCollectionView.BindingContext = this;
         }
 
-        private CategoryModel selectedCategory;//Declared selected category
-        private async void AddItemCategory_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddItemsCategoryPage(selectedCategory));//insert selected category sa AddItemsBurgerPage
-        }
-        
-
         protected override async void OnAppearing()
         {
             try

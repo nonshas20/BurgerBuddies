@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="popo.Edit_Category_ItemPage">
+             x:Class="popo.Edit_Category_ItemPage"
+             Title="Edit Product"
+             BackgroundColor="#F5F5F5"
+             NavigationPage.HasNavigationBar="True">
     <StackLayout>
-        <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
+        <Label Text="SELECT A CATEGORY" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
 
         <!--Container-->
         <Grid Grid.Row="1" Padding="20" ColumnSpacing="10" RowSpacing="10">

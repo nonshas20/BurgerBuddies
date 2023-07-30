@@ -53,6 +53,7 @@ namespace popo
                 });
 
                 await DisplayAlert("Success", "Product Added!", "OK");
+                await Navigation.PopAsync();
             }
             else
             {
