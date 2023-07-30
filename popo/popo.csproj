@@ -38,6 +38,9 @@
     <Compile Update="Views\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Delete item in category\DeleteItem.xaml.cs">
+      <DependentUpon>DeleteItem.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Main POS\BurgersPOS.xaml.cs">
       <DependentUpon>BurgersPOS.xaml</DependentUpon>
     </Compile>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.DeleteItem">
+    <StackLayout>
+        <Label Text="CHOOSE A CATEGORY TO DELETE ITEM ON" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
+
+        <!--Container-->
+        <Grid Grid.Row="1" Padding="20" ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="600"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+            <!-- TESTING -->
+            <CollectionView x:Name="CategoryCollectionView"
+                            SelectionMode="Single"
+                            Margin="20"
+                            ItemsSource="{Binding Category_Id}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
+                                    BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
+                                    CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="BurgersButton_Clicked"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!-- TESTING -->
+        </Grid>
+        <!--Container-->
+    </StackLayout>
+</ContentPage>
+    
+
+
+
+

@@ -203,7 +203,8 @@
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
-                                Margin="5" />
+                                Margin="5" 
+                                Clicked="RemoveCategoryItemButton_Clicked"/>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
@@ -270,54 +271,49 @@
                HeightRequest="550"
                BackgroundColor="#F0F0F0"
                Margin="0,10,0,0">
-                                
-                            
-                                <CollectionView x:Name="TransactionCollectionView"
-                            ItemsSource="{Binding Transactions}"
-                            SelectionMode="None">
+                                <ListView x:Name="TransactionListView"
+          ItemsSource="{Binding Transactions}"
+          SeparatorVisibility="None"
+          HasUnevenRows="True">
 
-                                    <CollectionView.ItemsLayout>
-                                        <LinearItemsLayout Orientation="Vertical" />
-                                    </CollectionView.ItemsLayout>
-
-                                    <CollectionView.ItemTemplate>
+                                    <ListView.ItemTemplate>
                                         <DataTemplate>
-                                            <Frame CornerRadius="10"
-                               BackgroundColor="White"
-                               Padding="1"
-                               Margin="5,0,5,10">
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
-                                                    
-                                                    <Grid Grid.Row="1" Padding="5">
+                                            <ViewCell>
+                                                <Frame CornerRadius="10"
+                       BackgroundColor="White"
+                       Padding="10"
+                       Margin="5,0,5,10">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="40" />
+                                                        </Grid.RowDefinitions>
                                                         <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="*" />
-                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="2*" />
                                                             <ColumnDefinition Width="Auto" />
                                                         </Grid.ColumnDefinitions>
+
                                                         <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" TextColor="Black" />
                                                         <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="Black" />
                                                         <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" TextColor="Black" />
 
                                                         <!-- Three dots image button -->
                                                         <ImageButton Grid.Column="3"
-                                                  Source="threedot.png"
-                                                  BackgroundColor="Transparent"
-                                                  Clicked="OnThreeDotsClicked"
-                                                  HeightRequest="30"
-                                                  WidthRequest="30"
-                                                  HorizontalOptions="End" />
+                                      Source="threedot.png"
+                                      BackgroundColor="Transparent"
+                                      Clicked="OnThreeDotsClicked"
+                                      HeightRequest="30"
+                                      WidthRequest="30"
+                                      HorizontalOptions="End" />
                                                     </Grid>
-                                                </Grid>
-                                            </Frame>
+                                                </Frame>
+                                            </ViewCell>
                                         </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
+                                    </ListView.ItemTemplate>
+                                </ListView>
                             </Frame>
                         </StackLayout>
                     </ScrollView>
+
 
                 </Grid>
             </ContentPage.Content>

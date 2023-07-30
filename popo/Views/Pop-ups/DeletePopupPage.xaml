@@ -24,7 +24,7 @@
 
                 <!-- Delete button -->
                 <Button Text="Yes" FontAttributes="Bold"
-                        BackgroundColor="#FF6B6B" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="Green" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnDeleteClicked" />
             </StackLayout>
 
