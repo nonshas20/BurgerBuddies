@@ -21,14 +21,8 @@ namespace popo
 
         private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            Grid parentGrid = button.Parent as Grid;
-            Frame frame = parentGrid.Children[0] as Frame;
-            Label label = frame.Content as Label;
-            string categoryName = label.Text;
 
-            var deletePopupPage = new DeletePopupPage(categoryName);
-            await PopupNavigation.Instance.PushAsync(deletePopupPage);
+            await PopupNavigation.Instance.PushAsync(new DeletePopupPage());
         }
 
         public async void OnDeleteConfirmed(string categoryName)

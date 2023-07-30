@@ -18,12 +18,12 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
 
                 <!-- Cancel button -->
-                <Button Text="Cancel" FontAttributes="Bold"
+                <Button Text="No" FontAttributes="Bold"
                         BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCancelClicked" />
 
                 <!-- Delete button -->
-                <Button Text="Delete" FontAttributes="Bold"
+                <Button Text="Yes" FontAttributes="Bold"
                         BackgroundColor="#FF6B6B" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnDeleteClicked" />
             </StackLayout>

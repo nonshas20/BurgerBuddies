@@ -4,6 +4,7 @@
              Title="Update Category"
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="True">
+             
     <StackLayout Margin="20">
         <!-- Parent Grid to organize the layout -->
         <Grid>
@@ -30,7 +31,7 @@
                                 <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
-                                        TextColor="White"/>
+                                        TextColor="White" Clicked="RenameButton_Clicked"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
@@ -38,15 +39,7 @@
             </CollectionView>
 
             <!-- Buttons in the second row -->
-            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0">
-                <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" CornerRadius="20"
-                        HeightRequest="50" WidthRequest="160" Margin="5" />
 
-                <Button Text="Save" FontAttributes="Bold"
-                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" CornerRadius="20"
-                        HeightRequest="100" WidthRequest="160" Margin="5" />
-            </StackLayout>
         </Grid>
     </StackLayout>
 </ContentPage>

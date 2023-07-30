@@ -17,14 +17,8 @@ namespace popo
 
         private async void RenameButton_Clicked(object sender, System.EventArgs e)
         {
-            Button button = sender as Button;
-            Grid parentGrid = button.Parent as Grid;
-            Frame frame = parentGrid.Children[0] as Frame;
-            Label label = frame.Content as Label;
-            string currentName = label.Text;
-
-            var renamePopup = new RenameCategoryPopup(currentName);
-            await PopupNavigation.Instance.PushAsync(renamePopup);
+            
+            await PopupNavigation.Instance.PushAsync(new RenameCategoryPopup());
         }
 
         protected override async void OnAppearing()

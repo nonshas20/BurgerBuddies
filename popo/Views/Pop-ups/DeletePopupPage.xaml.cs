@@ -11,10 +11,10 @@ namespace popo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DeletePopupPage: PopupPage
     {
-        public DeletePopupPage(string categoryName)
+        public DeletePopupPage(string categoryName = null)
         {
             InitializeComponent();
-            CategoryNameLabel.Text = categoryName;
+            
         }
 
         private async void OnCancelClicked(object sender, EventArgs e)

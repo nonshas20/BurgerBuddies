@@ -13,10 +13,10 @@ namespace popo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RenameCategoryPopup : PopupPage
     {
-        public RenameCategoryPopup(string currentName)
+        public RenameCategoryPopup(string currentName = null)
         {
             InitializeComponent();
-            CurrentNameLabel.Text = currentName;
+            
         }
 
         private async void OnCancelClicked(object sender, System.EventArgs e)
