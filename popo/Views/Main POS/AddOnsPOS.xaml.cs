@@ -9,7 +9,7 @@ namespace popo
     public partial class AddOnsPOS: ContentPage
     {
         public ObservableCollection<Product> Products { get; set; } //Variable for product list
-        private int SelectedCategoryId;
+        private int SelectedCategoryId;//Variable for the Selected Category from Main POS
 
         public AddOnsPOS(int SelectedCategoryId)
         {

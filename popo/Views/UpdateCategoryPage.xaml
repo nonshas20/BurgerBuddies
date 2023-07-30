@@ -15,7 +15,7 @@
 
             <CollectionView x:Name="CategoryCollectionView"
                             SelectionMode="Single"
-                            ItemsSource="{Binding Category_Name}">
+                            ItemsSource="{Binding Category_Id}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
                 </CollectionView.ItemsLayout>

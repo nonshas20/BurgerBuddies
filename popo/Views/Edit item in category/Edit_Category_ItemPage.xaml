@@ -5,7 +5,8 @@
     <StackLayout>
         <Label Text="CHOOSE A CATEGORY TO ADD ITEM ON" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,10" />
 
-        <Grid Grid.Row="1" Padding="15" ColumnSpacing="10" RowSpacing="15">
+        <!--Container-->
+        <Grid Grid.Row="1" Padding="20" ColumnSpacing="10" RowSpacing="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="600"/>
             </Grid.RowDefinitions>
@@ -17,7 +18,7 @@
             <CollectionView x:Name="CategoryCollectionView"
                             SelectionMode="Single"
                             Margin="20"
-                            ItemsSource="{Binding Category_Name}">
+                            ItemsSource="{Binding Category_Id}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
@@ -30,12 +31,15 @@
                             </Grid.ColumnDefinitions>
                             <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
                                     BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
-                                    CornerRadius="10" BorderWidth="2" HeightRequest="100"/>
+                                    CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="BurgersButton_Clicked"
+                                    CommandParameter="{Binding .}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <!-- TESTING -->
         </Grid>
+        <!--Container-->
     </StackLayout>
 </ContentPage>
     

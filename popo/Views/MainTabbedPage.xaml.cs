@@ -51,10 +51,10 @@ namespace popo
 
 
 
-        private async void BurgersButton_Clicked(object sender, EventArgs e)
+        /*private async void BurgersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BurgersPOS());
-        }
+        }*/
         private async void MealsButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MealsPOS());
@@ -82,8 +82,7 @@ namespace popo
         //TESTING
         private async void AddOnsButton_Clicked(object sender, EventArgs e)
         {
-            var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel; // Replace YourCategoryModelType with the actual type of your category object
-
+            var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel;
             if (selectedCategory != null)
             {
                 int selectedCategoryId = selectedCategory.Category_Id;

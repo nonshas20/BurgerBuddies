@@ -2,28 +2,25 @@
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using popo.Model;
 
 namespace popo
 {
     public partial class BurgersPOS : ContentPage
     {
-        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<Product> Products { get; set; } //Variable for product list
+        private int SelectedCategoryId;//Variable for the Selected Category from Main POS
 
-        public BurgersPOS()
+        public BurgersPOS(int SelectedCategoryId)
         {
             InitializeComponent();
 
             Products = new ObservableCollection<Product>
             {
-                new Product { ProductName = "PLB", Price = 30.00M, Stocks = 50, Quantity = 0 },
-                new Product { ProductName = "BC", Price = 35.00M, Stocks = 30, Quantity = 0 },
-                new Product { ProductName = "CB", Price = 25.00M, Stocks = 40, Quantity = 0 },
-                new Product { ProductName = "CBC", Price = 45.00M, Stocks = 15, Quantity = 0 },
-                new Product { ProductName = "CBCE", Price = 30.00M, Stocks = 50, Quantity = 0 },
-                new Product { ProductName = "PB", Price = 30.00M, Stocks = 50, Quantity = 0 }
+                //Dito sasaluhin yung mga ibabato ni OnAppearing from ProductsDatabase
             };
-
-            BindingContext = this;
+            this.BindingContext = this;
+            this.SelectedCategoryId = SelectedCategoryId;
         }
 
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
@@ -46,5 +43,32 @@ namespace popo
 
             await Navigation.PushAsync(new ViewOrdersPage(orderItems));
         }
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                List<ProductModel> productsList = await App.ProductsDatabase.ReadProducts();
+                foreach (var productModel in productsList)
+                {
+                    if (productModel.Category_Id == SelectedCategoryId)
+                    {
+                        // Assuming there's a constructor or conversion method in the Product class to convert from ProductModel
+                        Products.Add(new Product
+                        {
+                            ProductName = productModel.Product_Name,
+                            Price = productModel.Product_Cost,
+                            Stocks = productModel.Product_Stock,
+                            Quantity = 0
+                        });
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 }
