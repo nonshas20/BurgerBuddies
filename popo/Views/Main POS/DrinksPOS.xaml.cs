@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using popo.Model;
+using Rg.Plugins.Popup.Services;
 
 namespace popo
 {
@@ -48,6 +49,14 @@ namespace popo
             {
 
             }
+        }
+        private async void OnDeleteButton_Clicked(object sender, EventArgs e)
+        {
+            // Create the pop-up page instance
+            var deletePopup = new DeletePopup_ItemPage();
+
+            // Show the pop-up
+            await PopupNavigation.Instance.PushAsync(deletePopup);
         }
 
     }

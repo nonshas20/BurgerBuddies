@@ -31,7 +31,7 @@
                                 <Label Grid.Column="0" Text="{Binding ProductName}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
-                                        TextColor="White"/>
+                                        TextColor="White" Clicked="RenameButton_Clicked"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>

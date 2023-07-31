@@ -14,7 +14,8 @@ namespace popo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RenameCategoryPopup : PopupPage
     {
-        public RenameCategoryPopup(CategoryModel selectedCategory)
+
+        public RenameCategoryPopup(CategoryModel selectedCategory = null)
         {
             InitializeComponent();
             this.selectedCategory = selectedCategory;

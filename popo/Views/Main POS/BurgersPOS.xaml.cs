@@ -3,26 +3,24 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using popo.Model;
+using Rg.Plugins.Popup.Services;
 
 namespace popo
 {
-    public partial class BurgersPOS : ContentPage //EditPOS - Button List for Updating/Renaming Products
+    public partial class BurgersPOS : ContentPage
     {
-        public ObservableCollection<Product> Products { get; set; } //Variable for product list
-        private int SelectedCategoryId;//Variable for the Selected Category from EditPOS:  Renaming/Updating Products
+        public ObservableCollection<Product> Products { get; set; }
+        private int SelectedCategoryId;
 
         public BurgersPOS(int SelectedCategoryId)
         {
             InitializeComponent();
 
-            Products = new ObservableCollection<Product>
-            {
-                //Dito sasaluhin yung mga ibabato ni OnAppearing from ProductsDatabase
-            };
+            Products = new ObservableCollection<Product>();
             this.BindingContext = this;
             this.SelectedCategoryId = SelectedCategoryId;
         }
-       
+
         protected override async void OnAppearing()
         {
             try
@@ -33,7 +31,6 @@ namespace popo
                 {
                     if (productModel.Category_Id == SelectedCategoryId)
                     {
-                        // Assuming there's a constructor or conversion method in the Product class to convert from ProductModel
                         Products.Add(new Product
                         {
                             ProductName = productModel.Product_Name,
@@ -50,5 +47,13 @@ namespace popo
             }
         }
 
+        private async void RenameButton_Clicked(object sender, EventArgs e)
+        {
+            // Create the pop-up page instance
+            var renamePopup = new RenameCategory_ItemPopup();
+
+            // Show the pop-up
+            await PopupNavigation.Instance.PushAsync(renamePopup);
+        }
     }
 }

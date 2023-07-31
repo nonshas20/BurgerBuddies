@@ -50,6 +50,12 @@
     <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
       <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Pop-ups\Popups for update and delete item\DeletePopup_ItemPage.xaml.cs">
+      <DependentUpon>DeletePopup_ItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pop-ups\Popups for update and delete item\RenameCategory_ItemPopup.xaml.cs">
+      <DependentUpon>RenameCategory_ItemPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pop-ups\ThreeDotPage.xaml.cs">
       <DependentUpon>ThreeDotPage.xaml</DependentUpon>
     </Compile>

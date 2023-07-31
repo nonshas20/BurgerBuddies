@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 x:Class="popo.DeletePopup_ItemPage">
+
+    <!-- Frame to contain the popup content -->
+    <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="False">
+        <StackLayout>
+
+            <!-- Label displaying the category name -->
+            <Label x:Name="CategoryNameLabel" Text="Category Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
+
+            <!-- Confirmation message -->
+            <Label Text="Are you sure you want to delete this category?" HorizontalOptions="Center" FontSize="Medium" Margin="0,20" />
+
+            <!-- Buttons section -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
+
+                <!-- Cancel button -->
+                <Button Text="No" FontAttributes="Bold"
+                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnButtonNo_Clicked" />
+
+                <!-- Delete button -->
+                <Button Text="Yes" FontAttributes="Bold"
+                        BackgroundColor="Green" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnButtonYes_Clicked" />
+            </StackLayout>
+
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>

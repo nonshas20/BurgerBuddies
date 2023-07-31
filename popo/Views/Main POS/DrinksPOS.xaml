@@ -32,7 +32,7 @@
                                 <Label Grid.Column="0" Text="{Binding ProductName}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Delete" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
-                                        TextColor="White"/>
+                                        TextColor="White" Clicked="OnDeleteButton_Clicked"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
