@@ -6,10 +6,10 @@ using popo.Model;
 
 namespace popo
 {
-    public partial class BurgersPOS : ContentPage
+    public partial class BurgersPOS : ContentPage //EditPOS - Button List for Updating/Renaming Products
     {
         public ObservableCollection<Product> Products { get; set; } //Variable for product list
-        private int SelectedCategoryId;//Variable for the Selected Category from Main POS
+        private int SelectedCategoryId;//Variable for the Selected Category from EditPOS:  Renaming/Updating Products
 
         public BurgersPOS(int SelectedCategoryId)
         {
@@ -22,27 +22,7 @@ namespace popo
             this.BindingContext = this;
             this.SelectedCategoryId = SelectedCategoryId;
         }
-        /*
-        private async void ViewOrderButton_Clicked(object sender, EventArgs e)
-        {
-            List<OrderItem> orderItems = new List<OrderItem>();
-
-            foreach (Product product in Products)
-            {
-                if (product.Quantity > 0)
-                {
-                    OrderItem orderItem = new OrderItem
-                    {
-                        Item = product.ProductName,
-                        Price = (double)product.Price,
-                        Quantity = product.Quantity
-                    };
-                    orderItems.Add(orderItem);
-                }
-            }
-
-            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
-        } */
+       
         protected override async void OnAppearing()
         {
             try

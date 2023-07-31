@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DeleteItem : ContentPage
+    public partial class DeleteItem : ContentPage //Category List for Deleting Products (navigates to DrinksPOS)
     {
         public DeleteItem()
         {
@@ -25,13 +25,13 @@ namespace popo
             await Navigation.PushAsync(new ChooseItemInBurger());
         }
 
-        private async void BurgersButton_Clicked(object sender, EventArgs e)
+        private async void DrinksButton_Clicked(object sender, EventArgs e)
         {
             var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel;
             if (selectedCategory != null)
             {
                 int selectedCategoryId = selectedCategory.Category_Id;
-                await Navigation.PushAsync(new BurgersPOS(selectedCategoryId));
+                await Navigation.PushAsync(new DrinksPOS(selectedCategoryId));
             }
         }
 

@@ -6,7 +6,7 @@
              Title="Main POS"
              NavigationPage.HasNavigationBar="True">
 
-    <ContentPage.Content>
+    <ContentPage.Content><!--This is the Main POS -->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackLayout>
-                <Label Text="Add-Ons Inventory" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 20"/>
+                <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 20"/>
 
                 <ListView Grid.Row="0" ItemsSource="{Binding Products}" Margin="5,0,5,0" BackgroundColor="#FFFFFF">
                     <ListView.Header>

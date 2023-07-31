@@ -2,47 +2,53 @@
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using popo.Model;
 
 namespace popo
 {
-    public partial class DrinksPOS: ContentPage
+    public partial class DrinksPOS: ContentPage //EditPOS - Button List for Deleting Products
     {
-        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<Product> Products { get; set; } //Variable for product list
+        private int SelectedCategoryId;//Variable for the Selected Category from EditPOS: Deleting Products
 
-        public DrinksPOS()
+        public DrinksPOS(int SelectedCategoryId)
         {
             InitializeComponent();
 
             Products = new ObservableCollection<Product>
             {
-                new Product { ProductName = "HOTDOG B1T1", Price = 30.00M, Stocks = 50, Quantity = 0 },
-                new Product { ProductName = "HOTDOG W/ CHEESE B1T1", Price = 35.00M, Stocks = 30, Quantity = 0 },
-                new Product { ProductName = "HOTDOG COLESLAW W/ CHEESE B1T1", Price = 25.00M, Stocks = 40, Quantity = 0 },
-                new Product { ProductName = "CBC", Price = 45.00M, Stocks = 15, Quantity = 0 }
+                //Dito sasaluhin yung mga ibabato ni OnAppearing from ProductsDatabase
             };
-
-            BindingContext = this;
+            this.BindingContext = this;
+            this.SelectedCategoryId = SelectedCategoryId;
         }
 
-        private async void ViewOrderButton_Clicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
         {
-            List<OrderItem> orderItems = new List<OrderItem>();
-
-            foreach (Product product in Products)
+            try
             {
-                if (product.Quantity > 0)
+                base.OnAppearing();
+                List<ProductModel> productsList = await App.ProductsDatabase.ReadProducts();
+                foreach (var productModel in productsList)
                 {
-                    OrderItem orderItem = new OrderItem
+                    if (productModel.Category_Id == SelectedCategoryId)
                     {
-                        Item = product.ProductName,
-                        Price = (double)product.Price,
-                        Quantity = product.Quantity
-                    };
-                    orderItems.Add(orderItem);
+                        // Assuming there's a constructor or conversion method in the Product class to convert from ProductModel
+                        Products.Add(new Product
+                        {
+                            ProductName = productModel.Product_Name,
+                            Price = productModel.Product_Cost,
+                            Stocks = productModel.Product_Stock,
+                            Quantity = 0
+                        });
+                    }
                 }
             }
+            catch
+            {
 
-            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
+            }
         }
+
     }
 }

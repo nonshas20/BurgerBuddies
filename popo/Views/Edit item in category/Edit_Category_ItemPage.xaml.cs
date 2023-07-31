@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Edit_Category_ItemPage : ContentPage
+    public partial class Edit_Category_ItemPage : ContentPage //Category List for Updating/Renaming Products (navigates to BurgersPOS)
     {
         public Edit_Category_ItemPage()
         {

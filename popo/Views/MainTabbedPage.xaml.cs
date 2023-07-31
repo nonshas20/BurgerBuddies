@@ -95,10 +95,6 @@ namespace popo
             }
         }
         //TESTING
-        private async void DrinksButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new DrinksPOS());
-        }
 
         private async void SingleOrdersButton_Clicked(object sender, EventArgs e)
         {
