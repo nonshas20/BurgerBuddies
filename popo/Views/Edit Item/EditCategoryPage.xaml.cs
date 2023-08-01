@@ -9,14 +9,18 @@ using Xamarin.Forms.Xaml;
 
 namespace popo
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class EditCategoryPage : ContentPage
     {
+
         public EditCategoryPage()
         {
             InitializeComponent();
 
             CategoryCollectionView.BindingContext = this;
+
         }
             private async void RenameButton_Clicked(object sender, System.EventArgs e)
             {

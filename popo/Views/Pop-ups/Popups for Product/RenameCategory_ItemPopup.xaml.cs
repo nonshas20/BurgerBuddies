@@ -13,8 +13,10 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class RenameCategory_ItemPopup : PopupPage
     {
+
         public RenameCategory_ItemPopup(ProductModel selectedProduct)
         {
             InitializeComponent();

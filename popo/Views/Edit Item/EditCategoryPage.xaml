@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.EditCategoryPage"
              Title="Update Category"
-             BackgroundColor="White"
+             BackgroundColor="#fdf7fc"
              NavigationPage.HasNavigationBar="True">
              
     <StackLayout Margin="20">
@@ -22,7 +22,7 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="20">
+                        <Frame BackgroundColor="#1f2831" Padding="10" Margin="12" CornerRadius="10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -30,7 +30,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
-                                <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
+                                <Button Grid.Column="1" Text="Rename" BackgroundColor="#3b5772" WidthRequest="100" CornerRadius="10"
                                         TextColor="White" Clicked="RenameButton_Clicked"/>
                             </Grid>
                         </Frame>

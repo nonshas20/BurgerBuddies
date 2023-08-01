@@ -25,8 +25,13 @@ namespace popo
     public partial class MainTabbedPage : Xamarin.Forms.TabbedPage
 
     {
+        private List<OrderItem> orderItems = new List<OrderItem>(); //made this para mag navigae to ViewOrdersPage pag ni click shopping cart
         public ObservableCollection<Transaction> Transactions { get; set; }
-
+        private async void ShoppingCart_Tapped(object sender, EventArgs e)
+        {
+            // When the shopping cart image is tapped, navigate to the ViewOrdersPage.
+            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
+        }
         public MainTabbedPage()
         {
             InitializeComponent();

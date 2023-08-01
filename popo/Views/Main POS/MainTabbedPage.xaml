@@ -4,13 +4,15 @@
             xmlns:rgPlugins="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              x:Class="popo.MainTabbedPage"
              BarBackground="White"
-             BarTextColor="Black"
+             BarTextColor="#180f2c"
+            
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
 
     <TabbedPage.Children>
         
-        <ContentPage Title="Pos"  
+        <ContentPage Title="Pos" 
+                     
                      Icon="pos_icon.png">
             
             <ContentPage.Content>
@@ -46,7 +48,7 @@
                     <!--Container-->
                     <Grid Grid.Row="1" Padding="20" ColumnSpacing="10" RowSpacing="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="600"/>
+                            <RowDefinition Height="500"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="350"/>
@@ -75,6 +77,14 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
+                        <Frame BackgroundColor="White" Grid.Row="1" CornerRadius="15" Padding="10"
+       HorizontalOptions="End" VerticalOptions="End"
+       Margin="0,0,150,1" WidthRequest="30" HeightRequest="30">
+                            <Image Source="shoppingcart.png" Aspect="AspectFit" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ShoppingCart_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
                         <!-- TESTING -->
                     </Grid>
                     <!--Container-->
@@ -122,13 +132,14 @@
 
                         <Frame CornerRadius="10"
                    Padding="10"
-                   BackgroundColor="#F0F0F0"
+                   BackgroundColor="#fdf7fc"
                    HasShadow="True"
                    Margin="0,10,0,0">
                             <StackLayout>
                                 <Label Text="EDIT POS"
                            FontSize="20"
                            FontAttributes="Bold"
+                           TextColor="#ec1768"
                            HorizontalOptions="Center" />
 
                                 <StackLayout Orientation="Horizontal"
@@ -136,7 +147,7 @@
                                  Margin="0,10,0,0">
                                     <Button Text="Add"
                                 CornerRadius="10"
-                                BackgroundColor="#4CAF50"
+                                BackgroundColor="#757576"
                                 TextColor="White"
                                 FontAttributes="Bold"
                                 WidthRequest="100"
@@ -145,7 +156,7 @@
                                 Clicked="AddCategoryButton_Clicked"/>
                                     <Button Text="Update"
                                 CornerRadius="10"
-                                BackgroundColor="#2196F3"
+                                BackgroundColor="#ec1768"
                                 FontAttributes="Bold"
                                 TextColor="White"
                                 WidthRequest="100"
@@ -155,7 +166,7 @@
                                     <Button Text="Remove"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
-                                BackgroundColor="#F44336"
+                                BackgroundColor="#924040"
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
@@ -167,11 +178,12 @@
 
                         <Frame CornerRadius="10"
                    Padding="10"
-                   BackgroundColor="#F0F0F0"
+                   BackgroundColor="#fdf7fc"
                    Margin="0,20,0,0">
                             <StackLayout>
                                 <Label Text="EDIT MENU"
                            FontSize="20"
+                                       TextColor="#180f2c"
                            FontAttributes="Bold"
                            HorizontalOptions="Center" />
 
@@ -181,7 +193,7 @@
                                     <Button Text="Add"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
-                                BackgroundColor="#4CAF50"
+                                BackgroundColor="#757576"
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="100"
@@ -190,7 +202,7 @@
                                     <Button Text="Update"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
-                                BackgroundColor="#2196F3"
+                                BackgroundColor="#ec1768"
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
@@ -199,7 +211,7 @@
                                     <Button Text="Remove"
                                 CornerRadius="10"
                                 FontAttributes="Bold"
-                                BackgroundColor="#F44336"
+                                BackgroundColor="#924040"
                                 TextColor="White"
                                 WidthRequest="100"
                                 HeightRequest="40"
@@ -247,7 +259,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="HISTORY" FontSize="32" TextColor="White" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-
+                                
                             </Grid>
                         </StackLayout>
                     </Grid>
@@ -256,21 +268,19 @@
 
                     <!-- Header -->
                     <BoxView Grid.Row="0" HeightRequest="60"/>
+                    
 
                     <!-- Content -->
                     <ScrollView Grid.Row="1">
                         <StackLayout Margin="20">
-                            <Label Text="Transaction History"
-               FontSize="25"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               TextColor="#1976D2" />
+
 
                             <Frame CornerRadius="10"
                Padding="10"
                HeightRequest="550"
-               BackgroundColor="#F0F0F0"
+               BackgroundColor="#fdf7fc"
                Margin="0,10,0,0">
+                                
                                 <ListView x:Name="TransactionListView"
           ItemsSource="{Binding Transactions}"
           SeparatorVisibility="None"
@@ -292,9 +302,9 @@
                                                             <ColumnDefinition Width="Auto" />
                                                         </Grid.ColumnDefinitions>
 
-                                                        <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" TextColor="Black" />
-                                                        <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="Black" />
-                                                        <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" TextColor="Black" />
+                                                        <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" FontAttributes="Bold" TextColor="#252525" />
+                                                        <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="#252525" />
+                                                        <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
 
                                                         <!-- Three dots image button -->
                                                         <ImageButton Grid.Column="3"
@@ -304,12 +314,31 @@
                                       HeightRequest="30"
                                       WidthRequest="30"
                                       HorizontalOptions="End" />
+                                                        
                                                     </Grid>
                                                 </Frame>
+                                                
                                             </ViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
                                 </ListView>
+                            </Frame>
+                            <Frame Grid.Column="1"
+       CornerRadius="10"
+       Padding="0"
+       HasShadow="True"
+                                   Margin="0,10"
+       BackgroundColor="GhostWhite"
+       HorizontalOptions="Center"
+       VerticalOptions="CenterAndExpand">
+                                <Button Text="View Sales Report"
+            BackgroundColor="#ec1768"
+            TextColor="White"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Center"
+            FontSize="Default"
+            CornerRadius="10"
+            Clicked="ExitButton_Clicked" />
                             </Frame>
                         </StackLayout>
                     </ScrollView>

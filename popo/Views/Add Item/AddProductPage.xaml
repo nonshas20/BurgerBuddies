@@ -11,7 +11,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Category" FontAttributes="Bold" FontSize="Medium" TextColor="#1E90FF" />
+            <Label Text="Category" FontAttributes="Bold" FontSize="Medium" TextColor="#4E565F" />
             <Frame Grid.Column="1" BackgroundColor="#F6F6F6" CornerRadius="10" Padding="5">
                 <Entry x:Name="CategoryEntry" HorizontalTextAlignment="Center" FontAttributes="Bold" IsEnabled="False" />
             </Frame>
@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Item Name" FontSize="Medium" FontAttributes="Bold" TextColor="#1E90FF" />
+            <Label Text="Item Name" FontSize="Medium" FontAttributes="Bold" TextColor="#4E565F" />
             <Frame Grid.Column="1" BackgroundColor="#F6F6F6" CornerRadius="10" Padding="5">
                 <Entry x:Name="ItemNameEntry" Placeholder="Enter item name" />
             </Frame>
@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Price" FontSize="Medium" TextColor="#1E90FF" FontAttributes="Bold" />
+            <Label Text="Price" FontSize="Medium" TextColor="#4E565F" FontAttributes="Bold" />
             <Frame Grid.Column="1" BackgroundColor="#F6F6F6" CornerRadius="10" Padding="5">
                 <Entry x:Name="PriceEntry" Placeholder="Enter price" />
             </Frame>
@@ -53,7 +53,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Stocks" FontSize="Medium" TextColor="#1E90FF" FontAttributes="Bold" />
+            <Label Text="Stocks" FontSize="Medium" TextColor="#4E565F" FontAttributes="Bold" />
             <Frame Grid.Column="1" BackgroundColor="#F6F6F6" CornerRadius="10" Padding="5">
                 <Entry x:Name="StocksEntry" Placeholder="Enter stocks" />
             </Frame>
@@ -79,12 +79,12 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="CancelButton" Text="Cancel" FontAttributes="Bold" 
-            BackgroundColor="Red" TextColor="White" FontSize="Medium" BorderRadius="10"
-            HeightRequest="60" WidthRequest="160" Margin="0,0,5,0" Grid.Column="1" Clicked="CancelButton_Clicked"/>
+            BackgroundColor="#924040" TextColor="White" FontSize="Medium" BorderRadius="10"
+            HeightRequest="70" WidthRequest="150" Margin="0,0,5,0" Grid.Column="1" Clicked="CancelButton_Clicked"/>
 
             <Button x:Name="SaveButton" Text="Add" FontAttributes="Bold" 
-            BackgroundColor="#1E90FF" TextColor="White" FontSize="Medium" BorderRadius="10"
-            HeightRequest="60" WidthRequest="160" Margin="5,0,17,0" Grid.Column="2" Clicked="SaveButton_Clicked" />
+            BackgroundColor="#ec1768" TextColor="White" FontSize="Medium" BorderRadius="10"
+            HeightRequest="70" WidthRequest="150" Margin="5,0,17,0" Grid.Column="2" Clicked="SaveButton_Clicked" />
         </Grid>
 
     </StackLayout>

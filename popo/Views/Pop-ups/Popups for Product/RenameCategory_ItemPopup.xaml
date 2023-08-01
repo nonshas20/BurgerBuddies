@@ -4,28 +4,48 @@
                  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                  x:Class="popo.RenameCategory_ItemPopup">
     <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="False">
-        <StackLayout>
-            <Label x:Name="CurrentNameLabel" Text="Current Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
-            <Label x:Name="CurrentStockLabel" Text="Current Stock" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
-            <Label x:Name="CurrentPriceLabel" Text="Current Price" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
-            <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
+        <Grid>
+            <!-- Grid Rows -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Grid Columns -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Labels and Entry Fields -->
+            <Label x:Name="CurrentNameLabel" Text="Current Name" TextColor="#122944" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" />
+            <Frame Grid.Column="1" Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
                 <Entry x:Name="NewNameEntry" Placeholder="Enter new name" BackgroundColor="Transparent" />
             </Frame>
-            <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
+
+            <Label x:Name="CurrentStockLabel" Text="Current Stock" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" TextColor="#122944" Grid.Row="1" />
+            <Frame Grid.Column="1" Grid.Row="1" Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
                 <Entry x:Name="NewStockEntry" Placeholder="Enter new stock count" BackgroundColor="Transparent" />
             </Frame>
-            <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
+
+            <Label x:Name="CurrentPriceLabel" Text="Current Price" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" TextColor="#122944" Grid.Row="2" />
+            <Frame Grid.Column="1" Grid.Row="2" Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="True">
                 <Entry x:Name="NewPriceEntry" Placeholder="Enter new price" BackgroundColor="Transparent" />
             </Frame>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
+
+            <!-- Button StackLayout -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="3" Grid.Column="1" Margin="0,30,0,0">
                 <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
-                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnButtonCancel_Clicked" />
-                <Button Text="Save" FontAttributes="Bold"
-                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" BorderRadius="20"
-                        HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnButtonSave_Clicked" />
-                
+                        BackgroundColor="#924040" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Clicked="OnButtonCancel_Clicked" />
+                <Button Text="Update" FontAttributes="Bold"
+                        BackgroundColor="#ec1768" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        HeightRequest="50" WidthRequest="100" Clicked="OnButtonSave_Clicked" />
             </StackLayout>
-        </StackLayout>
+        </Grid>
     </Frame>
 </popup:PopupPage>

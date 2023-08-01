@@ -22,7 +22,7 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="20">
+                        <Frame BackgroundColor="#66a3ff" Padding="10" Margin="12" CornerRadius="10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -30,7 +30,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Product_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
-                                <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
+                                <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="10"
                                         TextColor="White" Clicked="RenameButton_Clicked"/>
                             </Grid>
                         </Frame>

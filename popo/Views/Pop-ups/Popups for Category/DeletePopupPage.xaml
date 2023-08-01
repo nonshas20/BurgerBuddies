@@ -12,7 +12,7 @@
             <Label x:Name="CategoryNameLabel" Text="Category Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
 
             <!-- Confirmation message -->
-            <Label Text="Are you sure you want to delete this category?" HorizontalOptions="Center" FontSize="Medium" Margin="0,20" />
+            <Label Text="Are you sure you want to delete this category?" HorizontalOptions="Center" TextColor="#2d3048" FontSize="Medium" Margin="0,20" />
 
             <!-- Buttons section -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
@@ -23,8 +23,8 @@
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCancelClicked" />
 
                 <!-- Delete button -->
-                <Button Text="Yes" FontAttributes="Bold"
-                        BackgroundColor="Green" TextColor="White" FontSize="Medium" BorderRadius="20"
+                <Button Text="Yes" FontAttributes="Bold" 
+                        BackgroundColor="LightGreen" TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnDeleteClicked" />
             </StackLayout>
 

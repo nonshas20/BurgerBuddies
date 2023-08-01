@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization; // Add this namespace
+
 using Xamarin.Forms;
 
 namespace popo
