@@ -64,13 +64,14 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid Padding="10">
+                                    <Grid Padding="7">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
+                                            
                                         </Grid.ColumnDefinitions>
-                                        <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
-                                                BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
+                                        <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
+                                                BackgroundColor="#ec1768" TextColor="White" BorderColor="#924040"
                                                 CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="AddOnsButton_Clicked"
                                                 CommandParameter="{Binding .}"/>
                                     </Grid>
