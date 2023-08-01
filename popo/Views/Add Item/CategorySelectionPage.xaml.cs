@@ -12,9 +12,9 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddItemPage : ContentPage
+    public partial class CategorySelectionPage : ContentPage
     {
-        public AddItemPage()
+        public CategorySelectionPage()
         {
             InitializeComponent();
 
@@ -42,7 +42,7 @@ namespace popo
 
                 if (category != null)
                 {
-                    await Navigation.PushAsync(new AddItemsCategoryPage(category));
+                    await Navigation.PushAsync(new AddProductPage(category));
                 }
             }
         }

@@ -11,27 +11,24 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DeleteItem : ContentPage //Category List for Deleting Products (navigates to DrinksPOS)
+    public partial class EditCategorySelectionPage : ContentPage //Category List for Updating/Renaming Products (navigates to BurgersPOS)
     {
-        public DeleteItem()
+        public EditCategorySelectionPage()
         {
             InitializeComponent();
 
             CategoryCollectionView.BindingContext = this;
         }
 
-        private async void EditItemBurger_Clicked(object sender, EventArgs e)
+        private async void EditButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ChooseItemInBurger());
-        }
-
-        private async void DrinksButton_Clicked(object sender, EventArgs e)
-        {
-            var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel;
-            if (selectedCategory != null)
+            if (sender is Button button)
             {
-                int selectedCategoryId = selectedCategory.Category_Id;
-                await Navigation.PushAsync(new DrinksPOS(selectedCategoryId));
+                CategoryModel selectedCategory = button.BindingContext as CategoryModel;
+                if (selectedCategory != null)
+                {
+                    await Navigation.PushAsync(new EditProductPage(selectedCategory));
+                }
             }
         }
 

@@ -15,7 +15,7 @@ namespace popo.Model
         public string Order_Mode { get; set; }
         [Unique]
         public string Order_Status { get; set; }
-        public DateTime Order_Date { get; set; }
+        public string Order_Date { get; set; }
         public int Order_Total { get; set; }
     }
 }

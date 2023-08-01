@@ -1,7 +1,7 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="popo.AddItemsCategoryPage"
-             Title="Add Item"
+             x:Class="popo.AddProductPage"
+             Title="Add Product"
              BackgroundColor="White">
     <StackLayout Margin="20">
         <!-- Category -->
@@ -13,7 +13,7 @@
 
             <Label Text="Category" FontAttributes="Bold" FontSize="Medium" TextColor="#1E90FF" />
             <Frame Grid.Column="1" BackgroundColor="#F6F6F6" CornerRadius="10" Padding="5">
-                <Entry x:Name="CategoryEntry" Placeholder="Burgers" HorizontalTextAlignment="Center" FontAttributes="Bold" IsEnabled="False" />
+                <Entry x:Name="CategoryEntry" HorizontalTextAlignment="Center" FontAttributes="Bold" IsEnabled="False" />
             </Frame>
         </Grid>
 

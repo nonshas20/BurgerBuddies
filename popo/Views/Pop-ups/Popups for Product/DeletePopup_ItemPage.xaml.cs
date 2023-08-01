@@ -11,12 +11,14 @@ namespace popo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DeletePopup_ItemPage : PopupPage
     {
-        public DeletePopup_ItemPage(string currentName = null)
+        public DeletePopup_ItemPage(ProductModel selectedProduct)
         {
             InitializeComponent();
-            //CategoryNameLabel.Text = selectedCategory.Category_Name;
+            this.selectedProduct = selectedProduct;
+            CategoryNameLabel.Text = selectedProduct.Product_Name;
         }
-        //private CategoryModel selectedCategory;
+
+        private ProductModel selectedProduct;
         private async void OnButtonNo_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync();
@@ -24,11 +26,9 @@ namespace popo
 
         private async void OnButtonYes_Clicked(object sender, EventArgs e)
         {
-            /*
-            await App.CategoryDatabase.DeleteCategory(selectedCategory);
-            await DisplayAlert("Success", "Deleted Category", "OK");
+            await App.ProductsDatabase.DeleteProducts(selectedProduct);
+            await DisplayAlert("Success", "Deleted Product", "OK");
             await PopupNavigation.Instance.PopAsync();
-            **/
         }
     }
 }

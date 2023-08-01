@@ -6,8 +6,16 @@
     <Frame VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White" WidthRequest="300" CornerRadius="10" HasShadow="False">
         <StackLayout>
             <Label x:Name="CurrentNameLabel" Text="Current Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
+            <Label x:Name="CurrentStockLabel" Text="Current Stock" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
+            <Label x:Name="CurrentPriceLabel" Text="Current Price" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
             <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
                 <Entry x:Name="NewNameEntry" Placeholder="Enter new name" BackgroundColor="Transparent" />
+            </Frame>
+            <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
+                <Entry x:Name="NewStockEntry" Placeholder="Enter new stock count" BackgroundColor="Transparent" />
+            </Frame>
+            <Frame Padding="0" CornerRadius="5" BackgroundColor="#F0F0F0" HasShadow="False">
+                <Entry x:Name="NewPriceEntry" Placeholder="Enter new price" BackgroundColor="Transparent" />
             </Frame>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
                 <Button Text="Cancel" FontAttributes="Bold"

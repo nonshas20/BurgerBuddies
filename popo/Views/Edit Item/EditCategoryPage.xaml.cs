@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UpdateCategoryPage : ContentPage
+    public partial class EditCategoryPage : ContentPage
     {
-        public UpdateCategoryPage()
+        public EditCategoryPage()
         {
             InitializeComponent();
 
@@ -29,20 +29,6 @@ namespace popo
                     }
                 }
             }
-        /*
-        private async void OnCategoryButtonClicked(object sender, EventArgs e) //Event Handler pag nagclick ng category buttons
-        {
-            if (sender is Button button)
-            {
-                CategoryModel category = button.BindingContext as CategoryModel;
-
-                if (category != null)
-                {
-                    await Navigation.PushAsync(new AddItemsCategoryPage(category));
-                }
-            }
-        }
-         */
 
         protected override async void OnAppearing()
         {

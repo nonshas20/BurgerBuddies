@@ -32,28 +32,43 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Add item to category\AddItemsCategoryPage.xaml.cs">
-      <DependentUpon>AddItemsCategoryPage.xaml</DependentUpon>
+    <Compile Update="Views\Add Item\CategorySelectionPage.xaml.cs">
+      <DependentUpon>CategorySelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Add Item\AddCategoryPage.xaml.cs">
+      <DependentUpon>AddCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Add Item\AddProductPage.xaml.cs">
+      <DependentUpon>AddProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Delete item in category\DeleteItem.xaml.cs">
-      <DependentUpon>DeleteItem.xaml</DependentUpon>
+    <Compile Update="Views\Delete item\DeleteCategorySelectionPage.xaml.cs">
+      <DependentUpon>DeleteCategorySelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Main POS\BurgersPOS.xaml.cs">
-      <DependentUpon>BurgersPOS.xaml</DependentUpon>
+    <Compile Update="Views\Delete item\DeleteProductPage.xaml.cs">
+      <DependentUpon>DeleteProductPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Main POS\MealsPOS.xaml.cs">
+    <Compile Update="Views\Edit Item\EditCategorySelectionPage.xaml.cs">
+      <DependentUpon>EditCategorySelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Edit Item\EditCategoryPage.xaml.cs">
+      <DependentUpon>EditCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Edit Item\EditProductPage.xaml.cs">
+      <DependentUpon>EditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Unused Pages for deletion\MealsPOS.xaml.cs">
       <DependentUpon>MealsPOS.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
       <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Pop-ups\Popups for update and delete item\DeletePopup_ItemPage.xaml.cs">
+    <Compile Update="Views\Pop-ups\Popups for Product\DeletePopup_ItemPage.xaml.cs">
       <DependentUpon>DeletePopup_ItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Pop-ups\Popups for update and delete item\RenameCategory_ItemPopup.xaml.cs">
+    <Compile Update="Views\Pop-ups\Popups for Product\RenameCategory_ItemPopup.xaml.cs">
       <DependentUpon>RenameCategory_ItemPopup.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pop-ups\ThreeDotPage.xaml.cs">
@@ -107,10 +122,10 @@
     <EmbeddedResource Update="ViewOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Edit item in category\ChooseItemInBurger.xaml">
+    <EmbeddedResource Update="Unused Pages for deletion\ChooseItemInBurger.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Edit item in category\Edit_Category_ItemPage.xaml">
+    <EmbeddedResource Update="Views\Edit Item\EditCategorySelectionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Main POS\AddOnsPOS.xaml">
@@ -122,16 +137,16 @@
     <EmbeddedResource Update="Views\Main POS\CompletedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Main POS\DrinksPOS.xaml">
+    <EmbeddedResource Update="Views\Delete item\DeleteProductPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Main POS\SandwichesPOS.xaml">
+    <EmbeddedResource Update="Unused Pages for deletion\SandwichesPOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Main POS\SingleOrderPOS.xaml">
+    <EmbeddedResource Update="Unused Pages for deletion\SingleOrderPOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Main POS\SnacksPOS.xaml">
+    <EmbeddedResource Update="Unused Pages for deletion\SnacksPOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pop-ups\AddUserPagePopUp.xaml">
@@ -140,7 +155,7 @@
     <EmbeddedResource Update="Views\AddUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ItemFieldsControl.xaml">
+    <EmbeddedResource Update="Unused Pages for deletion\ItemFieldsControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

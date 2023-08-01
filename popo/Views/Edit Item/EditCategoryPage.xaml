@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="popo.BurgersPOS"
-             Padding="10"
-             Title="Main POS"
+             x:Class="popo.EditCategoryPage"
+             Title="Update Category"
+             BackgroundColor="White"
              NavigationPage.HasNavigationBar="True">
-
-    <ContentPage.Content> <!-- This is the EditPOS: Renaming/Updating Products-->
+             
+    <StackLayout Margin="20">
+        <!-- Parent Grid to organize the layout -->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -16,7 +16,7 @@
 
             <CollectionView x:Name="CategoryCollectionView"
                             SelectionMode="Single"
-                            ItemsSource="{Binding Products}">
+                            ItemsSource="{Binding Category_Id}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
@@ -28,7 +28,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding ProductName}" FontSize="Medium" FontAttributes="Bold" 
+                                <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
                                         TextColor="White" Clicked="RenameButton_Clicked"/>
@@ -37,6 +37,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <!-- Buttons in the second row -->
+
         </Grid>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

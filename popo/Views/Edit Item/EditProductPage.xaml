@@ -1,12 +1,12 @@
-﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="popo.UpdateCategoryPage"
-             Title="Update Category"
-             BackgroundColor="White"
+             x:Class="popo.EditProductPage"
+             Padding="10"
+             Title="Edit Product"
              NavigationPage.HasNavigationBar="True">
-             
-    <StackLayout Margin="20">
-        <!-- Parent Grid to organize the layout -->
+
+    <ContentPage.Content> <!-- This is the EditPOS: Renaming/Updating Products-->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -14,9 +14,9 @@
                 <!-- This row will hold the buttons -->
             </Grid.RowDefinitions>
 
-            <CollectionView x:Name="CategoryCollectionView"
+            <CollectionView x:Name="ProductCollectionView"
                             SelectionMode="Single"
-                            ItemsSource="{Binding Category_Id}">
+                            ItemsSource="{Binding Product_Name}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
@@ -28,7 +28,7 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
+                                <Label Grid.Column="0" Text="{Binding Product_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Rename" BackgroundColor="#523ffc" WidthRequest="100" CornerRadius="20"
                                         TextColor="White" Clicked="RenameButton_Clicked"/>
@@ -37,9 +37,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
-            <!-- Buttons in the second row -->
-
         </Grid>
-    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

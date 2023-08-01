@@ -9,7 +9,6 @@ namespace popo.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Category_Id { get; set; }
-        [Unique]
         public string Category_Name { get; set; }
     }
 }

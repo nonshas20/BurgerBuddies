@@ -65,7 +65,7 @@ namespace popo
         {
             CategoryModel createdCategory = await App.CategoryDatabase.CreateCategory(new CategoryModel
             {
-                Category_Name = CategoryEntry.Text,
+                Category_Name = CategoryEntry.Text
             });
             if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
             {
@@ -76,7 +76,6 @@ namespace popo
                     Product_Cost = productCost,
                     Product_Stock = productStock
                 });
-
                 await DisplayAlert("Success", "Category and Product Added!", "OK");
                 await Navigation.PopAsync();
             }

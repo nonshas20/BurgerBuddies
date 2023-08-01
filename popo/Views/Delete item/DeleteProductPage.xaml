@@ -1,43 +1,43 @@
-﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="popo.DeleteCategoryPage"
-             Title="Delete Category"
-             BackgroundColor="#F5F5F5"
+             x:Class="popo.DeleteProductPage"
+             Padding="10"
+             Title="Delete Product"
              NavigationPage.HasNavigationBar="True">
-    <StackLayout Margin="20">
-        <StackLayout VerticalOptions="StartAndExpand">
-            <!--Container-->
-            <CollectionView x:Name="CategoryCollectionView"
+
+    <ContentPage.Content>
+        <!-- This is the EditPOS: Deleting Products-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <!-- This row will hold the buttons -->
+            </Grid.RowDefinitions>
+
+            <CollectionView x:Name="ProductCollectionView"
                             SelectionMode="Single"
-                            
-                            ItemsSource="{Binding Category_Name}">
-                <!-- Use custom GridItemsLayout with vertical spacing -->
+                            ItemsSource="{Binding Product_Name}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <!-- Adjust CornerRadius for a more circular look -->
                         <Frame BackgroundColor="#FDA085" Padding="10" Margin="12" CornerRadius="20">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
+                                <Label Grid.Column="0" Text="{Binding Product_Name}" FontSize="Medium" FontAttributes="Bold" 
                                        TextColor="White"/>
                                 <Button Grid.Column="1" Text="Delete" BackgroundColor="#fa6934" WidthRequest="100" CornerRadius="20"
-                                        TextColor="White" Clicked="DeleteButton_Clicked"/>
+                                        TextColor="White" Clicked="OnDeleteButton_Clicked"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--Container-->
-        </StackLayout>
-
-        <StackLayout VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="0,10,0,0">
-            
-        </StackLayout>
-    </StackLayout>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

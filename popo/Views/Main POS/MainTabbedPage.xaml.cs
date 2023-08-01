@@ -77,11 +77,11 @@ namespace popo
 
         private async void EditCategoryItemButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Edit_Category_ItemPage());
+            await Navigation.PushAsync(new EditCategorySelectionPage());
         }
         private async void RemoveCategoryItemButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new DeleteItem());
+            await Navigation.PushAsync(new DeleteCategorySelectionPage());
         }
         
         //TESTING
@@ -103,10 +103,11 @@ namespace popo
 
 
 
-        private void ExitButton_Clicked(object sender, EventArgs e)
+        private async void ExitButton_Clicked(object sender, EventArgs e)
         {
             // Navigate back to the LoginPage
-            Navigation.PopToRootAsync();
+            //await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new LoginPage());
         }
         private async void HistoryButton_Clicked(object sender, EventArgs e)
         {
@@ -122,7 +123,7 @@ namespace popo
         }
         private async void UpdateCategoryButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new UpdateCategoryPage());
+            await Navigation.PushAsync(new EditCategoryPage());
         }
         
         private async void DeleteCategoryButton_Clicked(object sender, EventArgs e)
@@ -132,7 +133,7 @@ namespace popo
         
         private async void AddItemButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddItemPage());
+            await Navigation.PushAsync(new CategorySelectionPage());
         }
 
         protected override async void OnAppearing()
