@@ -12,7 +12,6 @@
     <TabbedPage.Children>
         
         <ContentPage Title="Pos" 
-                     
                      Icon="pos_icon.png">
             
             <ContentPage.Content>
@@ -72,8 +71,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
                                                 BackgroundColor="#ec1768" TextColor="White" BorderColor="#924040"
-                                                CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="AddOnsButton_Clicked"
-                                                CommandParameter="{Binding .}"/>
+                                                CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="AddOnsButton_Clicked"/>
                                     </Grid>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

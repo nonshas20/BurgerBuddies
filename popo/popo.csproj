@@ -59,9 +59,6 @@
     <Compile Update="Views\Edit Item\EditProductPage.xaml.cs">
       <DependentUpon>EditProductPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Unused Pages for deletion\MealsPOS.xaml.cs">
-      <DependentUpon>MealsPOS.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
       <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
     </Compile>
@@ -122,9 +119,6 @@
     <EmbeddedResource Update="ViewOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Unused Pages for deletion\ChooseItemInBurger.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Edit Item\EditCategorySelectionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -140,23 +134,15 @@
     <EmbeddedResource Update="Views\Delete item\DeleteProductPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Unused Pages for deletion\SandwichesPOS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Unused Pages for deletion\SingleOrderPOS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Unused Pages for deletion\SnacksPOS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Pop-ups\AddUserPagePopUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AddUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Unused Pages for deletion\ItemFieldsControl.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Unused Pages for deletion\" />
   </ItemGroup>
 </Project>

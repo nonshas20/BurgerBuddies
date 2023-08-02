@@ -1,4 +1,5 @@
 ﻿using popo.Model;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,24 +10,19 @@ namespace popo
 {
     public partial class AddOnsPOS : ContentPage //MainPOS
     {
-        public ObservableCollection<Product> Products { get; set; } //Variable for product list
-        private int SelectedCategoryId;//Variable for the Selected Category from Main POS
-
-        public AddOnsPOS(int SelectedCategoryId)
+        private int qty = 0;
+        public AddOnsPOS(CategoryModel selectedCategory)
         {
             InitializeComponent();
-
-            Products = new ObservableCollection<Product>
-            {
-                //Dito sasaluhin yung mga ibabato ni OnAppearing from ProductsDatabase
-            };
-            this.BindingContext = this;
-            this.SelectedCategoryId = SelectedCategoryId;
+            this.selectedCategory = selectedCategory;
+            ProductListView.BindingContext = this;
         }
+
+        private CategoryModel selectedCategory;
 
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
         {
-            List<OrderItem> orderItems = new List<OrderItem>();
+            /*List<OrderItem> orderItems = new List<OrderItem>();
 
             foreach (Product product in Products)
             {
@@ -42,7 +38,40 @@ namespace popo
                 }
             }
 
-            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
+            await Navigation.PushAsync(new ViewOrdersPage(orderItems));*/
+            if (sender is Button button)
+            {
+                ProductModel product = button.BindingContext as ProductModel;
+                if (product != null)
+                {
+                    //await PopupNavigation.Instance.PushAsync(new DeletePopup_ItemPage(product));
+                    await Navigation.PushAsync(new ViewOrdersPage());
+                }
+            }
+        }
+
+        private void SubQty(object sender, EventArgs e)
+        {
+            /*if (qty > 0)
+            {
+                Label quantityLabel = (Label)FindByName("QuantityLabel");
+                qty--;
+                quantityLabel.Text = qty.ToString();
+                
+            }
+            else if(qty <= 0)
+            {
+                Label quantityLabel = (Label)FindByName("QuantityLabel");
+                qty = 0;
+                quantityLabel.Text = qty.ToString();
+            }*/
+        }
+        private void AddQty(object sender, EventArgs e)
+        {
+            /*Label quantityLabel = (Label)FindByName("QuantityLabel");
+            qty++;
+            quantityLabel.Text = qty.ToString();*/
+        
         }
 
         protected override async void OnAppearing()
@@ -50,48 +79,11 @@ namespace popo
             try
             {
                 base.OnAppearing();
-                Products.Clear();
-                //Call all categories and products in database
-                List<CategoryModel> categoryList = await App.CategoryDatabase.ReadCategory();
-                List<ProductModel> productsList = await App.ProductsDatabase.ReadProducts();
-
-                string selectedCategoryName = string.Empty;
-
-                foreach (var categoryModel in categoryList)
-                {
-                    if (categoryModel.Category_Id == SelectedCategoryId)
-                    {
-                        selectedCategoryName = categoryModel.Category_Name; // Get the selected category name
-                        break; // No need to continue the loop once the selected category is found
-                    }
-                }
-
-                foreach (var categoryModel in categoryList)
-                {
-                    if (categoryModel.Category_Id == SelectedCategoryId)
-                    {
-                        foreach (var productModel in productsList)
-                        {
-                            if (productModel.Category_Id == SelectedCategoryId)
-                            {
-                                // Assuming there's a constructor or conversion method in the Product class to convert from ProductModel
-                                Products.Add(new Product
-                                {
-                                    ProductName = productModel.Product_Name,
-                                    Price = productModel.Product_Cost,
-                                    Stocks = productModel.Product_Stock,
-                                    Quantity = 0
-                                });
-                            }
-                        }
-                    }
-                }
-
-                this.Title = selectedCategoryName;
+                ProductListView.ItemsSource = await App.ProductsDatabase.FilterProducts(this.selectedCategory);
             }
             catch
             {
-
+                
             }
         }
     }

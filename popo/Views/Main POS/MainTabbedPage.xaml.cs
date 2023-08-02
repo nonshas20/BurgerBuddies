@@ -25,34 +25,34 @@ namespace popo
     public partial class MainTabbedPage : Xamarin.Forms.TabbedPage
 
     {
-        private List<OrderItem> orderItems = new List<OrderItem>(); //made this para mag navigae to ViewOrdersPage pag ni click shopping cart
-        public ObservableCollection<Transaction> Transactions { get; set; }
+        //private List<OrderItem> orderItems = new List<OrderItem>(); //made this para mag navigae to ViewOrdersPage pag ni click shopping cart
+        //public ObservableCollection<Transaction> Transactions { get; set; }
         private async void ShoppingCart_Tapped(object sender, EventArgs e)
         {
             // When the shopping cart image is tapped, navigate to the ViewOrdersPage.
-            await Navigation.PushAsync(new ViewOrdersPage(orderItems));
+            await Navigation.PushAsync(new ViewOrdersPage());
         }
         public MainTabbedPage()
         {
             InitializeComponent();
-            InitializeData();
-            this.BindingContext = this;
+            //InitializeData();
+            //this.BindingContext = this;
 
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             CategoryCollectionView.BindingContext = this;
         }
-        private void InitializeData()
+        /*private void InitializeData()
         {
             // Sample data for transactions (you can replace this with your actual data)
             Transactions = new ObservableCollection<Transaction>
-        {
-            new Transaction { Date = DateTime.Now, TotalPrice = 0.00m},
-            new Transaction { Date = DateTime.Now.AddDays(-1), TotalPrice = 0.00m},
-            new Transaction { Date = DateTime.Now.AddDays(-2), TotalPrice = 0.00m},
-            // Add more transactions here...
-        };
-        }
+            {
+                new Transaction { Date = DateTime.Now, TotalPrice = 0.00m},
+                new Transaction { Date = DateTime.Now.AddDays(-1), TotalPrice = 0.00m},
+                new Transaction { Date = DateTime.Now.AddDays(-2), TotalPrice = 0.00m},
+                // Add more transactions here...
+            };
+        }*/
 
 
 
@@ -60,20 +60,6 @@ namespace popo
         {
             await Navigation.PushAsync(new BurgersPOS());
         }*/
-        private async void MealsButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MealsPOS());
-        }
-        
-        private async void SandwichesButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SandwichesPOS());
-        }
-        
-        private async void SnacksButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SnacksPOS());
-        }
 
         private async void OnThreeDotsClicked(object sender, EventArgs e)
         {
@@ -90,7 +76,7 @@ namespace popo
         }
         
         //TESTING
-        private async void AddOnsButton_Clicked(object sender, EventArgs e)
+        /*private async void AddOnsButton_Clicked(object sender, EventArgs e)
         {
             var selectedCategory = ((Xamarin.Forms.Button)sender).CommandParameter as CategoryModel;
             if (selectedCategory != null)
@@ -98,13 +84,21 @@ namespace popo
                 int selectedCategoryId = selectedCategory.Category_Id;
                 await Navigation.PushAsync(new AddOnsPOS(selectedCategoryId));
             }
+
+        }*/
+
+        private async void AddOnsButton_Clicked(object sender, EventArgs e)
+        {
+            if (sender is Xamarin.Forms.Button button)
+            {
+                CategoryModel category = button.BindingContext as CategoryModel;
+                if (category != null)
+                {
+                    await Navigation.PushAsync(new AddOnsPOS(category));
+                }
+            }
         }
         //TESTING
-
-        private async void SingleOrdersButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SingleOrderPOS());
-        }
 
 
 
@@ -114,14 +108,7 @@ namespace popo
             //await Navigation.PopToRootAsync();
             await Navigation.PushAsync(new LoginPage());
         }
-        private async void HistoryButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new HistoryPage());
-        }
-        private async void InventoryButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new InventoryPage());
-        }
+
         private async void AddCategoryButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddCategoryPage());

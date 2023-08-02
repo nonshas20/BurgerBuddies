@@ -16,7 +16,7 @@
             <StackLayout>
                 <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 20"/>
 
-                <ListView Grid.Row="0" ItemsSource="{Binding Products}" Margin="5,0,5,0" BackgroundColor="#FFFFFF">
+                <ListView x:Name="ProductListView" Grid.Row="0" ItemsSource="{Binding Product_Name}" Margin="5,0,5,0" BackgroundColor="#FFFFFF">
                     <ListView.Header>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -49,14 +49,16 @@
                                             <ColumnDefinition Width="3*" />
                                             <ColumnDefinition Width="AUTO" />
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Text="{Binding ProductName}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
-                                        <Label Grid.Column="1" Text="{Binding Price}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
-                                        <Label Grid.Column="2" Text="{Binding Stocks}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
+                                        <Label Grid.Column="0" Text="{Binding Product_Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
+                                        <Label Grid.Column="1" Text="{Binding Product_Cost}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
+                                        <Label Grid.Column="2" Text="{Binding Product_Stock}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="14"/>
 
                                         <StackLayout Grid.Column="3" Orientation="Horizontal" Spacing="5" VerticalOptions="Center">
-                                            <Button Text="-" CommandParameter="{Binding .}" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="30" BackgroundColor="Red" />
-                                            <Entry Text="{Binding Quantity}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                            <Button Text="+" CommandParameter="{Binding .}" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="30" BackgroundColor="Blue" CornerRadius="5"/>
+                                            <Button Text="-" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="30" 
+                                                    BackgroundColor="Red" Clicked="SubQty"/>
+                                            <Label Text="0" x:Name="QuantityLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                            <Button Text="+" TextColor="White" FontSize="14" WidthRequest="30" HeightRequest="30"
+                                                    BackgroundColor="Blue" CornerRadius="5" Clicked="AddQty"/>
                                         </StackLayout>
                                     </Grid>
                                 </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using popo.Model;
+using System;
 using System.Collections.Generic;
 using System.Globalization; // Add this namespace
 
@@ -8,23 +9,9 @@ namespace popo
 {
     public partial class ViewOrdersPage : ContentPage
     {
-        public ViewOrdersPage(List<OrderItem> orderItems)
+        public ViewOrdersPage()
         {
             InitializeComponent();
-
-            // Set the ItemsSource of the OrderListView to the list of order items
-            OrderListView.ItemsSource = orderItems;
-
-            // Calculate and set the Grand Total
-            double grandTotal = 0;
-            foreach (var item in orderItems)
-            {
-                grandTotal += item.Subtotal;
-            }
-            GrandTotalLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
-
-            // Set the current date
-            DateLabel.Text = DateTime.Now.ToString("MMMM dd, yyyy");
         }
 
         private async void OnAddItems_Clicked(object sender, EventArgs e)
