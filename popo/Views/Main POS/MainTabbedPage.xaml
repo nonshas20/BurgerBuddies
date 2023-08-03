@@ -81,7 +81,8 @@
        Margin="0,0,150,1" WidthRequest="30" HeightRequest="30">
                             <Image Source="shoppingcart.png" Aspect="AspectFit" />
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ShoppingCart_Tapped"/>
+                                <TapGestureRecognizer/>
+                                <!--Tapped="ShoppingCart_Tapped"-->
                             </Frame.GestureRecognizers>
                         </Frame>
                         <!-- TESTING -->

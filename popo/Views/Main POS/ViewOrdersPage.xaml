@@ -32,7 +32,7 @@
                 <Label Grid.Row="0" Grid.Column="3" Text="Subtotal" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="End"/>
 
                 <!-- Order Items List -->
-                <ListView x:Name="OrderListView" Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding OrderItems}" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView x:Name="OrderListView" Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding OrderItem}" HasUnevenRows="True" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -50,9 +50,9 @@
                                     <Label Grid.Column="1" Text="{Binding Price}" FontSize="Medium" HorizontalTextAlignment="End"/>
                                     <!-- Quantity Controls -->
                                     <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                                        <Button Text="-" FontSize="Medium" BackgroundColor="Red" TextColor="White" WidthRequest="30" HeightRequest="30" BorderRadius="10" Command="{Binding Path=BindingContext.DecrementQuantityCommand, Source={x:Reference Name=OrderListView}}" CommandParameter="{Binding .}"/>
+                                        <!--<Button Text="-" FontSize="Medium" BackgroundColor="Red" TextColor="White" WidthRequest="30" HeightRequest="30" BorderRadius="10" Command="{Binding Path=BindingContext.DecrementQuantityCommand, Source={x:Reference Name=OrderListView}}" CommandParameter="{Binding .}"/>-->
                                         <Label Text="{Binding Quantity}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10,0"/>
-                                        <Button Text="+" FontSize="Medium" BackgroundColor="Blue" TextColor="White" WidthRequest="30" HeightRequest="30" BorderRadius="10" Command="{Binding Path=BindingContext.IncrementQuantityCommand, Source={x:Reference Name=OrderListView}}" CommandParameter="{Binding .}"/>
+                                        <!--<Button Text="+" FontSize="Medium" BackgroundColor="Blue" TextColor="White" WidthRequest="30" HeightRequest="30" BorderRadius="10" Command="{Binding Path=BindingContext.IncrementQuantityCommand, Source={x:Reference Name=OrderListView}}" CommandParameter="{Binding .}"/>-->
                                     </StackLayout>
                                     <!-- Item Subtotal -->
                                     <Label Grid.Column="3" Text="{Binding Subtotal}" FontSize="Medium" HorizontalTextAlignment="End"/>

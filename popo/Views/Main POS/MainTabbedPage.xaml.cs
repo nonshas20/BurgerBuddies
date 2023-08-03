@@ -25,19 +25,36 @@ namespace popo
     public partial class MainTabbedPage : Xamarin.Forms.TabbedPage
 
     {
-        //private List<OrderItem> orderItems = new List<OrderItem>(); //made this para mag navigae to ViewOrdersPage pag ni click shopping cart
+        //private List<OrderItem> orderedItems = new List<OrderItem>();
+
+
         //public ObservableCollection<Transaction> Transactions { get; set; }
-        private async void ShoppingCart_Tapped(object sender, EventArgs e)
+        /*private async void ShoppingCart_Tapped(object sender, EventArgs e)
         {
-            // When the shopping cart image is tapped, navigate to the ViewOrdersPage.
-            await Navigation.PushAsync(new ViewOrdersPage());
-        }
-        public MainTabbedPage()
+            List<OrderItem> orderedItems = new List<OrderItem>();
+
+            foreach (ProductModel product in ProductsList)
+            {
+                if (product.Qty > 0)
+                {
+                    OrderItem orderItem = new OrderItem
+                    {
+                        Product_Id = product.Product_Id,
+                        Item = product.Product_Name,
+                        Price = product.Product_Cost,
+                        Quantity = product.Qty
+                    };
+                    orderedItems.Add(orderItem);
+                }
+            }
+            await Navigation.PushAsync(new ViewOrdersPage(orderedItems));
+        }*/
+        public MainTabbedPage()//List<ProductModel> productsList
         {
             InitializeComponent();
             //InitializeData();
             //this.BindingContext = this;
-
+                                                //ProductsList = productsList;
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             CategoryCollectionView.BindingContext = this;
@@ -52,13 +69,6 @@ namespace popo
                 new Transaction { Date = DateTime.Now.AddDays(-2), TotalPrice = 0.00m},
                 // Add more transactions here...
             };
-        }*/
-
-
-
-        /*private async void BurgersButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new BurgersPOS());
         }*/
 
         private async void OnThreeDotsClicked(object sender, EventArgs e)
