@@ -30,7 +30,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Product_Name}" FontSize="Medium" FontAttributes="Bold" 
-                                       TextColor="#1f2831"/>
+                                       TextColor="#1f2831"  VerticalOptions="CenterAndExpand" Margin="5"/>
                                 <Button Grid.Column="1" Text="Delete" BackgroundColor="#EC1768"
                                         BorderColor="#924040" BorderWidth="2" WidthRequest="100" CornerRadius="20"
                                         TextColor="White" Clicked="OnDeleteButton_Clicked"/>

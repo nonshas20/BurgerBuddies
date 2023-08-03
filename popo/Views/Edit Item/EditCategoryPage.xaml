@@ -29,7 +29,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
-                                       TextColor="#1f2831"/>
+                                       TextColor="#1f2831" VerticalOptions="CenterAndExpand" Margin="5"/>
                                 <Button Grid.Column="1" Text="Rename" BackgroundColor="#28A745"
                                         BorderColor="#0F5132" BorderWidth="2" WidthRequest="100" CornerRadius="10"
                                         TextColor="White" Clicked="RenameButton_Clicked"/>
