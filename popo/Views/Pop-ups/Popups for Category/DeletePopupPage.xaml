@@ -19,12 +19,14 @@
 
                 <!-- Cancel button -->
                 <Button Text="No" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2" 
+                        TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCancelClicked" />
 
                 <!-- Delete button -->
                 <Button Text="Yes" FontAttributes="Bold" 
-                        BackgroundColor="LightGreen" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#28A745" BorderColor="#0F5132" BorderWidth="2" 
+                        TextColor="White" FontSize="Medium" BorderRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnDeleteClicked" />
             </StackLayout>
 

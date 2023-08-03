@@ -11,10 +11,12 @@
             </Frame>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">
                 <Button Text="Cancel" FontAttributes="Bold"
-                        BackgroundColor="#DC143C" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
+                        TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnCancelClicked" />
                 <Button Text="Save" FontAttributes="Bold"
-                        BackgroundColor="#32CD32" TextColor="White" FontSize="Medium" BorderRadius="20"
+                        BackgroundColor="#28A745" BorderColor="#0F5132" BorderWidth="2" 
+                        TextColor="White" FontSize="Medium" CornerRadius="20"
                         HeightRequest="50" WidthRequest="100" Margin="5" Clicked="OnSaveClicked" />
                 
             </StackLayout>

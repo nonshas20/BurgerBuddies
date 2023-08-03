@@ -30,7 +30,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Button Text="{Binding Category_Name}" FontSize="25" FontAttributes="Bold" 
+                            <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
                                     BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2"
                                     CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="DrinksButton_Clicked"
                                     CommandParameter="{Binding .}"/>

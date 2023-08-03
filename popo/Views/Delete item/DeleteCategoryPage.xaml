@@ -17,15 +17,16 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <!-- Adjust CornerRadius for a more circular look -->
-                        <Frame BackgroundColor="#CF597B" Padding="10" Margin="12" CornerRadius="10">
+                        <Frame BackgroundColor="WhiteSmoke" BorderColor="#1f2831" Padding="10" Margin="12" CornerRadius="10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Category_Name}" FontSize="Medium" FontAttributes="Bold" 
-                                       TextColor="White"/>
-                                <Button Grid.Column="1" Text="Delete" BackgroundColor="#B32C50" WidthRequest="100" CornerRadius="10"
+                                       TextColor="#1f2831"/>
+                                <Button Grid.Column="1" Text="Delete" BackgroundColor="#EC1768"
+                                        BorderColor="#924040" BorderWidth="2" WidthRequest="100" CornerRadius="10"
                                         TextColor="White" Clicked="DeleteButton_Clicked"/>
 
                             </Grid>

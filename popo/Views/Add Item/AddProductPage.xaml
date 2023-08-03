@@ -79,12 +79,12 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="CancelButton" Text="Cancel" FontAttributes="Bold" 
-            BackgroundColor="#924040" TextColor="White" FontSize="Medium" BorderRadius="10"
-            HeightRequest="70" WidthRequest="150" Margin="0,0,5,0" Grid.Column="1" Clicked="CancelButton_Clicked"/>
+                BackgroundColor="#EC1768" TextColor="White" FontSize="Medium" BorderRadius="10" BorderColor="#924040"
+                BorderWidth="2" HeightRequest="70" WidthRequest="150" Margin="0,0,5,0" Grid.Column="1" Clicked="CancelButton_Clicked"/>
 
             <Button x:Name="SaveButton" Text="Add" FontAttributes="Bold" 
-            BackgroundColor="#ec1768" TextColor="White" FontSize="Medium" BorderRadius="10"
-            HeightRequest="70" WidthRequest="150" Margin="5,0,17,0" Grid.Column="2" Clicked="SaveButton_Clicked" />
+                BackgroundColor="#28A745" TextColor="White" FontSize="Medium" BorderRadius="10" BorderColor="#0F5132"
+                BorderWidth="2" HeightRequest="70" WidthRequest="150" Margin="5,0,17,0" Grid.Column="2" Clicked="SaveButton_Clicked" />
         </Grid>
 
     </StackLayout>

@@ -61,12 +61,12 @@
 
         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="Center">
             <Button x:Name="CancelButton" Text="Cancel" FontAttributes="Bold" Clicked="CancelButton_Clicked"
-                    BackgroundColor="#924040" TextColor="White" FontSize="Medium" BorderRadius="10"
-                    HeightRequest="50" WidthRequest="150" Margin="0,0,5,0" />
+                    BackgroundColor="#EC1768" TextColor="White" FontSize="Medium" BorderRadius="10"
+                    BorderWidth="2" BorderColor="#924040" HeightRequest="50" WidthRequest="150" Margin="0,0,5,0" />
 
             <Button x:Name="SaveButton" Text="Save" FontAttributes="Bold" Clicked="SaveButton_Clicked"
-                    BackgroundColor="#ec1768" TextColor="White" FontSize="Medium" BorderRadius="10"
-                    HeightRequest="70" WidthRequest="150" Margin="5,0,0,0" />
+                    BackgroundColor="#28A745"  TextColor="White" FontSize="Medium" BorderRadius="10"
+                    BorderWidth="2" BorderColor="#0F5132" HeightRequest="70" WidthRequest="150" Margin="5,0,0,0" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

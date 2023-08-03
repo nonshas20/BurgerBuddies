@@ -32,7 +32,7 @@
                             </Grid.ColumnDefinitions>
                             
                             <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
-                                    BackgroundColor="#2196F3" TextColor="White" 
+                                    BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" BorderWidth="2"
                                     CornerRadius="10"  HeightRequest="110" Clicked="OnCategoryButtonClicked"/><!--Trigger handle event pag click ng button-->
                         </Grid>
                     </DataTemplate>
