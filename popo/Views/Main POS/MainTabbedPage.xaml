@@ -11,18 +11,16 @@
 
     <TabbedPage.Children>
         
-        <ContentPage Title="Pos" 
-                     Icon="pos_icon.png">
+        <ContentPage Title="Pos" Icon="pos_icon.png">
             
             <ContentPage.Content>
-
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="90" />
                         <!-- Header Height -->
                         <RowDefinition Height="*" />
                         <!-- Main Content Height -->
-                        <RowDefinition Height="0" />
+                        <RowDefinition Height="10" />
                         <!-- Tab Bar Height -->
                     </Grid.RowDefinitions>
 
@@ -43,53 +41,48 @@
                             </Grid>
                         </StackLayout>
                     </Grid>
-
-                    <!--Container-->
-                    <Grid Grid.Row="1" Padding="20" ColumnSpacing="10" RowSpacing="10">
+                    <Grid Grid.Row="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="500"/>
+                            <RowDefinition Height="100*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="350"/>
-                            <ColumnDefinition Width="350"/>
-                         </Grid.ColumnDefinitions>
-                        <!-- TESTING -->
-                        <CollectionView x:Name="CategoryCollectionView"
-                                        SelectionMode="Single"
-                                        Margin="20"
-                                        ItemsSource="{Binding Category_Id}">
-                            <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Vertical" Span="2" />
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Padding="7">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                            
-                                        </Grid.ColumnDefinitions>
-                                        <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
-                                                BackgroundColor="#ec1768" TextColor="White" BorderColor="#924040"
-                                                CornerRadius="10" BorderWidth="2" HeightRequest="100" Clicked="AddOnsButton_Clicked"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                        <Frame BackgroundColor="White" Grid.Row="1" CornerRadius="15" Padding="10"
-       HorizontalOptions="End" VerticalOptions="End"
-       Margin="0,0,150,1" WidthRequest="30" HeightRequest="30">
-                            <Image Source="shoppingcart.png" Aspect="AspectFit" />
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                                <!--Tapped="ShoppingCart_Tapped"-->
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <!-- TESTING -->
-                    </Grid>
-                    <!--Container-->
-                </Grid>
+                            <ColumnDefinition Width="90*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"/>
+                                    <ColumnDefinition Width="50*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.ColumnSpan="2" Text="Transaction Page" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="Center"/>
+                                
+                                <Label Grid.Row="1" Grid.Column="0" Text="Order Mode" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                <Picker Grid.Row="1" Grid.Column="1" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="CenterAndExpand" x:Name="ModePicker" Title="Select Mode" VerticalOptions="Center"/>
+                                
+                                <Label Grid.Row="2" Grid.Column="0" Text="Payment Mode" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                <Picker Grid.Row="2" Grid.Column="1" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="CenterAndExpand" x:Name="PaymentPicker" Title="Select Method" VerticalOptions="Center"/>
 
+                                <Label Grid.Row="3" Grid.ColumnSpan="2" x:Name="Clock" Text="TimeNow" FontSize="20" FontAttributes="Bold" TextColor="#180f2c"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+                                <Button Text="Clear" Grid.Row="4" Grid.Column="0" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
+                                        BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2" CornerRadius="15"
+                                        TextColor="White" Clicked="ClearButton_Clicked"/>
+                                <Button Text="Continue" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
+                                        BackgroundColor="#2196F3" BorderColor="#1976D2" BorderWidth="2" CornerRadius="15"
+                                        TextColor="White" Clicked="ConfirmButton_Clicked"/>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
             </ContentPage.Content>
             
         </ContentPage>

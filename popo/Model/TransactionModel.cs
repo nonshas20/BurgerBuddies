@@ -5,17 +5,15 @@ using System.Text;
 
 namespace popo.Model
 {
-    public class PurchaseOrderModel
+    public class TransactionModel
     {
         [PrimaryKey, AutoIncrement]
-        public int POrderId { get; set; }
-
+        public int Transaction_Id { get; set; }
         public string Payment_Mode { get; set; }
-
         public string Order_Mode { get; set; }
 
         public string Order_Status { get; set; }
-        public string Order_Date { get; set; }
-        public double Order_Total { get; set; }
+        public string Date { get; set; }
+        public int Order_Total { get; set; } 
     }
 }

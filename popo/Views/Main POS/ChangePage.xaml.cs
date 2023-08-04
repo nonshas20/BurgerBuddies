@@ -12,7 +12,7 @@ namespace popo
         private double grandTotal;
         private double amountReceived;
 
-        public ChangePage(double grandTotal)
+        public ChangePage()//(double grandTotal)
         {
             InitializeComponent();
             this.grandTotal = grandTotal;
@@ -49,7 +49,7 @@ namespace popo
                     return;
                 }
                 double change = amountReceived - grandTotal;
-                await Navigation.PushAsync(new CompletedPage(grandTotal, change));
+                await Navigation.PushAsync(new CompletedPage());//(grandTotal, change));
             }
             catch (FormatException)
             {

@@ -7,27 +7,7 @@
                      Clicked ="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <CollectionView x:Name="CategoryCollectionView"
-                        SelectionMode="Single"
-                        Margin="20,5,20,0">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid RowSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Category_Id}" FontSize="16" 
-                               Grid.Row="0" Grid.RowSpan="2"/>
-                        <Label Text="{Binding Category_Name}" FontSize="16" 
-                               Grid.Row="0" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <CollectionView x:Name="ProductCollectionView"
+        <CollectionView x:Name="CartCollectionView"
                         SelectionMode="Single"
                         Margin="20,20,20,20">
             <CollectionView.ItemTemplate>
@@ -37,18 +17,84 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Category_Id}" FontSize="16" 
+                        <Label Text="Order Id" FontSize="16" 
                                Grid.Row="0"/>
-                        <Label Text="{Binding Product_Id}" FontSize="16" 
+                        <Label Text="{Binding Order_Id}" FontSize="16" 
+                               Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Text="Transaction Id" FontSize="16" 
                                Grid.Row="1"/>
-                        <Label Text="{Binding Product_Name}" FontSize="16" 
+                        <Label Text="{Binding Transaction_Id}" FontSize="16" 
+                               Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="Product Name" FontSize="16" 
                                Grid.Row="2"/>
-                        <Label Text="{Binding Product_Cost}" FontSize="16" 
+                        <Label Text="{Binding Product_Name}" FontSize="16" 
+                               Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Text="Product Cost" FontSize="16" 
                                Grid.Row="3"/>
-                        <Label Text="{Binding Product_Stock}" FontSize="16" 
+                        <Label Text="{Binding Product_Cost}" FontSize="16" 
+                               Grid.Row="3" Grid.Column="1"/>
+
+                        <Label Text="Order Quantity" FontSize="16" 
                                Grid.Row="4"/>
+                        <Label Text="{Binding Order_Qty}" FontSize="16" 
+                               Grid.Row="4" Grid.Column="1"/>
+
+                        <Label Text="Total" FontSize="16" 
+                               Grid.Row="5"/>
+                        <Label Text="{Binding Order_Amt}" FontSize="16" 
+                               Grid.Row="5" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <CollectionView x:Name="TransactionCollectionView"
+                        SelectionMode="Single"
+                        Margin="20,20,20,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Transaction Id" FontSize="16" 
+                               Grid.Row="0"/>
+                        <Label Text="{Binding Transaction_Id}" FontSize="16" 
+                               Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Text="Payment Method" FontSize="16" 
+                               Grid.Row="1"/>
+                        <Label Text="{Binding Payment_Mode}" FontSize="16" 
+                               Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="Order Mode" FontSize="16" 
+                               Grid.Row="2"/>
+                        <Label Text="{Binding Order_Mode}" FontSize="16" 
+                               Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Text="Order Status" FontSize="16" 
+                               Grid.Row="3"/>
+                        <Label Text="{Binding Order_Status}" FontSize="16" 
+                               Grid.Row="3" Grid.Column="1"/>
+
+                        <Label Text="Date" FontSize="16" 
+                               Grid.Row="4"/>
+                        <Label Text="{Binding Date}" FontSize="16" 
+                               Grid.Row="4" Grid.Column="1"/>
+
+                        <Label Text="Total" FontSize="16" 
+                               Grid.Row="5"/>
+                        <Label Text="{Binding Order_Total}" FontSize="16" 
+                               Grid.Row="5" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

@@ -8,7 +8,7 @@ namespace popo.Database
     public class LoginModel
     {
         [PrimaryKey,AutoIncrement]
-        public int Id { get; set; }
+        public int User_Id { get; set; }
         [Unique]
         public string Username { get; set; }
         public string Password { get; set; }

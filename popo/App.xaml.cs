@@ -63,23 +63,23 @@ namespace popo
                 return ProductsDb;
             }
         }
-        private static SQLiteHelper5 PurchasedOrderDb;
-        public static SQLiteHelper5 PurchasedOrderDatabase
+        private static SQLiteHelper5 TransactionDb;
+        public static SQLiteHelper5 TransactionDatabase
         {
             get
             {
-                if (PurchasedOrderDb == null)
+                if (TransactionDb == null)
                 {
-                    PurchasedOrderDb = new SQLiteHelper5(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "PurchasedOrderDb.db3")); // Login Details database location
+                    TransactionDb = new SQLiteHelper5(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "TransactionDb.db3")); // Login Details database location
                 }
-                return PurchasedOrderDb;
+                return TransactionDb;
             }
         }
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new MainTabbedPage());
         }
 
         protected override void OnStart()

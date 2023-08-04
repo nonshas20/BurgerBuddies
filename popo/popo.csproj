@@ -59,8 +59,17 @@
     <Compile Update="Views\Edit Item\EditProductPage.xaml.cs">
       <DependentUpon>EditProductPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Main POS\POSOrderPage2.xaml.cs">
+      <DependentUpon>POSOrderPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Main POS\POSOrderPage.xaml.cs">
+      <DependentUpon>POSOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pop-ups\AddUserPagePopUp.xaml.cs">
       <DependentUpon>AddUserPagePopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pop-ups\Popups for Ordering Item\OrderPopup.xaml.cs">
+      <DependentUpon>OrderPopup.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pop-ups\Popups for Product\DeletePopup_ItemPage.xaml.cs">
       <DependentUpon>DeletePopup_ItemPage.xaml</DependentUpon>
@@ -120,9 +129,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Edit Item\EditCategorySelectionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Main POS\AddOnsPOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Main POS\ChangePage.xaml">
