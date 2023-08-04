@@ -28,11 +28,24 @@ namespace popo.Database
             return db.Table<TransactionModel>().ToListAsync(); // Reads all data from the Login Model
         }
 
-        public async Task<List<TransactionModel>> ViewCart(OrderModel orderedItem)
+        /*public async Task<List<TransactionModel>> ViewCart(OrderModel orderedItem)
         {
             var orders = await db.Table<TransactionModel>().ToListAsync();
             var filteredOrder = orders.Where(p => p.Transaction_Id == orderedItem.Transaction_Id).ToList();
             return filteredOrder;
+        }
+        */
+
+        public async Task<List<TransactionModel>> ViewCart(OrderModel orderedItem)
+        {
+            // Get all transactions from the database
+            var transactions = await db.Table<TransactionModel>().ToListAsync();
+
+            // Filter the transactions based on the provided orderedItem's Transaction_Id
+            var filteredTransactions = transactions.Where(t => t.Transaction_Id == orderedItem.Transaction_Id).ToList();
+
+            // Return the filtered transactions
+            return filteredTransactions;
         }
 
     }

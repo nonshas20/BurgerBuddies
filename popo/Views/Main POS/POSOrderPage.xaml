@@ -37,6 +37,17 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand">
+                <!--<Frame BackgroundColor="White" CornerRadius="15" Padding="10" Margin="0, 0, 0, 10">
+                    <Image Source="shoppingcart.png" Aspect="AspectFit" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ViewShoppingCart"/>
+                    </Frame.GestureRecognizers>
+                </Frame>-->
+                <Button Text="View Cart" BackgroundColor="#28A745" BorderColor="#0F5132" BorderWidth="2"
+                        WidthRequest="100" CornerRadius="10" TextColor="White" Clicked="ViewShoppingCart" 
+                        CommandParameter="{Binding .}"/>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

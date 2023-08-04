@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.ViewShoppingCart2"
+             Padding="10"
+             Title="Edit Product"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.Content> <!-- This is the EditPOS: Renaming/Updating Products-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <!-- This row will hold the buttons -->
+            </Grid.RowDefinitions>
+            <CollectionView x:Name="OrdersCollectionView" SelectionMode="None" Margin="20,20,20,20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Order Id" FontSize="16" Grid.Row="0"/>
+                            <Label Text="{Binding Order_Id}" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+
+                            <Label Text="Transaction Id" FontSize="16" Grid.Row="1"/>
+                            <Label Text="{Binding Transaction_Id}" FontSize="16" Grid.Row="1" Grid.Column="1"/>
+
+                            <Label Text="Product Name" FontSize="16" Grid.Row="2"/>
+                            <Label Text="{Binding Product_Name}" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+
+                            <Label Text="Product Cost" FontSize="16" Grid.Row="3"/>
+                            <Label Text="{Binding Product_Cost}" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+
+                            <Label Text="Order Quantity" FontSize="16" Grid.Row="4"/>
+                            <Label Text="{Binding Order_Qty}" FontSize="16" Grid.Row="4" Grid.Column="1"/>
+
+                            <Label Text="Total" FontSize="16" Grid.Row="5"/>
+                            <Label Text="{Binding Order_Amt}" FontSize="16" Grid.Row="5" Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand">
+                <Button Text="Close" BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
+                        WidthRequest="100" CornerRadius="20" TextColor="White" Clicked="CloseButton_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

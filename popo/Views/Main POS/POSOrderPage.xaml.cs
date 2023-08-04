@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using popo.Model;
 using Rg.Plugins.Popup.Services;
 using System.Transactions;
+using System.Diagnostics;
 
 namespace popo
 {
@@ -17,7 +18,7 @@ namespace popo
             CategoryCollectionView.BindingContext = this;
             TransactionId = transactionId;
         }
-        private async void Category_Clicked(object sender, EventArgs e) //Event Handler pag nagclick ng category buttons
+        private async void Category_Clicked(object sender, EventArgs e)
         {
             if (sender is Button button)
             {
@@ -29,17 +30,23 @@ namespace popo
                 }
             }
         }
+
+        /*private async void ViewShoppingCart(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                OrderModel orders = button.BindingContext as OrderModel;
+                if (orders != null)
+                {
+                    await Navigation.PushAsync(new ViewShoppingCart2(orders));
+                }
+            }
+        }*/
+
         protected override async void OnAppearing()
         {
-            try
-            {
-                base.OnAppearing();
-                CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
-            }
-            catch
-            {
-
-            }
+            base.OnAppearing();
+            CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
         }
     }
 }

@@ -16,7 +16,7 @@
 
             <CollectionView x:Name="ProductCollectionView"
                             SelectionMode="Single"
-                            ItemsSource="{Binding Product_Name}">
+                            ItemsSource="{Binding Product_Id}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10" HorizontalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
@@ -38,8 +38,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <StackLayout>
-                <Button Text="Tite"/>
+            <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand">
             </StackLayout>
         </Grid>
     </ContentPage.Content>
