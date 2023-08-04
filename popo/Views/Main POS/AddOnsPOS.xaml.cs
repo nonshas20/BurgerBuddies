@@ -14,6 +14,8 @@ namespace popo
         //private int qty = 0;
 
         private ObservableCollection<ProductModel> ProductsList { get; set; }
+
+        private CategoryModel selectedCategory;
         public AddOnsPOS(CategoryModel selectedCategory)
         {
             InitializeComponent();
@@ -24,7 +26,6 @@ namespace popo
             ProductListView.BindingContext = this;
         }
 
-        private CategoryModel selectedCategory;
 
         private async void ViewOrderButton_Clicked(object sender, EventArgs e)
         {
@@ -43,8 +44,9 @@ namespace popo
                     };
                     orderedItems.Add(orderItem);
                 }
+                await App.ProductsDatabase.UpdateProductStock(product);//TESTING
             }
-            await Navigation.PushAsync(new ViewOrdersPage(orderedItems));
+            await Navigation.PushAsync(new ViewOrdersPage(orderedItems,selectedCategory));
             // TESTING
             /*var viewOrdersPage = new ViewOrdersPage(orderedItems);
             viewOrdersPage.Disappearing += async (s, args) =>

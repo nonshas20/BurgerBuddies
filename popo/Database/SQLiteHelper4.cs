@@ -26,6 +26,11 @@ namespace popo.Database
             return db.Table<ProductModel>().ToListAsync(); // Reads all data from the Login Model
         }
 
+        public Task<int> UpdateProductStock(ProductModel product)
+        {
+            return db.UpdateAsync(product); // Updates the product's stock in the database
+        }
+
         public async Task<List<ProductModel>> FilterProducts(CategoryModel selectedCategory)
         {
             var products = await db.Table<ProductModel>().ToListAsync();
