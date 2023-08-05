@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,36 @@ namespace popo
                     Order_Qty = Qty,
                     Order_Amt = Total
                 };
+                /*
+                var products = await App.ProductsDatabase.ReadProducts();
+
+                List<ProductModel> productItems = new List<ProductModel>();
+
+                foreach (var product in products)
+                {
+                    ProductModel productItem = new ProductModel
+                    {
+                        Product_Id = product.Product_Id,
+                        Category_Id = product.Category_Id,
+                        Product_Name = product.Product_Name,
+                        Product_Cost = product.Product_Cost,
+                        Product_Stock = product.Product_Stock
+                    };
+                    productItems.Add(productItem);
+                }
+
+                foreach(ProductModel product in productItems)
+                {
+                    if (product.Transaction_Id == newOrder.Transaction_Id)
+                    {
+                        product.Product_Stock = product.Product_Stock - newOrder.Order_Qty;
+                        await App.ProductsDatabase.UpdateProductStock(product);
+                    }
+                }
+                */
+
+
+
                 await App.OrderedItemsDatabase.CreateOrder(newOrder);
                 await DisplayAlert("Success", "Added To Cart", "OK");
                 await Navigation.PushAsync(new POSOrderPage3(newOrder, TransactionId));
@@ -109,4 +140,14 @@ namespace popo
 
         }*/
     }
+    /*
+    public class ProductItem
+    {
+        public int Product_Id { get; set; }
+        public int Category_Id { get; set; }
+        public int Transaction_Id { get; set; }
+        public string Product_Name { get; set; }
+        public int Product_Cost { get; set; }
+        public int Product_Stock { get; set; }
+    }*/
 }

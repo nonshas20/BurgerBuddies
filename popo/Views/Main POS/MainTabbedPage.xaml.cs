@@ -18,7 +18,8 @@ namespace popo
         {
             InitializeComponent();
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            //CategoryCollectionView.BindingContext = this;
+            HistoryListView.BindingContext = this;
+
             var OrderMode_List = new List<string>
             {
                 "Dine-In",
@@ -134,6 +135,7 @@ namespace popo
             {
                 base.OnAppearing();
                 //CategoryCollectionView.ItemsSource = await App.CategoryDatabase.ReadCategory();
+                HistoryListView.ItemsSource = await App.TransactionDatabase.ReadTransactions();
             }
             catch
             {

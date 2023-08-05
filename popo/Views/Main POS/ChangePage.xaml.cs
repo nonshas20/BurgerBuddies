@@ -30,6 +30,7 @@ namespace popo
             {
                 base.OnAppearing();
                 int grandTotal = await App.RecieptDatabase.CalculateGrandTotal(TransactionId);
+                await App.TransactionDatabase.UpdateTransactions(TransactionId, grandTotal);
                 AmountPayableLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
             }
             catch (Exception ex)

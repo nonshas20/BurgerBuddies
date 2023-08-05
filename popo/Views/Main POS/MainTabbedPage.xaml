@@ -199,23 +199,26 @@
                     <Grid Grid.Row="1">
                         <ScrollView Margin="10">
                             <StackLayout>
-                                <Frame CornerRadius="10" Padding="10" BackgroundColor="#858585" Margin="0,10,0,0" HeightRequest="400">
+                                <Frame CornerRadius="10" Padding="10" BackgroundColor="#858585" Margin="0,10,0,0" HeightRequest="580">
                                     <ListView x:Name="HistoryListView">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>
-                                                    <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
+                                                    <Frame CornerRadius="10" BackgroundColor="NavajoWhite" Padding="10">
                                                         <Grid>
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="50"/>
                                                             </Grid.RowDefinitions>
                                                             <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="80*"/>
                                                                 <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="40"/>
                                                             </Grid.ColumnDefinitions>
                                                             <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" FontAttributes="Bold" TextColor="#252525" />
-                                                            <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="#252525" />
-                                                            <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+                                                            <Label Grid.Column="1" Text="Total Price: " FontSize="16"  FontAttributes="Bold" TextColor="#252525" />
+                                                            <Label Grid.Column="2" Text="{Binding Order_Total}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+                                                            <Button Grid.Column="3" Text="i" BindingContext="{Binding .}" Clicked="OnThreeDotsClicked"/>
                                                         </Grid>
                                                     </Frame>
                                                 </ViewCell>

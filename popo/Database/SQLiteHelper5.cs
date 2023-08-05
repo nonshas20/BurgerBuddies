@@ -60,6 +60,35 @@ namespace popo.Database
             return filteredData;
         }*/
 
+        public async Task<int> UpdateTransactions(int transactionId, int grandTotal)
+        {
+            List<TransactionItem> transactionItems = new List<TransactionItem>();
+
+            foreach (var transaction in transactionItems)
+            {
+                TransactionItem transactItem = new TransactionItem
+                {
+                    Transaction_Id = transaction.Transaction_Id,
+                    Payment_Mode = transaction.Payment_Mode,
+                    Order_Mode = transaction.Order_Mode,
+                    Order_Status = transaction.Order_Status,
+                    Date = transaction.Date,
+                    Order_Total = transaction.Order_Total
+                };
+                transactionItems.Add(transactItem);
+            }
+
+            foreach (var Transact in transactionItems)
+            {
+                if (transactionId == Transact.Transaction_Id)
+                {
+                    Transact.Order_Total = grandTotal;
+                }
+            }
+
+            return await db.UpdateAsync(transactionItems);
+        }
+
 
     }
 }
