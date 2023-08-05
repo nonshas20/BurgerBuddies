@@ -174,7 +174,7 @@ namespace popo.Database
             var filteredTransactions = joinedTransactions.Where(t => t.Transaction_Id == transactionId).ToList();
 
             // Calculate the grandTotal by adding all the sums of Order_Amt in the RecieptModel
-            int grandTotal = filteredTransactions.Sum(t => t.Order_Amt);
+            int grandTotal = filteredTransactions.Sum(t => t.Order_Amt);    
 
             return grandTotal;
         }

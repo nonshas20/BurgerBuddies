@@ -36,6 +36,10 @@ namespace popo
             {
                 await DisplayAlert("Invalid", "Enter Product Name!", "OK");
             }
+            else if (NewCategoryName.Length > 30)
+            {
+                await DisplayAlert("Invalid", "New Category Name cannot be longer than 30 characters!", "OK");
+            }
             else
             {
                 UpdateCategoryName();

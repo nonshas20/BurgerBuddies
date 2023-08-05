@@ -43,19 +43,26 @@ namespace popo
             {
                 await DisplayAlert("Invalid", "Enter Category Name!", "OK");
             }
-            if (string.IsNullOrWhiteSpace(ItemName))
+            else if (CategoryName.Length >= 30)
+            {
+                await DisplayAlert("Invalid", "Category Name cannot be longer than 30 characters!", "OK");
+            }
+            else if (string.IsNullOrWhiteSpace(ItemName))
             {
                 await DisplayAlert("Invalid", "Enter Product Name!", "OK");
             }
-            if (string.IsNullOrWhiteSpace(Price))
+            else if (ItemName.Length >= 30)
+            {
+                await DisplayAlert("Invalid", "Product Name cannot be longer than 30 characters!", "OK");
+            }
+            else if (string.IsNullOrWhiteSpace(Price))
             {
                 await DisplayAlert("Invalid", "Enter Product's Price!", "OK");
             }
-            if (string.IsNullOrWhiteSpace(Stocks))
+            else if (string.IsNullOrWhiteSpace(Stocks))
             {
                 await DisplayAlert("Invalid", "Enter Product's Stock!", "OK");
             }
-
             else
             {
                 AddCategoryAndProduct();
@@ -67,7 +74,32 @@ namespace popo
             {
                 Category_Name = CategoryEntry.Text
             });
-            if (int.TryParse(PriceEntry.Text, out int productCost) && int.TryParse(StocksEntry.Text, out int productStock))
+
+            if (!int.TryParse(PriceEntry.Text, out int productCost))
+            {
+                await DisplayAlert("Invalid", "Please enter a valid Product Price!", "OK");
+            }
+            else if (productCost >= 999)
+            {
+                await DisplayAlert("Invalid", "Product Price cannot be higher than 999!", "OK");
+            }
+            else if (productCost <= 0)
+            {
+                await DisplayAlert("Invalid", "Product Price cannot be lower than 0!", "OK");
+            }
+            else if (!int.TryParse(StocksEntry.Text, out int productStock))
+            {
+                await DisplayAlert("Invalid", "Please enter a valid Product Stock!", "OK");
+            }
+            else if (productStock >= 999)
+            {
+                await DisplayAlert("Invalid", "Product Stock cannot be higher than 999!", "OK");
+            }
+            else if (productStock <= 0)
+            {
+                await DisplayAlert("Invalid", "Product Stock cannot be lower than 0!", "OK");
+            }
+            else
             {
                 await App.ProductsDatabase.CreateProducts(new ProductModel
                 {
@@ -78,10 +110,6 @@ namespace popo
                 });
                 await DisplayAlert("Success", "Category and Product Added!", "OK");
                 await Navigation.PopAsync();
-            }
-            else
-            {
-                await DisplayAlert("Error", "Invalid input for product cost or stock", "OK");
             }
         }
     }
