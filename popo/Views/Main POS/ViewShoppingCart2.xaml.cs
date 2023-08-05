@@ -17,7 +17,7 @@ namespace popo
         {
             InitializeComponent();
             TransactionId = transactionId;
-            this.orders = orders;
+            OrdersCollectionView.BindingContext = this;
         }
 
         private async void CloseButton_Clicked(object sender, System.EventArgs e)
@@ -30,8 +30,7 @@ namespace popo
             try
             {
                 base.OnAppearing();
-                var recieptItems = await App.RecieptDatabase.ViewCart2(orders);
-                OrdersCollectionView.ItemsSource = recieptItems;
+                OrdersCollectionView.ItemsSource = await App.RecieptDatabase.ViewCart2(orders);
             }
             catch
             {
