@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using popo.Model;
 using Rg.Plugins.Popup.Services;
 using popo.Database;
+using System.Diagnostics;
 
 namespace popo
 {
@@ -17,8 +18,10 @@ namespace popo
         {
             InitializeComponent();
             TransactionId = transactionId;
-            OrdersCollectionView.BindingContext = this;
+            this.orders = orders; // Make sure to set the class-level 'orders' variable.
+              // No need to set OrdersCollectionView.BindingContext here since you are setting the ItemsSource in OnAppearing.
         }
+
 
         private async void CloseButton_Clicked(object sender, System.EventArgs e)
         {
@@ -30,15 +33,13 @@ namespace popo
             try
             {
                 base.OnAppearing();
-                OrdersCollectionView.ItemsSource = await App.RecieptDatabase.ViewCart2(orders);
+                var recieptModels = await App.RecieptDatabase.ViewCart2(orders);
+                OrdersCollectionView.ItemsSource = new ObservableCollection<RecieptModel>(recieptModels);
             }
-            catch
+            catch (Exception ex)
             {
-
+                Debug.WriteLine("Error: " + ex.Message);
             }
         }
-
     }
-
-
 }

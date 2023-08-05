@@ -39,15 +39,22 @@ namespace popo.Database
                 };
             await db.InsertAsync(joinedTransactions.ToList());
         }*/
+
+        public async Task InsertRecieptModels(List<RecieptModel> recieptModels)
+        {
+            foreach (var recieptModel in recieptModels)
+            {
+                await db.InsertAsync(recieptModel);
+            }
+        }
+
+
         public async Task<List<RecieptModel>> ViewCart2(OrderModel orderedItem)
         {
-            // Get all transactions from the database
+            // Perform the join operation without inserting into the database.
             var transactions = await db.Table<TransactionModel>().ToListAsync();
-
-            // Get all orders from the database
             var orders = await db.Table<OrderModel>().ToListAsync();
 
-            // Perform an inner join on transaction_id
             var joinedTransactions =
                 from transaction in transactions
                 join order in orders on transaction.Transaction_Id equals order.Transaction_Id
@@ -60,7 +67,15 @@ namespace popo.Database
                     Order_Qty = order.Order_Qty,
                     Order_Amt = order.Order_Amt
                 };
+
+            // Insert each RecieptModel object into the database
+            await InsertRecieptModels(joinedTransactions.ToList());
+
+            // Return the list of RecieptModel objects
             return joinedTransactions.ToList();
         }
+
+
+
     }
 }

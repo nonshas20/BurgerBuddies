@@ -18,7 +18,12 @@
                     <DataTemplate>
                         <Grid RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50*"/>
@@ -45,6 +50,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
             <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand">
                 <Button Text="Close" BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
                         WidthRequest="100" CornerRadius="20" TextColor="White" Clicked="CloseButton_Clicked"/>
