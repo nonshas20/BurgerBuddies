@@ -18,7 +18,7 @@ namespace popo
                 if(LoginDb == null)
                 {
                     LoginDb = new SQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "LoginDetails.db3")); // Login Details database location
+                        "LoginDetails.db3"));
                 }
                 return LoginDb;
             }
@@ -32,7 +32,7 @@ namespace popo
                 if (CategoryDb == null)
                 {
                     CategoryDb = new SQLiteHelper2(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "CategoryDb.db3")); // Login Details database location
+                        "CategoryDb.db3"));
                 }
                 return CategoryDb;
             }
@@ -45,7 +45,7 @@ namespace popo
                 if (OrderedItemsDb == null)
                 {
                     OrderedItemsDb = new SQLiteHelper3(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "OrderedItemsDb.db3")); // Login Details database location
+                        "OrderedItemsDb.db3"));
                 }
                 return OrderedItemsDb;
             }
@@ -58,7 +58,7 @@ namespace popo
                 if (ProductsDb == null)
                 {
                     ProductsDb = new SQLiteHelper4(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "ProductsDb.db3")); // Login Details database location
+                        "ProductsDb.db3"));
                 }
                 return ProductsDb;
             }
@@ -71,7 +71,7 @@ namespace popo
                 if (TransactionDb == null)
                 {
                     TransactionDb = new SQLiteHelper5(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "TransactionDb.db3")); // Login Details database location
+                        "TransactionDb.db3"));
                 }
                 return TransactionDb;
             }
@@ -84,7 +84,7 @@ namespace popo
                 if (RecieptDb == null)
                 {
                     RecieptDb = new SQLiteHelper6(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "RecieptDb.db3")); // Login Details database location
+                        "RecieptDb.db3"));
                 }
                 return RecieptDb;
             }

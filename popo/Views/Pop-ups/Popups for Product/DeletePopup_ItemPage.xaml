@@ -12,7 +12,7 @@
             <Label x:Name="CategoryNameLabel" Text="Category Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
 
             <!-- Confirmation message -->
-            <Label Text="Are you sure you want to delete this category?" HorizontalOptions="Center" FontSize="Medium" Margin="0,20" />
+            <Label Text="Are you sure you want to delete this product?" HorizontalOptions="Center" FontSize="Medium" Margin="0,20" />
 
             <!-- Buttons section -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0">

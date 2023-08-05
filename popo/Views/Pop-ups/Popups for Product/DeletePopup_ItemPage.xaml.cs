@@ -28,6 +28,7 @@ namespace popo
         {
             await App.ProductsDatabase.DeleteProducts(selectedProduct);
             await DisplayAlert("Success", "Deleted Product", "OK");
+            await Navigation.PopAsync();
             await PopupNavigation.Instance.PopAsync();
         }
     }

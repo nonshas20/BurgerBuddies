@@ -47,9 +47,18 @@ namespace popo.Database
                 await db.InsertAsync(recieptModel);
             }
         }
+        /*public List<RecieptModel> SortRecieptModelsByTransactionId(List<RecieptModel> joinedTransactions, int transactionId)
+        {
+            // Filter the joined transactions by the given transactionId
+            var filteredTransactions = joinedTransactions.Where(t => t.Transaction_Id == transactionId).ToList();
 
+            // Sort the filtered transactions by Order_Id (optional, you can change the sorting criteria if needed)
+            filteredTransactions.Sort((t1, t2) => t1.Order_Id.CompareTo(t2.Order_Id));
 
-        public async Task<List<RecieptModel>> ViewCart2(OrderModel orderedItem)
+            return filteredTransactions;
+        }*/
+
+        public async Task<List<RecieptModel>> ViewCart2(OrderModel orderedItem, int transactionId)
         {
             // Perform the join operation without inserting into the database.
             var orders = await App.OrderedItemsDatabase.ReadOrders();
@@ -86,8 +95,6 @@ namespace popo.Database
                 transactionItems.Add(transactItem);
             }
 
-
-
             var joinedTransactions =
                 from transaction in transactionItems
                 join order in orderItems on transaction.Transaction_Id equals order.Transaction_Id
@@ -100,15 +107,25 @@ namespace popo.Database
                     Order_Qty = order.Order_Qty,
                     Order_Amt = order.Order_Amt
                 };
+            
+             // Filter the joined transactions by the given transactionId
+            var filteredTransactions = joinedTransactions.Where(t => t.Transaction_Id == transactionId).ToList();
 
-            // Insert each RecieptModel object into the database
+            // Sort the filtered transactions by Order_Id (optional, you can change the sorting criteria if needed)
+            filteredTransactions.Sort((t1, t2) => t1.Order_Id.CompareTo(t2.Order_Id));
+            
+            //Insert each RecieptModel object into the database
+            await InsertRecieptModels(filteredTransactions.ToList());
+            //Return the list of RecieptModel objects
+            return filteredTransactions.ToList();
+             
+            /*
+            //Insert each RecieptModel object into the database
             await InsertRecieptModels(joinedTransactions.ToList());
-
-            // Return the list of RecieptModel objects
+            //Return the list of RecieptModel objects
             return joinedTransactions.ToList();
+            */
+            
         }
-
-
-
     }
 }

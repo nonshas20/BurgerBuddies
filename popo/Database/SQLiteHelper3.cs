@@ -54,7 +54,6 @@ namespace popo.Database
                 .ToList();
 
             return filteredData;
-    }
-
+        }
     }
 }

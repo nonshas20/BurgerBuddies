@@ -46,6 +46,7 @@ namespace popo
             selectedCategory.Category_Name = NewNameEntry.Text;
             await App.CategoryDatabase.UpdateCategory(selectedCategory);
             await DisplayAlert("Success", "Updated Category Name", "OK");
+            await Navigation.PopAsync();
             // Close the popup
             await PopupNavigation.Instance.PopAsync();
         }

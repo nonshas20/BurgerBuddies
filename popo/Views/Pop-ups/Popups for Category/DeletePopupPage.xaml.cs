@@ -27,6 +27,7 @@ namespace popo
         {
             await App.CategoryDatabase.DeleteCategory(selectedCategory);
             await DisplayAlert("Success", "Deleted Category", "OK");
+            await Navigation.PopAsync();
             await PopupNavigation.Instance.PopAsync();
         }
     }

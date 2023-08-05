@@ -73,7 +73,6 @@ namespace popo
                     Order_Qty = Qty,
                     Order_Amt = Total
                 };
-
                 await App.OrderedItemsDatabase.CreateOrder(newOrder);
                 await DisplayAlert("Success", "Added To Cart", "OK");
                 await Navigation.PushAsync(new POSOrderPage3(newOrder, TransactionId));

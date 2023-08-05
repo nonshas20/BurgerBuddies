@@ -64,6 +64,7 @@ namespace popo
                 selectedProduct.Product_Cost = newProductPrice;
                 await App.ProductsDatabase.UpdateProducts(selectedProduct);
                 await DisplayAlert("Success", "Updated Product!", "OK");
+                await Navigation.PopAsync();
                 await PopupNavigation.Instance.PopAsync();
             }
             else

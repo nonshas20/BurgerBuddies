@@ -35,7 +35,7 @@ namespace popo
             try
             {
                 base.OnAppearing();
-                var recieptModels = await App.RecieptDatabase.ViewCart2(orders);
+                var recieptModels = await App.RecieptDatabase.ViewCart2(orders, TransactionId);
                 OrdersCollectionView.ItemsSource = new ObservableCollection<RecieptModel>(recieptModels);
             }
             catch (Exception ex)
