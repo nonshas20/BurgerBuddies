@@ -76,6 +76,19 @@ namespace popo
                 return TransactionDb;
             }
         }
+        private static SQLiteHelper6 RecieptDb;
+        public static SQLiteHelper6 RecieptDatabase
+        {
+            get
+            {
+                if (RecieptDb == null)
+                {
+                    RecieptDb = new SQLiteHelper6(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "RecieptDb.db3")); // Login Details database location
+                }
+                return RecieptDb;
+            }
+        }
         public App()
         {
             InitializeComponent();

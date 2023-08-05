@@ -61,21 +61,23 @@ namespace popo
         }
         async void AddToCart()
         {
-            
+
             if (int.TryParse(QtyEntry.Text, out int Qty) && int.TryParse(PriceLabel.Text, out int Price))
             {
                 int Total = Qty * Price;
-                await App.OrderedItemsDatabase.CreateOrder(new OrderModel
+                OrderModel newOrder = new OrderModel
                 {
                     Product_Name = NameLabel.Text,
                     Transaction_Id = TransactionId,
                     Product_Cost = Price,
                     Order_Qty = Qty,
                     Order_Amt = Total
-                }) ;
+                };
+
+                await App.OrderedItemsDatabase.CreateOrder(newOrder);
                 await DisplayAlert("Success", "Added To Cart", "OK");
+                await Navigation.PushAsync(new POSOrderPage3(newOrder, TransactionId));
                 await PopupNavigation.Instance.PopAsync();
-                await Navigation.PushAsync(new MainTabbedPage());
             }
             else
             {

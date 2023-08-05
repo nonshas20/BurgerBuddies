@@ -9,14 +9,27 @@ using System.Diagnostics;
 
 namespace popo
 {
-    public partial class POSOrderPage : ContentPage
+    public partial class POSOrderPage3 : ContentPage
     {
         private int TransactionId;
-        public POSOrderPage(int transactionId)
+        private OrderModel orders;
+        public POSOrderPage3(OrderModel orders,int transactionId)
         {
             InitializeComponent();
             CategoryCollectionView.BindingContext = this;
+            this.orders = orders;
             TransactionId = transactionId;
+        }
+        private async void ViewShoppingCart(object sender, EventArgs e)
+        {
+            if (orders != null)
+            {
+                await Navigation.PushAsync(new ViewShoppingCart2(orders, TransactionId));
+            }
+            else
+            {
+                await DisplayAlert("Invalid", "Please Add an item to cart first!", "Ok");
+            }
         }
         private async void Category_Clicked(object sender, EventArgs e)
         {
@@ -27,22 +40,6 @@ namespace popo
                 if (category != null)
                 {
                     await Navigation.PushAsync(new POSOrderPage2(category, TransactionId));
-                }
-            }
-        }
-
-        private async void ViewShoppingCart(object sender, EventArgs e)
-        {
-            if (sender is Button button)
-            {
-                OrderModel orders = button.BindingContext as OrderModel;
-                if (orders != null)
-                {
-                    await Navigation.PushAsync(new ViewShoppingCart2(orders, TransactionId));
-                }
-                else
-                {
-                    await DisplayAlert("Invalid", "Please Add an item to cart first!", "Ok");
                 }
             }
         }

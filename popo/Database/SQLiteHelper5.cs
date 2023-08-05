@@ -36,17 +36,30 @@ namespace popo.Database
         }
         */
 
-        public async Task<List<TransactionModel>> ViewCart(OrderModel orderedItem)
+        /*
+        public async Task<List<TransactionModel>> ViewCart(OrderModel order, int transaction_id)
         {
-            // Get all transactions from the database
+            // Get all transactions and orders from the database
             var transactions = await db.Table<TransactionModel>().ToListAsync();
+            var orders = await db.Table<OrderModel>().ToListAsync();
 
-            // Filter the transactions based on the provided orderedItem's Transaction_Id
-            var filteredTransactions = transactions.Where(t => t.Transaction_Id == orderedItem.Transaction_Id).ToList();
+            // Join transactions and orders based on the Transaction_Id
+            var filteredTransactionOrders = transactions.Join(
+                orders,
+                transaction => transaction.Transaction_Id,
+                ord => ord.Transaction_Id,
+                (transaction, ord) => new { Transaction = transaction, Order = ord }
+            );
 
-            // Return the filtered transactions
-            return filteredTransactions;
-        }
+            // Filter the joined data based on the provided transaction_id and the given order's Transaction_Id
+            var filteredData = filteredTransactionOrders
+                .Where(pair => pair.Transaction.Transaction_Id == transaction_id && pair.Order.Transaction_Id == order.Transaction_Id)
+                .Select(pair => pair.Transaction)
+                .ToList();
+
+            return filteredData;
+        }*/
+
 
     }
 }

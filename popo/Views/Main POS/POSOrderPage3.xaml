@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="popo.POSOrderPage3"
+             Padding="10"
+             Title="Order Item"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.Content> <!-- This is the EditPOS: Renaming/Updating Products-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <!-- This row will hold the buttons -->
+            </Grid.RowDefinitions>
+
+            <CollectionView x:Name="CategoryCollectionView"
+                            SelectionMode="Single"
+                            Margin="20"
+                            ItemsSource="{Binding Category_Id}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="AUTO" />
+                            </Grid.ColumnDefinitions>
+
+                            <Button Text="{Binding Category_Name}" FontSize="20" FontAttributes="Bold" 
+                                    BackgroundColor="#2196F3" TextColor="White" BorderColor="#1976D2" BorderWidth="2"
+                                    CornerRadius="10"  HeightRequest="110" Clicked="Category_Clicked"/>
+                            <!--Trigger handle event pag click ng button-->
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand">
+                <!--<Frame BackgroundColor="White" CornerRadius="15" Padding="10" Margin="0, 0, 0, 10">
+                    <Image Source="shoppingcart.png" Aspect="AspectFit" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ViewShoppingCart"/>
+                    </Frame.GestureRecognizers>
+                </Frame>-->
+                <Button Text="View Cart" BackgroundColor="#28A745" BorderColor="#0F5132" BorderWidth="2"
+                        WidthRequest="100" CornerRadius="10" TextColor="White" Clicked="ViewShoppingCart" 
+                        CommandParameter="{Binding .}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

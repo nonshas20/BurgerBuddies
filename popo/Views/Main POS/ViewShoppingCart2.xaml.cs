@@ -10,24 +10,36 @@ namespace popo
 {
     public partial class ViewShoppingCart2 : ContentPage
     {
-        public ViewShoppingCart2()
+        private int TransactionId;
+        private OrderModel orders;
+
+        public ViewShoppingCart2(OrderModel orders, int transactionId)
         {
             InitializeComponent();
+            TransactionId = transactionId;
+            this.orders = orders;
         }
+
         private async void CloseButton_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PopAsync();
         }
+
         protected override async void OnAppearing()
         {
             try
             {
                 base.OnAppearing();
+                var recieptItems = await App.RecieptDatabase.ViewCart2(orders);
+                OrdersCollectionView.ItemsSource = recieptItems;
             }
             catch
             {
 
             }
         }
+
     }
+
+
 }

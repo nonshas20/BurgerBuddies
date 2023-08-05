@@ -59,6 +59,9 @@
     <Compile Update="Views\Edit Item\EditProductPage.xaml.cs">
       <DependentUpon>EditProductPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Main POS\POSOrderPage3.xaml.cs">
+      <DependentUpon>POSOrderPage3.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Main POS\ViewShoppingCart2.xaml.cs">
       <DependentUpon>ViewShoppingCart2.xaml</DependentUpon>
     </Compile>

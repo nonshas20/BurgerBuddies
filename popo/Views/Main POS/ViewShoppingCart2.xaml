@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="popo.ViewShoppingCart2"
              Padding="10"
-             Title="Edit Product"
+             Title="View Cart"
              NavigationPage.HasNavigationBar="True">
 
     <ContentPage.Content> <!-- This is the EditPOS: Renaming/Updating Products-->
