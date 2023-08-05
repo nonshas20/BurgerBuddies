@@ -11,7 +11,7 @@
         <Label Text="Amount Received:" FontSize="Medium" FontAttributes="Bold" Margin="20,0,0,0" TextColor="#333333" HorizontalOptions="StartAndExpand" />
         <Frame Margin="30,20,30,10" CornerRadius="10" BorderColor="#333333" BackgroundColor="#FFFFFF" Padding="5" WidthRequest="300">
             <Entry x:Name="AmountReceivedEntry" Placeholder="Enter amount received" Keyboard="Numeric" 
-                   HorizontalOptions="FillAndExpand" IsEnabled="False"/>
+                   HorizontalOptions="FillAndExpand"/>
         </Frame>
 
         <StackLayout Margin="30,20,30,10" HorizontalOptions="Center" VerticalOptions="Center">
