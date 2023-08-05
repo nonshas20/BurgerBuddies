@@ -52,12 +52,45 @@ namespace popo.Database
         public async Task<List<RecieptModel>> ViewCart2(OrderModel orderedItem)
         {
             // Perform the join operation without inserting into the database.
-            var transactions = await db.Table<TransactionModel>().ToListAsync();
-            var orders = await db.Table<OrderModel>().ToListAsync();
+            var orders = await App.OrderedItemsDatabase.ReadOrders();
+            var transactions = await App.TransactionDatabase.ReadTransactions();
+
+            List<OrderItem> orderItems = new List<OrderItem>();
+            List<TransactionItem> transactionItems = new List<TransactionItem>();
+
+            foreach (var order in orders)
+            {
+                OrderItem orderItem = new OrderItem
+                {
+                    Order_Id = order.Order_Id,
+                    Transaction_Id = order.Transaction_Id,
+                    Product_Name = order.Product_Name,
+                    Product_Cost = order.Product_Cost,
+                    Order_Qty = order.Order_Qty,
+                    Order_Amt = order.Order_Amt
+                };
+                orderItems.Add(orderItem);
+            }
+
+            foreach (var transaction in transactions)
+            {
+                TransactionItem transactItem = new TransactionItem
+                {
+                    Transaction_Id = transaction.Transaction_Id,
+                    Payment_Mode = transaction.Payment_Mode,
+                    Order_Mode = transaction.Order_Mode,
+                    Order_Status = transaction.Order_Status,
+                    Date = transaction.Date,
+                    Order_Total = transaction.Order_Total
+                };
+                transactionItems.Add(transactItem);
+            }
+
+
 
             var joinedTransactions =
-                from transaction in transactions
-                join order in orders on transaction.Transaction_Id equals order.Transaction_Id
+                from transaction in transactionItems
+                join order in orderItems on transaction.Transaction_Id equals order.Transaction_Id
                 select new RecieptModel
                 {
                     Transaction_Id = transaction.Transaction_Id,

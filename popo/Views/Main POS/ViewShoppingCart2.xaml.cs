@@ -6,6 +6,8 @@ using popo.Model;
 using Rg.Plugins.Popup.Services;
 using popo.Database;
 using System.Diagnostics;
+using System.ComponentModel.DataAnnotations.Schema;
+using SQLite;
 
 namespace popo
 {
@@ -42,4 +44,27 @@ namespace popo
             }
         }
     }
+
+    public class OrderItem //Temp storage for items pending to be confirmed (Should be passed into properties of PurchaseOrderModel)
+    {
+        // Properties for an order item, including the item name, price, quantity, and subtotal
+        public int Order_Id { get; set; }
+        public int Transaction_Id { get; set; }
+        public string Product_Name { get; set; }
+        public int Product_Cost { get; set; }
+        public int Order_Qty { get; set; }
+        public int Order_Amt { get; set; }
+    }
+
+    public class TransactionItem
+    {
+        public int Transaction_Id { get; set; }
+        public string Payment_Mode { get; set; }
+        public string Order_Mode { get; set; }
+
+        public string Order_Status { get; set; }
+        public string Date { get; set; }
+        public int Order_Total { get; set; }
+    }
+
 }
