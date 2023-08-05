@@ -54,6 +54,14 @@ namespace popo
             {
                 await DisplayAlert("Invalid", "Enter Order Quantity!", "OK");
             }
+            if (!int.TryParse(OrderQuantity, out int OrderAmt))
+            {
+                await DisplayAlert("Invalid", "Please enter a valid Order Quantity!", "OK");
+            }
+            else if (OrderAmt >= selectedProduct.Product_Stock)
+            {
+                await DisplayAlert("Invalid", "Ordered amount cannot be higher than the product stock!", "OK");
+            }
             else
             {
                 AddToCart();

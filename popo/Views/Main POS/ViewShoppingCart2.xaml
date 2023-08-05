@@ -57,8 +57,10 @@
                         <ColumnDefinition Width="50*"/>
                         <ColumnDefinition Width="50*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.ColumnSpan="2" Grid.Column="0" x:Name="TotalAmtLabel" Text="TotalNumberHere" FontSize="Large" 
+                    <Label Grid.Column="0" Text="Total Amount:" FontSize="Large" 
                            TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    <Label Grid.Column="1" x:Name="TotalAmtLabel" Text="TotalNumberHere" FontSize="Large" 
+                           TextColor="Red" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                     <Button Text="Close" Grid.Row="1" Grid.Column="0" BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
                         WidthRequest="100" CornerRadius="20" TextColor="White" FontAttributes="Bold" Clicked="CloseButton_Clicked"/>
                     <Button Text="Confirm" Grid.Row="1" Grid.Column="1" BackgroundColor="#2196F3" BorderColor="#1976D2" BorderWidth="2" 
