@@ -92,7 +92,7 @@ namespace popo
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainTabbedPage());
+            MainPage = new NavigationPage(new CompletedPage(1,1));
         }
 
         protected override void OnStart()

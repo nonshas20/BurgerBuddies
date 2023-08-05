@@ -14,6 +14,7 @@ namespace popo
     public partial class ViewShoppingCart2 : ContentPage
     {
         private int TransactionId;
+        private int grandTotal;
         private OrderModel orders;
 
         public ViewShoppingCart2(OrderModel orders, int transactionId)
@@ -30,6 +31,12 @@ namespace popo
             await Navigation.PopAsync();
         }
 
+        private async void ConfirmButton_Clicked(object sender, System.EventArgs e)
+        {
+            grandTotal = await App.RecieptDatabase.CalculateGrandTotal(TransactionId);
+            await Navigation.PushAsync(new ChangePage(TransactionId,grandTotal));
+        }
+
         protected override async void OnAppearing()
         {
             try
@@ -37,6 +44,8 @@ namespace popo
                 base.OnAppearing();
                 var recieptModels = await App.RecieptDatabase.ViewCart2(orders, TransactionId);
                 OrdersCollectionView.ItemsSource = new ObservableCollection<RecieptModel>(recieptModels);
+                grandTotal = await App.RecieptDatabase.CalculateGrandTotal(TransactionId);
+                TotalAmtLabel.Text = grandTotal.ToString();
             }
             catch (Exception ex)
             {

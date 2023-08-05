@@ -8,11 +8,11 @@ namespace popo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CompletedPage : ContentPage
     {
-        public CompletedPage()//(double grandTotal, double change)
+        public CompletedPage(int grandTotal, int change)
         {
             InitializeComponent();
-            //AmountPayableLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
-            //ChangeLabel.Text = change.ToString("C", new CultureInfo("en-PH"));
+            AmountPayableLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
+            ChangeLabel.Text = change.ToString("C", new CultureInfo("en-PH"));
         }
         private async void NewEntryButton_Clicked(object sender, EventArgs e)
         {

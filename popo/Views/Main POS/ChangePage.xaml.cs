@@ -1,6 +1,11 @@
-﻿using System;
+﻿using popo.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
+using System.Threading.Tasks;
+using System.Transactions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,17 +13,30 @@ namespace popo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangePage : ContentPage
-    {
-        private double grandTotal;
-        private double amountReceived;
 
-        public ChangePage()//(double grandTotal)
+    {
+        private int TransactionId;
+        private int grandTotal;
+        private int amountReceived;
+
+        public ChangePage(int transactionId, int grandTotal)//(double grandTotal)
         {
             InitializeComponent();
-            this.grandTotal = grandTotal;
-            AmountPayableLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
+            TransactionId = transactionId;
         }
-
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                int grandTotal = await App.RecieptDatabase.CalculateGrandTotal(TransactionId);
+                AmountPayableLabel.Text = grandTotal.ToString("C", new CultureInfo("en-PH"));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+            }
+        }
         private void OnButtonClicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -42,14 +60,14 @@ namespace popo
                     await DisplayAlert("Invalid amount", "Please enter a valid amount.", "OK");
                     return;
                 }
-                amountReceived = double.Parse(AmountReceivedEntry.Text, NumberStyles.Currency, CultureInfo.GetCultureInfo("en-PH"));
+                amountReceived = int.Parse(AmountReceivedEntry.Text, NumberStyles.Currency, CultureInfo.GetCultureInfo("en-PH"));
                 if (amountReceived < grandTotal)
                 {
                     await DisplayAlert("Insufficient amount", "The amount received is less than the amount payable.", "OK");
                     return;
                 }
-                double change = amountReceived - grandTotal;
-                await Navigation.PushAsync(new CompletedPage());//(grandTotal, change));
+                int change = amountReceived - grandTotal;
+                await Navigation.PushAsync(new CompletedPage(grandTotal, change));
             }
             catch (FormatException)
             {

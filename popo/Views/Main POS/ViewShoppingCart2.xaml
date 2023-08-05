@@ -52,8 +52,18 @@
             </CollectionView>
 
             <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand">
-                <Button Text="Close" BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
-                        WidthRequest="100" CornerRadius="20" TextColor="White" Clicked="CloseButton_Clicked"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.ColumnSpan="2" Grid.Column="0" x:Name="TotalAmtLabel" Text="TotalNumberHere" FontSize="Large" 
+                           TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    <Button Text="Close" Grid.Row="1" Grid.Column="0" BackgroundColor="#EC1768" BorderColor="#924040" BorderWidth="2"
+                        WidthRequest="100" CornerRadius="20" TextColor="White" FontAttributes="Bold" Clicked="CloseButton_Clicked"/>
+                    <Button Text="Confirm" Grid.Row="1" Grid.Column="1" BackgroundColor="#2196F3" BorderColor="#1976D2" BorderWidth="2" 
+                        WidthRequest="100" CornerRadius="20" TextColor="White" FontAttributes="Bold" Clicked="ConfirmButton_Clicked"/>
+                </Grid>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

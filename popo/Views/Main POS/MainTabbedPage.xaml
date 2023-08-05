@@ -192,61 +192,40 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="HISTORY" FontSize="32" TextColor="White" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                                
+
                             </Grid>
                         </StackLayout>
                     </Grid>
-
-                   
-
-                    <!-- Header -->
-                    <BoxView Grid.Row="0" HeightRequest="60"/>
-                    
-
-                    <!-- Content -->
-                    <ScrollView Grid.Row="1">
-                        <StackLayout Margin="20">
-                            <Frame CornerRadius="10" Padding="10" HeightRequest="550" BackgroundColor="#fdf7fc" Margin="0,10,0,0">
-                                <ListView x:Name="TransactionListView" ItemsSource="{Binding Transactions}"
-                                    SeparatorVisibility="None" HasUnevenRows="True">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ViewCell>
-                                                <Frame CornerRadius="10" BackgroundColor="White" Padding="10" Margin="5,0,5,10">
-                                                    <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="40" />
-                                                        </Grid.RowDefinitions>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="2*" />
-                                                            <ColumnDefinition Width="Auto" />
-                                                        </Grid.ColumnDefinitions>
-
-                                                        <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" FontAttributes="Bold" TextColor="#252525" />
-                                                        <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="#252525" />
-                                                        <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
-
-                                                        <!-- Three dots image button -->
-                                                        <ImageButton Grid.Column="3" Source="threedot.png" BackgroundColor="Transparent"
-                                                            Clicked="OnThreeDotsClicked" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" />
-                                                    </Grid>
-                                                </Frame>
-                                                
-                                            </ViewCell>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Frame>
-                            <Frame Grid.Column="1" CornerRadius="10" Padding="0" HasShadow="True" Margin="0,10"
-                                BackgroundColor="GhostWhite" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                                <Button Text="View Sales Report" BackgroundColor="#28A745" BorderColor="#0F5132"
-                                    BorderWidth="2" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"
-                                    FontSize="Default" CornerRadius="10" Clicked="ExitButton_Clicked" />
-                            </Frame>
-                        </StackLayout>
-                    </ScrollView>
-
-
+                    <Grid Grid.Row="1">
+                        <ScrollView Margin="10">
+                            <StackLayout>
+                                <Frame CornerRadius="10" Padding="10" BackgroundColor="#858585" Margin="0,10,0,0" HeightRequest="400">
+                                    <ListView x:Name="HistoryListView">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="50"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="80*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Grid.Column="0" Text="{Binding Date}" FontSize="16" FontAttributes="Bold" TextColor="#252525" />
+                                                            <Label Grid.Column="1" Text="Total Price: " FontSize="16" TextColor="#252525" />
+                                                            <Label Grid.Column="2" Text="{Binding TotalPrice}" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+                                                        </Grid>
+                                                    </Frame>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Frame>
+                            </StackLayout>
+                        </ScrollView>
+                    </Grid>
                 </Grid>
             </ContentPage.Content>
         </ContentPage>
